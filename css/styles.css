@@ -1,0 +1,5338 @@
+html {	
+	overflow-y: auto!important;
+	min-width: auto!important;
+}
+
+* {
+	user-select: none;
+}
+
+body {
+	padding-bottom:50px;
+}
+
+body.gameOver {
+	padding-top: 47px;
+}
+
+.delete, .modal-close {
+    height: 30px;
+    max-height: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    min-width: 30px;
+    width: 30px;
+}
+
+#flatoutGamesLogo {
+	width: 110px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+#ks-container {
+	position: fixed;
+    top: -74px;
+	opacity:0;
+	width: 100%;
+	height: 108px;
+	transition: all .7s ease-in-out;
+	display:block;
+}
+
+#ks-container.activeKickstarter {
+	top: 0px;
+}
+
+#ks-container.showKickstarterInfo {
+	opacity:1;
+}
+
+#ks-container #ks-background {
+	background-color: #05ce78;
+    padding: 8px 0px 24px;
+}
+
+#ks-container #ks-background p {
+    font-size: 1.4rem;
+	margin-top: 9px!important;
+}
+
+#ks-container #ks-background p a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+#ks-container #kickstartImg {
+	width: 180px;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    background-color: #05ce78;
+    cursor: hand;
+    cursor: pointer;
+    transition: all .7s ease-in-out;
+    z-index: -1;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+body.gameOver #ks-container {
+	height: 60px;
+	top: 0px;
+	z-index: 2;
+	display:block;
+}
+
+body.gameOver #ks-container #ks-background {
+    padding: 4px 0px 15px;
+}
+
+body.gameOver #ks-container #ks-background p {
+    font-size: 1.2rem;
+	margin-top: 8px!important;
+}
+
+body.gameOver #ks-container #kickstartImg {
+	display:none;
+}
+
+.layer {
+	display:none;
+}
+
+#frontPageGameInstructionsButton {
+    display: block;
+    margin: 0 auto;
+    width: 140px;
+}
+
+#turnsAndNatureTokenContainer {
+    width: 401px;
+    margin: 10px auto 0px;
+    padding-left: 26px;
+}
+
+#turnsAndNatureTokenContainer p {
+	font-size: 21px;
+    float: left;
+	margin: 0px 20px;
+}
+
+#turnsAndNatureTokenContainer p span {
+	font-weight:bold;
+}
+
+#mobileTurnsAndNatureTokenContainer {
+	display:none;
+}
+
+#gameButtonsContainer {
+    height: 50px;
+    width: 822px;
+    margin: 14px auto 0px;
+    padding-left: 16px;
+}
+
+#gameButtonsContainer .button {
+	display: block;
+    margin: 0px 10px;
+    float: left;
+}
+
+#gameLayer #allButtonsContainer #mobileButtonsContainer .useNatureCube.button {
+	display:none;
+}
+
+#gameLayer #allButtonsContainer #gameButtonsContainer .useNatureCube.button {
+	display:block;
+}
+
+#mobileButtonsContainer {
+	display:none;
+}
+
+#setupLayer {
+	display: block;
+	margin-top: 10px;
+}
+
+#container {
+	width: 1180px;
+    margin: 0 auto;
+}
+
+#mobileCascadiaTitle {
+	display:none;
+}
+
+#endGameCascadiaTitle {
+	display:none;
+}
+
+#mainCascadiaTitle {
+	display:block;
+	text-align: center;
+	margin:20px 0px 0px!important;
+}
+
+#mainCascadiaTitle img {
+	width: 600px;
+	margin-bottom: 0px;
+	margin-left: 13px;
+}
+
+body.gameOver #mainCascadiaTitle {
+    margin: 20px 0px 41px!important;
+}
+
+body.gameOver #mainCascadiaTitle img {
+    width: 610px;
+}
+
+.subtitle {
+	font-style: italic;
+	text-align:center;
+    width: 400px;
+    margin: 15px auto 15px;
+}
+
+.title.is-5 {
+	margin-bottom:10px;
+}
+
+ion-icon[name="help-circle-outline"] {
+	font-size: 24px;
+    margin-bottom: -2px;
+    margin-left: 1px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+/* The container */
+.checkboxEl {
+	display: block;
+	position: relative;
+	margin-top: 6px;
+	cursor: pointer;
+	/* font-size: 22px; */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkboxEl input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxEl:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxEl input:checked ~ .checkmark {
+	background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxEl input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxEl .checkmark:after {
+	left: 7px;
+	top: 2px;
+	width: 7px;
+	height: 13px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.instructionContainer {
+	display:none;
+}
+
+#instructionCategories .instructionsIcon {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.instructionContainer .instructionalImage {
+    border: 1px solid #000;
+    margin: 20px auto;
+    display: block;
+}
+
+.instructionContainer .instructionalImage.largeImg {
+    width: 70%;
+}
+
+.instructionContainer .instructionalImage.mediumImg {
+    width: 50%;
+}
+
+#instructionsHelpModal .modal-card {
+    width: 800px;
+}
+
+#keyboardKeysModal .modal-content {
+	width: 460px;
+}
+
+#keyboardKeysModal .modal-content .title.is-6 {
+	margin: 20px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#keyboardKeysModal .modal-content #keyboardMoveKeysImg {
+	display: block;
+    margin: 20px auto 30px;
+    width: 310px;
+}
+
+#keyboardKeysModal .modal-content #keyboardRotateKeysImg {
+    display: block;
+    margin: 20px auto 40px;
+    width: 170px;
+}
+
+#keyboardKeysModal .modal-content .notification #commenceGame {
+	margin: 0 auto;
+    display: block;
+    padding: 0px 30px;
+}
+
+#natureCubesPlaceTileModal .modal-content, #natureCubesPlaceTokenModal .modal-content {
+	width: 280px;
+}
+
+#natureCubesPlaceTileModal .modal-content p, #natureCubesPlaceTokenModal .modal-content p {
+	margin: 6px 0px 20px;
+}
+
+#natureCubesClearAnyNumberOfTokensModal .modal-content {
+	width: 400px;
+}
+
+#natureCubesClearAnyNumberOfTokensModal .modal-content p {
+    margin-bottom: 19px;
+}
+
+#noValidPlacementModal .modal-content, #noValidPlacementNatureCubeModal .modal-content {
+	width: 400px;
+}
+
+#noValidPlacementModal .modal-content .notification .invalidTokenImg, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg {
+	position: relative;
+    height: 60px;
+    width: 60px;
+    margin: 10px auto 30px;
+}
+
+#noValidPlacementModal .modal-content .notification .invalidTokenImg .removedToken, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg .removedToken {
+    position: absolute;
+}
+
+#noValidPlacementModal .modal-content .notification .invalidTokenImg .removeTokenRedCross, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg .removeTokenRedCross {
+    position: absolute;
+    width: 30px;
+    top: -10px;
+    right: -10px;
+}
+
+#noValidPlacementModal .modal-content .notification .noValidPlacementButtonContainer, #noValidPlacementNatureCubeModal .modal-content .notification .noValidPlacementButtonContainer {
+	margin: 0 auto 15px;
+    width: 246px;
+}
+
+#noValidPlacementModal .modal-content .notification .noValidPlacementButtonContainer .button, #noValidPlacementNatureCubeModal .modal-content .notification .noValidPlacementButtonContainer .button {
+    margin: 0px 10px;
+    width: 100px;
+}
+
+.notificationModal .modal-content .notification .button.is-danger.closeModalTrigger:not(#cancelInvalidTokenPlacement):not(#cancelInvalidNatureCubeTokenPlacement) {
+    display: block;
+	margin: 0 auto;
+}
+
+#allDuplicateTokensModal .modal-content {
+    width: 390px;
+}
+
+#lastTurnModal .modal-content {
+	width: 330px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#lastTurnModal .modal-content p {
+	font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.notificationModal .notification .invalidWildlifeText, #allDuplicateTokensModal .modal-content .notification .duplicateWildlifeText {
+	font-weight:bold;
+	text-decoration: underline;
+}
+
+#allDuplicateTokensModal .modal-content .notification #duplicateImgContainer {
+    display: block;
+    margin: 10px auto 20px;
+    width: 60px;
+}
+
+.modalLink {
+	color: #0099ff;
+	text-decoration: none;
+	cursor:hand;
+	cursor:pointer;
+}
+
+.bold {
+	font-weight:bold;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.clearDiv {
+	clear:both;
+}
+
+#goalTilesContainer {
+	margin-top: 30px;
+}
+
+#tileTokenContainer .has-text-centered.title.is-6 {
+	margin-top: 0px!important;
+    margin-bottom: 5px!important;
+}
+
+#goalsContainer .has-text-centered.title.is-6 {
+	margin-top: 0px!important;
+    margin-bottom: 20px!important;
+}
+
+#goalTilesContainer #goalList {
+	width: 750px;
+	list-style: none;
+    text-align: center;
+    padding: 0 0 0 0;
+	margin: 14px auto 0;
+	box-sizing: border-box;
+}
+
+#goalTilesContainer #goalList li {
+	width: 32%;
+    height: auto;
+	padding: 0 0 0 0;
+    margin: 0px 0px 20px 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#goalTilesContainer #goalList li .goalScoring {
+    width: 91%;
+	margin: 0px 0px 0px 0px;
+	cursor:hand;
+	cursor:pointer;
+}
+
+#homepageButtonContainer {
+	margin: 30px auto 20px;
+    width: 360px;
+}
+
+#homepageButtonContainer .button {
+	margin: 0px 10px;
+    width: 160px;
+}
+
+#tileTokenContainer {
+    float: left;
+    margin: 10px 0px 10px -38px;
+    padding-left: 38px;
+    height: 530px;
+    width: 245px;
+    overflow: hidden;
+    position: relative;
+}
+
+#tileTokenContainer.finalScoring {
+	margin: 10px 22px 10px 16px;
+    padding-left: 0px;
+    width: 385px;
+    height: 490px;
+    overflow: visible;
+}
+
+#goalLayerListContainer {
+	display:none;
+}
+
+#mapContainer {
+    border: 1px solid #000;
+    float: left;
+    margin: 10px 0px 10px 0px;
+    height: 530px;
+	width: 760px;
+	overflow:hidden;
+	position: relative;
+	background-image: url('../img/blank-map.jpg');
+	background-size: cover;
+    border-radius: 20px;
+}
+
+body.gameOver #mapContainer {
+    height: 490px;
+    width: 739px;
+}
+
+#mapContainer #placedTileOptions {
+    background-image: url(../img/buttonBackground.jpg);
+    background-size: cover;
+    position: absolute;
+	bottom: -90px;
+    height: 90px;
+    width: 760px;
+	padding: 20px;
+	transition: all .7s ease-in-out;
+	z-index: 4;
+}
+
+#mapContainer #placedTileOptions.showOptions {
+	bottom: -12px;
+}
+
+.button.natureCubeButton {
+	display:none;
+}
+
+#mapContainer #placedTileOptions .button {
+	margin-right: 17px;
+}
+
+.zoomOptions {
+    position: absolute;
+    top: 0px;
+	left: 0px;
+	z-index: 5;
+}
+
+.zoomOptions .zoomOption.activeZoom {
+    cursor: hand;
+    cursor: pointer;
+}
+
+.zoomOptions .zoomOption.inactiveZoom {
+    opacity: .4;
+}
+
+#mapContainer .zoomOptions .zoomOption {
+	width: 51px;
+    margin: 6px 2px 0px 12px;
+}
+
+.mapNavigation {
+    position: absolute;
+    bottom: 0px;
+	right: 0px;
+	z-index: 5;
+}
+
+#mapContainer .mapNavigation .navBackground {
+    width: 140px;
+}
+
+.mapNavigation .navArrow {
+	position: absolute;
+	cursor:pointer;
+	cursor:hand;
+	transition: all .1s ease-in-out;
+}
+
+.mapNavigation .upArrow.navArrow.activeArrow {
+	-webkit-transform: rotate(270deg) translateX(2px);
+	transform: rotate(270deg) translateX(2px);
+}
+
+.mapNavigation .rightArrow.navArrow.activeArrow {
+	-webkit-transform: rotate(0deg) translateX(2px);
+	transform: rotate(0deg) translateX(2px);
+}
+
+.mapNavigation .downArrow.navArrow.activeArrow {
+	-webkit-transform: rotate(90deg) translateX(2px);
+	transform: rotate(90deg) translateX(2px);
+}
+
+.mapNavigation .leftArrow.navArrow.activeArrow {
+	-webkit-transform: rotate(180deg) translateX(2px);
+	transform: rotate(180deg) translateX(2px);
+}
+
+.mapNavigation .upArrow.navArrow {
+    transform: rotate(270deg);    
+}
+
+.mapNavigation .rightArrow.navArrow {
+	transform: rotate(0deg);    
+}
+
+.mapNavigation .downArrow.navArrow {
+	transform: rotate(90deg);    
+}
+
+.mapNavigation .leftArrow.navArrow {
+	transform: rotate(180deg);    
+}
+
+#mapContainer .mapNavigation .navArrow {
+	width: 42px;
+}
+
+#mapContainer .mapNavigation .upArrow {
+    right: 49px;
+    top: 17px;
+}
+
+#mapContainer .mapNavigation .rightArrow {
+	right: 14px;
+    top: 54px;
+}
+
+#mapContainer .mapNavigation .downArrow {
+	right: 51px;
+    top: 91px;
+}
+
+#mapContainer .mapNavigation .leftArrow {
+	right: 86px;
+    top: 51px;
+}
+
+#mobileMapNavContainer {
+	display:none;
+}
+
+#goalsContainer {
+	float: left;
+    margin: 10px 0px 10px 20px;
+    height: 530px;
+	width: 134px;
+	transition: all 1s ease-in-out;
+}
+
+#goalsContainer.finalScoringStage {
+	width: 0px!important;
+}
+
+#goalsContainer .goalScoringThumbnailContainer {
+    position: relative;
+    height: 85px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+#goalsContainer .goalScoringThumbnailContainer .goalScoringToken {
+    position: absolute;
+    width: 38px;
+    top: -11px;
+    z-index: 1;
+}
+
+#goalsContainer .goalScoringThumbnailContainer .goalScoringThumbnail {
+    position: absolute;
+    width: 117px;
+    right: 0px;
+}
+
+#natureCubesModal .modal-card {
+    width: 720px;
+}
+
+#natureCubesModal .modal-card-body .natureTokenContent {
+	margin-bottom:10px;
+}
+
+#natureTokenTrackerContainer {
+	width: 100px;
+    margin: 0px auto 7px;
+}
+
+#natureTokenTrackerContainer #natureTokenImage {
+    float: left;
+    width: 50px;
+}
+
+#natureTokenTrackerContainer #natureTokenAmount {
+    float: left;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+#natureTokenTrackerContainer #natureTokenAmount .numNatureCubes {
+	margin-left: 2px;
+}
+
+#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter .button span {
+    margin: 0px 5px;
+}
+
+#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubeClearAllTokens {
+	border: 3px solid #f14668;
+}
+
+.tokenTileContainer {
+	height: 115px;
+	width: 190px;
+	opacity: .75;
+	position:absolute;
+}
+
+.tokenTileContainer.chosenTokenTileContainer {
+	opacity: 1;
+}
+
+.tokenTileContainer:not(.natureCubeClearTokens) {
+	transition: all 1s ease-in-out;
+}
+
+.tokenTileContainer.natureCubeClearTokens {
+	transition: all .7s ease-in-out;
+}
+
+.tokenTileContainer.potentialNatureCube .tileContainer,
+.tokenTileContainer.potentialNatureCube .tokenContainer,
+.tokenTileContainer.natureCubeClearTokens .tileContainer,
+.tokenTileContainer.natureCubeClearTokens .tokenContainer,
+.tokenTileContainer.finishedNatureCubePlacement .tileContainer,
+.tokenTileContainer.finishedNatureCubePlacement .tokenContainer {
+	opacity: .75!important;
+}
+
+.tokenTileContainer:not(.inactive):not(.potentialNatureCube):not(.natureCubeClearTokens):hover, .chosenTokenTileContainer {
+	opacity: 1;
+}
+
+.tokenTileContainer.finishedNatureCubePlacement, .tokenTileContainer.potentialNatureCube,
+.tokenTileContainer.potentialNatureCube.natureCubeTile .tileContainer:hover,
+.tokenTileContainer.potentialNatureCube.natureCubeToken .tokenContainer:hover,
+.tokenTileContainer.potentialNatureCube.natureCubeTile .chosenNatureCubeTile,
+.tokenTileContainer.potentialNatureCube.natureCubeToken .chosenNatureCubeToken,
+.tokenTileContainer.natureCubeClearTokens,
+.tokenTileContainer.natureCubeClearTokens .tokenContainer.confirmedTokenToClear .activeToken,
+.tokenTileContainer.natureCubeClearTokens .tokenContainer:hover,
+.tokenTileContainer.natureCubeClearTokens .tokenContainer.confirmedTokenToClear:hover  {
+	opacity: 1;
+}
+
+.tokenTileContainer:not(.inactive):not(.chosenTokenTileContainer):not(.potentialNatureCube):not(.natureCubeClearTokens),
+.tokenTileContainer.potentialNatureCube.natureCubeTile .tileContainer,
+.tokenTileContainer.potentialNatureCube.natureCubeToken .tokenContainer,
+.tokenTileContainer.natureCubeClearTokens .tokenContainer {
+	cursor:hand;
+	cursor:pointer;
+}
+
+#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="0"] {
+    top: 51px;
+}
+
+#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="1"] {
+    top: 172px;
+}
+
+#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="2"] {
+	top: 292px;
+}
+
+#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="3"] {
+	top: 410px;
+}
+
+
+.tokenTileContainer[tokentilenum="0"] {
+	top:0px;
+}
+
+.tokenTileContainer[tokentilenum="1"] {
+	top:130px;
+}
+
+.tokenTileContainer[tokentilenum="2"] {
+	top:260px;
+}
+
+.tokenTileContainer[tokentilenum="3"] {
+	top:390px;
+}
+
+.tokenTileContainer[tokentilenum="-1"] {
+	top:-290px;
+}
+
+.tokenTileContainer[tokentilenum="-2"] {
+    top: -420px;
+}
+
+#confirmClearSelectedTokens, #selectAllTokensToClear {
+	position: absolute;
+    top: -45px;
+    transition: all .7s ease-in-out;
+    font-size: .85rem;
+    width: 102px;
+}
+
+#confirmClearSelectedTokens {
+	right: 120px;
+}
+
+#selectAllTokensToClear {
+	right: 10px;
+}
+
+#confirmClearSelectedTokens.revealButton, #selectAllTokensToClear.revealButton {
+	top: 0px;
+}
+
+.tileContainer {
+    position: relative;
+	width: 100px;
+    height: 115px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.tileContainer .habitatTile {
+	position: absolute;
+	width: 100px;
+    height: 115px;
+	max-width:100%;
+	max-height:100%;
+	transition: all .1s ease-in-out;
+}
+
+.tileContainer .tileToken {
+	position: absolute;
+    width: 33%;
+}
+
+.selectedTileOutline {
+	position: absolute;
+	z-index: 4;
+	width:100%;
+	height:100%;
+}
+
+.tokenTileContainer .tokenContainer {
+	float: right;
+    margin-right: 10px;
+    width: 60px;
+    margin-top: 30px;
+	position: relative;
+}
+
+.duplicateToken, .replacedToken {
+	display:none;
+	position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.tileContainer .redCross {
+    display: none;
+    position: absolute;
+    top: 88px;
+    right: -2px;
+    width: 35px;
+    z-index: 5;
+}
+
+.tokenContainer .redCross {
+	display:none;
+	position: absolute;
+    top: 35px;
+    right: -6px;
+    width: 35px;
+}
+
+.tileContainer[tilewildlife="1"] .wildlifeToken-1 {
+    top: 36.5%;
+    left: 33%;
+    z-index: 1;
+}
+
+.tileContainer[tilewildlife="2"] .wildlifeToken-1 {
+	top: 30.5%;
+    left: 23%;
+    z-index: 3;
+}
+
+.tileContainer[tilewildlife="2"] .wildlifeToken-2 {
+    top: 42.5%;
+    left: 45%;
+    z-index: 1;
+}
+
+.tileContainer[tilewildlife="3"] .wildlifeToken-1 {
+    top: 29.5%;
+    left: 23%;
+    z-index: 3;
+}
+
+.tileContainer[tilewildlife="3"] .wildlifeToken-2 {
+	top: 48.5%;
+    left: 36%;
+    z-index: 2;
+}
+
+.tileContainer[tilewildlife="3"] .wildlifeToken-3 {
+    top: 30.5%;
+    left: 50%;
+    z-index: 1;
+}
+
+#mapContainer #mapHiddenOverlay {
+	position:relative;
+	width:4000px;
+	height:4000px;
+	top: 0px;
+	left: 0px;
+	transform: scale(1);
+    transform-origin: 9.4% 5.5%;
+	transition: all .2s ease-in-out;
+}
+	
+#mapContainer #mapHiddenOverlay .mapTileContainer {
+    position: absolute;
+    width: 100px;
+    height: 115px;
+}
+
+#mapContainer #mapHiddenOverlay .mapTileContainer.potentialPlacement,  .mapTileContainer.potentialNatureCubePlacement {
+    z-index:1;
+}
+
+.mapTileContainer .tileOutline {
+    position: absolute;
+    width: 102px;
+    opacity: .2;
+}
+
+.mapTileContainer .validPlacement {
+   z-index:0;
+   position: absolute;
+    width: 102px;
+}
+
+.mapTileContainer.potentialPlacement .tileContainer:not(.lockedIn), .mapTileContainer.potentialNatureCubeTilePlacement .tileContainer {
+    position: absolute;
+    height: 118px;
+    width: 101px;
+    float: none;
+    margin-top: 0px;
+	margin-left: 0px;
+	opacity:.9;
+}
+
+/* .mapTileContainer.potentialPlacement.previewPotentialTile .tileContainer {
+	
+} */
+
+.mapTileContainer.potentialPlacement, .mapTileContainer.potentialNatureCubeTilePlacement {
+	cursor:hand!important;
+	cursor:pointer!important;
+}
+
+.mapTileContainer .placedTileOptions {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 118px;
+}
+
+.tileContainer.lockedIn {
+    position: absolute!important;
+    float: none!important;
+    margin-top: 0px!important;
+	margin-left: 0px!important;
+	z-index:3!important;
+}
+
+/* .tileContainer.lockedIn {
+    height: 118px;
+    width: 101px;
+} */
+
+
+/* .tileContainer .tile {
+	position: absolute;
+	width: 100px;
+    height: 115px;
+	transition: all .1s ease-in-out;
+} */
+
+
+/* .selectedTileOutline {
+	position: absolute;
+    z-index: 4;
+} */
+
+
+.row-0.column-0, .row-2.column-0, .row-4.column-0, .row-6.column-0, .row-8.column-0, .row-10.column-0, .row-12.column-0, .row-14.column-0, .row-16.column-0, .row-18.column-0, .row-20.column-0, .row-22.column-0, .row-24.column-0, .row-26.column-0, .row-28.column-0, .row-30.column-0, .row-32.column-0, .row-34.column-0, .row-36.column-0, .row-38.column-0  {
+	left: -1653px;
+}
+
+.row-0.column-1, .row-2.column-1, .row-4.column-1, .row-6.column-1, .row-8.column-1, .row-10.column-1, .row-12.column-1, .row-14.column-1, .row-16.column-1, .row-18.column-1, .row-20.column-1, .row-22.column-1, .row-24.column-1, .row-26.column-1, .row-28.column-1, .row-30.column-1, .row-32.column-1, .row-34.column-1, .row-36.column-1, .row-38.column-1  {
+	left: -1554px;
+}
+
+.row-0.column-2, .row-2.column-2, .row-4.column-2, .row-6.column-2, .row-8.column-2, .row-10.column-2, .row-12.column-2, .row-14.column-2, .row-16.column-2, .row-18.column-2, .row-20.column-2, .row-22.column-2, .row-24.column-2, .row-26.column-2, .row-28.column-2, .row-30.column-2, .row-32.column-2, .row-34.column-2, .row-36.column-2, .row-38.column-2  {
+	left: -1455px;
+}
+
+.row-0.column-3, .row-2.column-3, .row-4.column-3, .row-6.column-3, .row-8.column-3, .row-10.column-3, .row-12.column-3, .row-14.column-3, .row-16.column-3, .row-18.column-3, .row-20.column-3, .row-22.column-3, .row-24.column-3, .row-26.column-3, .row-28.column-3, .row-30.column-3, .row-32.column-3, .row-34.column-3, .row-36.column-3, .row-38.column-3  {
+	left: -1356px;
+}
+
+.row-0.column-4, .row-2.column-4, .row-4.column-4, .row-6.column-4, .row-8.column-4, .row-10.column-4, .row-12.column-4, .row-14.column-4, .row-16.column-4, .row-18.column-4, .row-20.column-4, .row-22.column-4, .row-24.column-4, .row-26.column-4, .row-28.column-4, .row-30.column-4, .row-32.column-4, .row-34.column-4, .row-36.column-4, .row-38.column-4  {
+	left: -1257px;
+}
+
+.row-0.column-5, .row-2.column-5, .row-4.column-5, .row-6.column-5, .row-8.column-5, .row-10.column-5, .row-12.column-5, .row-14.column-5, .row-16.column-5, .row-18.column-5, .row-20.column-5, .row-22.column-5, .row-24.column-5, .row-26.column-5, .row-28.column-5, .row-30.column-5, .row-32.column-5, .row-34.column-5, .row-36.column-5, .row-38.column-5  {
+	left: -1158px;
+}
+
+.row-0.column-6, .row-2.column-6, .row-4.column-6, .row-6.column-6, .row-8.column-6, .row-10.column-6, .row-12.column-6, .row-14.column-6, .row-16.column-6, .row-18.column-6, .row-20.column-6, .row-22.column-6, .row-24.column-6, .row-26.column-6, .row-28.column-6, .row-30.column-6, .row-32.column-6, .row-34.column-6, .row-36.column-6, .row-38.column-6  {
+	left: -1059px;
+}
+
+.row-0.column-7, .row-2.column-7, .row-4.column-7, .row-6.column-7, .row-8.column-7, .row-10.column-7, .row-12.column-7, .row-14.column-7, .row-16.column-7, .row-18.column-7, .row-20.column-7, .row-22.column-7, .row-24.column-7, .row-26.column-7, .row-28.column-7, .row-30.column-7, .row-32.column-7, .row-34.column-7, .row-36.column-7, .row-38.column-7  {
+	left: -960px;
+}
+
+.row-0.column-8, .row-2.column-8, .row-4.column-8, .row-6.column-8, .row-8.column-8, .row-10.column-8, .row-12.column-8, .row-14.column-8, .row-16.column-8, .row-18.column-8, .row-20.column-8, .row-22.column-8, .row-24.column-8, .row-26.column-8, .row-28.column-8, .row-30.column-8, .row-32.column-8, .row-34.column-8, .row-36.column-8, .row-38.column-8  {
+	left: -861px;
+}
+
+.row-0.column-9, .row-2.column-9, .row-4.column-9, .row-6.column-9, .row-8.column-9, .row-10.column-9, .row-12.column-9, .row-14.column-9, .row-16.column-9, .row-18.column-9, .row-20.column-9, .row-22.column-9, .row-24.column-9, .row-26.column-9, .row-28.column-9, .row-30.column-9, .row-32.column-9, .row-34.column-9, .row-36.column-9, .row-38.column-9  {
+	left: -762px;
+}
+
+.row-0.column-10, .row-2.column-10, .row-4.column-10, .row-6.column-10, .row-8.column-10, .row-10.column-10, .row-12.column-10, .row-14.column-10, .row-16.column-10, .row-18.column-10, .row-20.column-10, .row-22.column-10, .row-24.column-10, .row-26.column-10, .row-28.column-10, .row-30.column-10, .row-32.column-10, .row-34.column-10, .row-36.column-10, .row-38.column-10  {
+	left: -663px;
+}
+
+.row-0.column-11, .row-2.column-11, .row-4.column-11, .row-6.column-11, .row-8.column-11, .row-10.column-11, .row-12.column-11, .row-14.column-11, .row-16.column-11, .row-18.column-11, .row-20.column-11, .row-22.column-11, .row-24.column-11, .row-26.column-11, .row-28.column-11, .row-30.column-11, .row-32.column-11, .row-34.column-11, .row-36.column-11, .row-38.column-11  {
+	left: -564px;
+}
+
+.row-0.column-12, .row-2.column-12, .row-4.column-12, .row-6.column-12, .row-8.column-12, .row-10.column-12, .row-12.column-12, .row-14.column-12, .row-16.column-12, .row-18.column-12, .row-20.column-12, .row-22.column-12, .row-24.column-12, .row-26.column-12, .row-28.column-12, .row-30.column-12, .row-32.column-12, .row-34.column-12, .row-36.column-12, .row-38.column-12  {
+	left: -465px;
+}
+
+.row-0.column-13, .row-2.column-13, .row-4.column-13, .row-6.column-13, .row-8.column-13, .row-10.column-13, .row-12.column-13, .row-14.column-13, .row-16.column-13, .row-18.column-13, .row-20.column-13, .row-22.column-13, .row-24.column-13, .row-26.column-13, .row-28.column-13, .row-30.column-13, .row-32.column-13, .row-34.column-13, .row-36.column-13, .row-38.column-13  {
+	left: -366px;
+}
+
+.row-0.column-14, .row-2.column-14, .row-4.column-14, .row-6.column-14, .row-8.column-14, .row-10.column-14, .row-12.column-14, .row-14.column-14, .row-16.column-14, .row-18.column-14, .row-20.column-14, .row-22.column-14, .row-24.column-14, .row-26.column-14, .row-28.column-14, .row-30.column-14, .row-32.column-14, .row-34.column-14, .row-36.column-14, .row-38.column-14  {
+	left: -267px;
+}
+
+.row-0.column-15, .row-2.column-15, .row-4.column-15, .row-6.column-15, .row-8.column-15, .row-10.column-15, .row-12.column-15, .row-14.column-15, .row-16.column-15, .row-18.column-15, .row-20.column-15, .row-22.column-15, .row-24.column-15, .row-26.column-15, .row-28.column-15, .row-30.column-15, .row-32.column-15, .row-34.column-15, .row-36.column-15, .row-38.column-15  {
+	left: -168px;
+}
+
+.row-0.column-16, .row-2.column-16, .row-4.column-16, .row-6.column-16, .row-8.column-16, .row-10.column-16, .row-12.column-16, .row-14.column-16, .row-16.column-16, .row-18.column-16, .row-20.column-16, .row-22.column-16, .row-24.column-16, .row-26.column-16, .row-28.column-16, .row-30.column-16, .row-32.column-16, .row-34.column-16, .row-36.column-16, .row-38.column-16  {
+	left: -69px;
+}
+
+.row-0.column-17, .row-2.column-17, .row-4.column-17, .row-6.column-17, .row-8.column-17, .row-10.column-17, .row-12.column-17, .row-14.column-17, .row-16.column-17, .row-18.column-17, .row-20.column-17, .row-22.column-17, .row-24.column-17, .row-26.column-17, .row-28.column-17, .row-30.column-17, .row-32.column-17, .row-34.column-17, .row-36.column-17, .row-38.column-17  {
+	left: 30px;
+}
+
+.row-0.column-18, .row-2.column-18, .row-4.column-18, .row-6.column-18, .row-8.column-18, .row-10.column-18, .row-12.column-18, .row-14.column-18, .row-16.column-18, .row-18.column-18, .row-20.column-18, .row-22.column-18, .row-24.column-18, .row-26.column-18, .row-28.column-18, .row-30.column-18, .row-32.column-18, .row-34.column-18, .row-36.column-18, .row-38.column-18  {
+	left: 129px;
+}
+
+.row-0.column-19, .row-2.column-19, .row-4.column-19, .row-6.column-19, .row-8.column-19, .row-10.column-19, .row-12.column-19, .row-14.column-19, .row-16.column-19, .row-18.column-19, .row-20.column-19, .row-22.column-19, .row-24.column-19, .row-26.column-19, .row-28.column-19, .row-30.column-19, .row-32.column-19, .row-34.column-19, .row-36.column-19, .row-38.column-19  {
+	left: 228px;
+}
+
+.row-0.column-20, .row-2.column-20, .row-4.column-20, .row-6.column-20, .row-8.column-20, .row-10.column-20, .row-12.column-20, .row-14.column-20, .row-16.column-20, .row-18.column-20, .row-20.column-20, .row-22.column-20, .row-24.column-20, .row-26.column-20, .row-28.column-20, .row-30.column-20, .row-32.column-20, .row-34.column-20, .row-36.column-20, .row-38.column-20  {
+	left: 327px;
+}
+
+.row-0.column-21, .row-2.column-21, .row-4.column-21, .row-6.column-21, .row-8.column-21, .row-10.column-21, .row-12.column-21, .row-14.column-21, .row-16.column-21, .row-18.column-21, .row-20.column-21, .row-22.column-21, .row-24.column-21, .row-26.column-21, .row-28.column-21, .row-30.column-21, .row-32.column-21, .row-34.column-21, .row-36.column-21, .row-38.column-21  {
+	left: 426px;
+}
+
+.row-0.column-22, .row-2.column-22, .row-4.column-22, .row-6.column-22, .row-8.column-22, .row-10.column-22, .row-12.column-22, .row-14.column-22, .row-16.column-22, .row-18.column-22, .row-20.column-22, .row-22.column-22, .row-24.column-22, .row-26.column-22, .row-28.column-22, .row-30.column-22, .row-32.column-22, .row-34.column-22, .row-36.column-22, .row-38.column-22  {
+	left: 525px;
+}
+
+.row-0.column-23, .row-2.column-23, .row-4.column-23, .row-6.column-23, .row-8.column-23, .row-10.column-23, .row-12.column-23, .row-14.column-23, .row-16.column-23, .row-18.column-23, .row-20.column-23, .row-22.column-23, .row-24.column-23, .row-26.column-23, .row-28.column-23, .row-30.column-23, .row-32.column-23, .row-34.column-23, .row-36.column-23, .row-38.column-23  {
+	left: 624px;
+}
+
+.row-0.column-24, .row-2.column-24, .row-4.column-24, .row-6.column-24, .row-8.column-24, .row-10.column-24, .row-12.column-24, .row-14.column-24, .row-16.column-24, .row-18.column-24, .row-20.column-24, .row-22.column-24, .row-24.column-24, .row-26.column-24, .row-28.column-24, .row-30.column-24, .row-32.column-24, .row-34.column-24, .row-36.column-24, .row-38.column-24  {
+	left: 723px;
+}
+
+.row-0.column-25, .row-2.column-25, .row-4.column-25, .row-6.column-25, .row-8.column-25, .row-10.column-25, .row-12.column-25, .row-14.column-25, .row-16.column-25, .row-18.column-25, .row-20.column-25, .row-22.column-25, .row-24.column-25, .row-26.column-25, .row-28.column-25, .row-30.column-25, .row-32.column-25, .row-34.column-25, .row-36.column-25, .row-38.column-25  {
+	left: 822px;
+}
+
+.row-0.column-26, .row-2.column-26, .row-4.column-26, .row-6.column-26, .row-8.column-26, .row-10.column-26, .row-12.column-26, .row-14.column-26, .row-16.column-26, .row-18.column-26, .row-20.column-26, .row-22.column-26, .row-24.column-26, .row-26.column-26, .row-28.column-26, .row-30.column-26, .row-32.column-26, .row-34.column-26, .row-36.column-26, .row-38.column-26  {
+	left: 921px;
+}
+
+.row-0.column-27, .row-2.column-27, .row-4.column-27, .row-6.column-27, .row-8.column-27, .row-10.column-27, .row-12.column-27, .row-14.column-27, .row-16.column-27, .row-18.column-27, .row-20.column-27, .row-22.column-27, .row-24.column-27, .row-26.column-27, .row-28.column-27, .row-30.column-27, .row-32.column-27, .row-34.column-27, .row-36.column-27, .row-38.column-27  {
+	left: 1020px;
+}
+
+.row-0.column-28, .row-2.column-28, .row-4.column-28, .row-6.column-28, .row-8.column-28, .row-10.column-28, .row-12.column-28, .row-14.column-28, .row-16.column-28, .row-18.column-28, .row-20.column-28, .row-22.column-28, .row-24.column-28, .row-26.column-28, .row-28.column-28, .row-30.column-28, .row-32.column-28, .row-34.column-28, .row-36.column-28, .row-38.column-28  {
+	left: 1119px;
+}
+
+.row-0.column-29, .row-2.column-29, .row-4.column-29, .row-6.column-29, .row-8.column-29, .row-10.column-29, .row-12.column-29, .row-14.column-29, .row-16.column-29, .row-18.column-29, .row-20.column-29, .row-22.column-29, .row-24.column-29, .row-26.column-29, .row-28.column-29, .row-30.column-29, .row-32.column-29, .row-34.column-29, .row-36.column-29, .row-38.column-29  {
+	left: 1218px;
+}
+
+.row-0.column-30, .row-2.column-30, .row-4.column-30, .row-6.column-30, .row-8.column-30, .row-10.column-30, .row-12.column-30, .row-14.column-30, .row-16.column-30, .row-18.column-30, .row-20.column-30, .row-22.column-30, .row-24.column-30, .row-26.column-30, .row-28.column-30, .row-30.column-30, .row-32.column-30, .row-34.column-30, .row-36.column-30, .row-38.column-30  {
+	left: 1317px;
+}
+
+.row-0.column-31, .row-2.column-31, .row-4.column-31, .row-6.column-31, .row-8.column-31, .row-10.column-31, .row-12.column-31, .row-14.column-31, .row-16.column-31, .row-18.column-31, .row-20.column-31, .row-22.column-31, .row-24.column-31, .row-26.column-31, .row-28.column-31, .row-30.column-31, .row-32.column-31, .row-34.column-31, .row-36.column-31, .row-38.column-31  {
+	left: 1416px;
+}
+
+.row-0.column-32, .row-2.column-32, .row-4.column-32, .row-6.column-32, .row-8.column-32, .row-10.column-32, .row-12.column-32, .row-14.column-32, .row-16.column-32, .row-18.column-32, .row-20.column-32, .row-22.column-32, .row-24.column-32, .row-26.column-32, .row-28.column-32, .row-30.column-32, .row-32.column-32, .row-34.column-32, .row-36.column-32, .row-38.column-32  {
+	left: 1515px;
+}
+
+.row-0.column-33, .row-2.column-33, .row-4.column-33, .row-6.column-33, .row-8.column-33, .row-10.column-33, .row-12.column-33, .row-14.column-33, .row-16.column-33, .row-18.column-33, .row-20.column-33, .row-22.column-33, .row-24.column-33, .row-26.column-33, .row-28.column-33, .row-30.column-33, .row-32.column-33, .row-34.column-33, .row-36.column-33, .row-38.column-33  {
+	left: 1614px;
+}
+
+.row-0.column-34, .row-2.column-34, .row-4.column-34, .row-6.column-34, .row-8.column-34, .row-10.column-34, .row-12.column-34, .row-14.column-34, .row-16.column-34, .row-18.column-34, .row-20.column-34, .row-22.column-34, .row-24.column-34, .row-26.column-34, .row-28.column-34, .row-30.column-34, .row-32.column-34, .row-34.column-34, .row-36.column-34, .row-38.column-34  {
+	left: 1713px;
+}
+
+.row-0.column-35, .row-2.column-35, .row-4.column-35, .row-6.column-35, .row-8.column-35, .row-10.column-35, .row-12.column-35, .row-14.column-35, .row-16.column-35, .row-18.column-35, .row-20.column-35, .row-22.column-35, .row-24.column-35, .row-26.column-35, .row-28.column-35, .row-30.column-35, .row-32.column-35, .row-34.column-35, .row-36.column-35, .row-38.column-35  {
+	left: 1812px;
+}
+
+.row-0.column-36, .row-2.column-36, .row-4.column-36, .row-6.column-36, .row-8.column-36, .row-10.column-36, .row-12.column-36, .row-14.column-36, .row-16.column-36, .row-18.column-36, .row-20.column-36, .row-22.column-36, .row-24.column-36, .row-26.column-36, .row-28.column-36, .row-30.column-36, .row-32.column-36, .row-34.column-36, .row-36.column-36, .row-38.column-36  {
+	left: 1911px;
+}
+
+.row-0.column-37, .row-2.column-37, .row-4.column-37, .row-6.column-37, .row-8.column-37, .row-10.column-37, .row-12.column-37, .row-14.column-37, .row-16.column-37, .row-18.column-37, .row-20.column-37, .row-22.column-37, .row-24.column-37, .row-26.column-37, .row-28.column-37, .row-30.column-37, .row-32.column-37, .row-34.column-37, .row-36.column-37, .row-38.column-37  {
+	left: 2010px;
+}
+
+.row-0.column-38, .row-2.column-38, .row-4.column-38, .row-6.column-38, .row-8.column-38, .row-10.column-38, .row-12.column-38, .row-14.column-38, .row-16.column-38, .row-18.column-38, .row-20.column-38, .row-22.column-38, .row-24.column-38, .row-26.column-38, .row-28.column-38, .row-30.column-38, .row-32.column-38, .row-34.column-38, .row-36.column-38, .row-38.column-38  {
+	left: 2109px;
+}
+
+.row-0.column-39, .row-2.column-39, .row-4.column-39, .row-6.column-39, .row-8.column-39, .row-10.column-39, .row-12.column-39, .row-14.column-39, .row-16.column-39, .row-18.column-39, .row-20.column-39, .row-22.column-39, .row-24.column-39, .row-26.column-39, .row-28.column-39, .row-30.column-39, .row-32.column-39, .row-34.column-39, .row-36.column-39, .row-38.column-39  {
+	left: 2208px;
+}
+
+.row-1.column-0, .row-3.column-0, .row-5.column-0, .row-7.column-0, .row-9.column-0, .row-11.column-0, .row-13.column-0, .row-15.column-0, .row-17.column-0, .row-19.column-0, .row-21.column-0, .row-23.column-0, .row-25.column-0, .row-27.column-0, .row-29.column-0, .row-31.column-0, .row-33.column-0, .row-35.column-0, .row-37.column-0, .row-39.column-0  {
+	left: -1604px;
+}
+
+.row-1.column-1, .row-3.column-1, .row-5.column-1, .row-7.column-1, .row-9.column-1, .row-11.column-1, .row-13.column-1, .row-15.column-1, .row-17.column-1, .row-19.column-1, .row-21.column-1, .row-23.column-1, .row-25.column-1, .row-27.column-1, .row-29.column-1, .row-31.column-1, .row-33.column-1, .row-35.column-1, .row-37.column-1, .row-39.column-1  {
+	left: -1505px;
+}
+
+.row-1.column-2, .row-3.column-2, .row-5.column-2, .row-7.column-2, .row-9.column-2, .row-11.column-2, .row-13.column-2, .row-15.column-2, .row-17.column-2, .row-19.column-2, .row-21.column-2, .row-23.column-2, .row-25.column-2, .row-27.column-2, .row-29.column-2, .row-31.column-2, .row-33.column-2, .row-35.column-2, .row-37.column-2, .row-39.column-2  {
+	left: -1406px;
+}
+
+.row-1.column-3, .row-3.column-3, .row-5.column-3, .row-7.column-3, .row-9.column-3, .row-11.column-3, .row-13.column-3, .row-15.column-3, .row-17.column-3, .row-19.column-3, .row-21.column-3, .row-23.column-3, .row-25.column-3, .row-27.column-3, .row-29.column-3, .row-31.column-3, .row-33.column-3, .row-35.column-3, .row-37.column-3, .row-39.column-3  {
+	left: -1307px;
+}
+
+.row-1.column-4, .row-3.column-4, .row-5.column-4, .row-7.column-4, .row-9.column-4, .row-11.column-4, .row-13.column-4, .row-15.column-4, .row-17.column-4, .row-19.column-4, .row-21.column-4, .row-23.column-4, .row-25.column-4, .row-27.column-4, .row-29.column-4, .row-31.column-4, .row-33.column-4, .row-35.column-4, .row-37.column-4, .row-39.column-4  {
+	left: -1208px;
+}
+
+.row-1.column-5, .row-3.column-5, .row-5.column-5, .row-7.column-5, .row-9.column-5, .row-11.column-5, .row-13.column-5, .row-15.column-5, .row-17.column-5, .row-19.column-5, .row-21.column-5, .row-23.column-5, .row-25.column-5, .row-27.column-5, .row-29.column-5, .row-31.column-5, .row-33.column-5, .row-35.column-5, .row-37.column-5, .row-39.column-5  {
+	left: -1109px;
+}
+
+.row-1.column-6, .row-3.column-6, .row-5.column-6, .row-7.column-6, .row-9.column-6, .row-11.column-6, .row-13.column-6, .row-15.column-6, .row-17.column-6, .row-19.column-6, .row-21.column-6, .row-23.column-6, .row-25.column-6, .row-27.column-6, .row-29.column-6, .row-31.column-6, .row-33.column-6, .row-35.column-6, .row-37.column-6, .row-39.column-6  {
+	left: -1010px;
+}
+
+.row-1.column-7, .row-3.column-7, .row-5.column-7, .row-7.column-7, .row-9.column-7, .row-11.column-7, .row-13.column-7, .row-15.column-7, .row-17.column-7, .row-19.column-7, .row-21.column-7, .row-23.column-7, .row-25.column-7, .row-27.column-7, .row-29.column-7, .row-31.column-7, .row-33.column-7, .row-35.column-7, .row-37.column-7, .row-39.column-7  {
+	left: -911px;
+}
+
+.row-1.column-8, .row-3.column-8, .row-5.column-8, .row-7.column-8, .row-9.column-8, .row-11.column-8, .row-13.column-8, .row-15.column-8, .row-17.column-8, .row-19.column-8, .row-21.column-8, .row-23.column-8, .row-25.column-8, .row-27.column-8, .row-29.column-8, .row-31.column-8, .row-33.column-8, .row-35.column-8, .row-37.column-8, .row-39.column-8  {
+	left: -812px;
+}
+
+.row-1.column-9, .row-3.column-9, .row-5.column-9, .row-7.column-9, .row-9.column-9, .row-11.column-9, .row-13.column-9, .row-15.column-9, .row-17.column-9, .row-19.column-9, .row-21.column-9, .row-23.column-9, .row-25.column-9, .row-27.column-9, .row-29.column-9, .row-31.column-9, .row-33.column-9, .row-35.column-9, .row-37.column-9, .row-39.column-9  {
+	left: -713px;
+}
+
+.row-1.column-10, .row-3.column-10, .row-5.column-10, .row-7.column-10, .row-9.column-10, .row-11.column-10, .row-13.column-10, .row-15.column-10, .row-17.column-10, .row-19.column-10, .row-21.column-10, .row-23.column-10, .row-25.column-10, .row-27.column-10, .row-29.column-10, .row-31.column-10, .row-33.column-10, .row-35.column-10, .row-37.column-10, .row-39.column-10  {
+	left: -614px;
+}
+
+.row-1.column-11, .row-3.column-11, .row-5.column-11, .row-7.column-11, .row-9.column-11, .row-11.column-11, .row-13.column-11, .row-15.column-11, .row-17.column-11, .row-19.column-11, .row-21.column-11, .row-23.column-11, .row-25.column-11, .row-27.column-11, .row-29.column-11, .row-31.column-11, .row-33.column-11, .row-35.column-11, .row-37.column-11, .row-39.column-11  {
+	left: -515px;
+}
+
+.row-1.column-12, .row-3.column-12, .row-5.column-12, .row-7.column-12, .row-9.column-12, .row-11.column-12, .row-13.column-12, .row-15.column-12, .row-17.column-12, .row-19.column-12, .row-21.column-12, .row-23.column-12, .row-25.column-12, .row-27.column-12, .row-29.column-12, .row-31.column-12, .row-33.column-12, .row-35.column-12, .row-37.column-12, .row-39.column-12  {
+	left: -416px;
+}
+
+.row-1.column-13, .row-3.column-13, .row-5.column-13, .row-7.column-13, .row-9.column-13, .row-11.column-13, .row-13.column-13, .row-15.column-13, .row-17.column-13, .row-19.column-13, .row-21.column-13, .row-23.column-13, .row-25.column-13, .row-27.column-13, .row-29.column-13, .row-31.column-13, .row-33.column-13, .row-35.column-13, .row-37.column-13, .row-39.column-13  {
+	left: -317px;
+}
+
+.row-1.column-14, .row-3.column-14, .row-5.column-14, .row-7.column-14, .row-9.column-14, .row-11.column-14, .row-13.column-14, .row-15.column-14, .row-17.column-14, .row-19.column-14, .row-21.column-14, .row-23.column-14, .row-25.column-14, .row-27.column-14, .row-29.column-14, .row-31.column-14, .row-33.column-14, .row-35.column-14, .row-37.column-14, .row-39.column-14  {
+	left: -218px;
+}
+
+.row-1.column-15, .row-3.column-15, .row-5.column-15, .row-7.column-15, .row-9.column-15, .row-11.column-15, .row-13.column-15, .row-15.column-15, .row-17.column-15, .row-19.column-15, .row-21.column-15, .row-23.column-15, .row-25.column-15, .row-27.column-15, .row-29.column-15, .row-31.column-15, .row-33.column-15, .row-35.column-15, .row-37.column-15, .row-39.column-15  {
+	left: -119px;
+}
+
+.row-1.column-16, .row-3.column-16, .row-5.column-16, .row-7.column-16, .row-9.column-16, .row-11.column-16, .row-13.column-16, .row-15.column-16, .row-17.column-16, .row-19.column-16, .row-21.column-16, .row-23.column-16, .row-25.column-16, .row-27.column-16, .row-29.column-16, .row-31.column-16, .row-33.column-16, .row-35.column-16, .row-37.column-16, .row-39.column-16  {
+	left: -20px;
+}
+
+.row-1.column-17, .row-3.column-17, .row-5.column-17, .row-7.column-17, .row-9.column-17, .row-11.column-17, .row-13.column-17, .row-15.column-17, .row-17.column-17, .row-19.column-17, .row-21.column-17, .row-23.column-17, .row-25.column-17, .row-27.column-17, .row-29.column-17, .row-31.column-17, .row-33.column-17, .row-35.column-17, .row-37.column-17, .row-39.column-17  {
+	left: 79px;
+}
+
+.row-1.column-18, .row-3.column-18, .row-5.column-18, .row-7.column-18, .row-9.column-18, .row-11.column-18, .row-13.column-18, .row-15.column-18, .row-17.column-18, .row-19.column-18, .row-21.column-18, .row-23.column-18, .row-25.column-18, .row-27.column-18, .row-29.column-18, .row-31.column-18, .row-33.column-18, .row-35.column-18, .row-37.column-18, .row-39.column-18  {
+	left: 178px;
+}
+
+.row-1.column-19, .row-3.column-19, .row-5.column-19, .row-7.column-19, .row-9.column-19, .row-11.column-19, .row-13.column-19, .row-15.column-19, .row-17.column-19, .row-19.column-19, .row-21.column-19, .row-23.column-19, .row-25.column-19, .row-27.column-19, .row-29.column-19, .row-31.column-19, .row-33.column-19, .row-35.column-19, .row-37.column-19, .row-39.column-19  {
+	left: 277px;
+}
+
+.row-1.column-20, .row-3.column-20, .row-5.column-20, .row-7.column-20, .row-9.column-20, .row-11.column-20, .row-13.column-20, .row-15.column-20, .row-17.column-20, .row-19.column-20, .row-21.column-20, .row-23.column-20, .row-25.column-20, .row-27.column-20, .row-29.column-20, .row-31.column-20, .row-33.column-20, .row-35.column-20, .row-37.column-20, .row-39.column-20  {
+	left: 376px;
+}
+
+.row-1.column-21, .row-3.column-21, .row-5.column-21, .row-7.column-21, .row-9.column-21, .row-11.column-21, .row-13.column-21, .row-15.column-21, .row-17.column-21, .row-19.column-21, .row-21.column-21, .row-23.column-21, .row-25.column-21, .row-27.column-21, .row-29.column-21, .row-31.column-21, .row-33.column-21, .row-35.column-21, .row-37.column-21, .row-39.column-21  {
+	left: 475px;
+}
+
+.row-1.column-22, .row-3.column-22, .row-5.column-22, .row-7.column-22, .row-9.column-22, .row-11.column-22, .row-13.column-22, .row-15.column-22, .row-17.column-22, .row-19.column-22, .row-21.column-22, .row-23.column-22, .row-25.column-22, .row-27.column-22, .row-29.column-22, .row-31.column-22, .row-33.column-22, .row-35.column-22, .row-37.column-22, .row-39.column-22  {
+	left: 574px;
+}
+
+.row-1.column-23, .row-3.column-23, .row-5.column-23, .row-7.column-23, .row-9.column-23, .row-11.column-23, .row-13.column-23, .row-15.column-23, .row-17.column-23, .row-19.column-23, .row-21.column-23, .row-23.column-23, .row-25.column-23, .row-27.column-23, .row-29.column-23, .row-31.column-23, .row-33.column-23, .row-35.column-23, .row-37.column-23, .row-39.column-23  {
+	left: 673px;
+}
+
+.row-1.column-24, .row-3.column-24, .row-5.column-24, .row-7.column-24, .row-9.column-24, .row-11.column-24, .row-13.column-24, .row-15.column-24, .row-17.column-24, .row-19.column-24, .row-21.column-24, .row-23.column-24, .row-25.column-24, .row-27.column-24, .row-29.column-24, .row-31.column-24, .row-33.column-24, .row-35.column-24, .row-37.column-24, .row-39.column-24  {
+	left: 772px;
+}
+
+.row-1.column-25, .row-3.column-25, .row-5.column-25, .row-7.column-25, .row-9.column-25, .row-11.column-25, .row-13.column-25, .row-15.column-25, .row-17.column-25, .row-19.column-25, .row-21.column-25, .row-23.column-25, .row-25.column-25, .row-27.column-25, .row-29.column-25, .row-31.column-25, .row-33.column-25, .row-35.column-25, .row-37.column-25, .row-39.column-25  {
+	left: 871px;
+}
+
+.row-1.column-26, .row-3.column-26, .row-5.column-26, .row-7.column-26, .row-9.column-26, .row-11.column-26, .row-13.column-26, .row-15.column-26, .row-17.column-26, .row-19.column-26, .row-21.column-26, .row-23.column-26, .row-25.column-26, .row-27.column-26, .row-29.column-26, .row-31.column-26, .row-33.column-26, .row-35.column-26, .row-37.column-26, .row-39.column-26  {
+	left: 970px;
+}
+
+.row-1.column-27, .row-3.column-27, .row-5.column-27, .row-7.column-27, .row-9.column-27, .row-11.column-27, .row-13.column-27, .row-15.column-27, .row-17.column-27, .row-19.column-27, .row-21.column-27, .row-23.column-27, .row-25.column-27, .row-27.column-27, .row-29.column-27, .row-31.column-27, .row-33.column-27, .row-35.column-27, .row-37.column-27, .row-39.column-27  {
+	left: 1069px;
+}
+
+.row-1.column-28, .row-3.column-28, .row-5.column-28, .row-7.column-28, .row-9.column-28, .row-11.column-28, .row-13.column-28, .row-15.column-28, .row-17.column-28, .row-19.column-28, .row-21.column-28, .row-23.column-28, .row-25.column-28, .row-27.column-28, .row-29.column-28, .row-31.column-28, .row-33.column-28, .row-35.column-28, .row-37.column-28, .row-39.column-28  {
+	left: 1168px;
+}
+
+.row-1.column-29, .row-3.column-29, .row-5.column-29, .row-7.column-29, .row-9.column-29, .row-11.column-29, .row-13.column-29, .row-15.column-29, .row-17.column-29, .row-19.column-29, .row-21.column-29, .row-23.column-29, .row-25.column-29, .row-27.column-29, .row-29.column-29, .row-31.column-29, .row-33.column-29, .row-35.column-29, .row-37.column-29, .row-39.column-29  {
+	left: 1267px;
+}
+
+.row-1.column-30, .row-3.column-30, .row-5.column-30, .row-7.column-30, .row-9.column-30, .row-11.column-30, .row-13.column-30, .row-15.column-30, .row-17.column-30, .row-19.column-30, .row-21.column-30, .row-23.column-30, .row-25.column-30, .row-27.column-30, .row-29.column-30, .row-31.column-30, .row-33.column-30, .row-35.column-30, .row-37.column-30, .row-39.column-30  {
+	left: 1366px;
+}
+
+.row-1.column-31, .row-3.column-31, .row-5.column-31, .row-7.column-31, .row-9.column-31, .row-11.column-31, .row-13.column-31, .row-15.column-31, .row-17.column-31, .row-19.column-31, .row-21.column-31, .row-23.column-31, .row-25.column-31, .row-27.column-31, .row-29.column-31, .row-31.column-31, .row-33.column-31, .row-35.column-31, .row-37.column-31, .row-39.column-31  {
+	left: 1465px;
+}
+
+.row-1.column-32, .row-3.column-32, .row-5.column-32, .row-7.column-32, .row-9.column-32, .row-11.column-32, .row-13.column-32, .row-15.column-32, .row-17.column-32, .row-19.column-32, .row-21.column-32, .row-23.column-32, .row-25.column-32, .row-27.column-32, .row-29.column-32, .row-31.column-32, .row-33.column-32, .row-35.column-32, .row-37.column-32, .row-39.column-32  {
+	left: 1564px;
+}
+
+.row-1.column-33, .row-3.column-33, .row-5.column-33, .row-7.column-33, .row-9.column-33, .row-11.column-33, .row-13.column-33, .row-15.column-33, .row-17.column-33, .row-19.column-33, .row-21.column-33, .row-23.column-33, .row-25.column-33, .row-27.column-33, .row-29.column-33, .row-31.column-33, .row-33.column-33, .row-35.column-33, .row-37.column-33, .row-39.column-33  {
+	left: 1663px;
+}
+
+.row-1.column-34, .row-3.column-34, .row-5.column-34, .row-7.column-34, .row-9.column-34, .row-11.column-34, .row-13.column-34, .row-15.column-34, .row-17.column-34, .row-19.column-34, .row-21.column-34, .row-23.column-34, .row-25.column-34, .row-27.column-34, .row-29.column-34, .row-31.column-34, .row-33.column-34, .row-35.column-34, .row-37.column-34, .row-39.column-34  {
+	left: 1762px;
+}
+
+.row-1.column-35, .row-3.column-35, .row-5.column-35, .row-7.column-35, .row-9.column-35, .row-11.column-35, .row-13.column-35, .row-15.column-35, .row-17.column-35, .row-19.column-35, .row-21.column-35, .row-23.column-35, .row-25.column-35, .row-27.column-35, .row-29.column-35, .row-31.column-35, .row-33.column-35, .row-35.column-35, .row-37.column-35, .row-39.column-35  {
+	left: 1861px;
+}
+
+.row-1.column-36, .row-3.column-36, .row-5.column-36, .row-7.column-36, .row-9.column-36, .row-11.column-36, .row-13.column-36, .row-15.column-36, .row-17.column-36, .row-19.column-36, .row-21.column-36, .row-23.column-36, .row-25.column-36, .row-27.column-36, .row-29.column-36, .row-31.column-36, .row-33.column-36, .row-35.column-36, .row-37.column-36, .row-39.column-36  {
+	left: 1960px;
+}
+
+.row-1.column-37, .row-3.column-37, .row-5.column-37, .row-7.column-37, .row-9.column-37, .row-11.column-37, .row-13.column-37, .row-15.column-37, .row-17.column-37, .row-19.column-37, .row-21.column-37, .row-23.column-37, .row-25.column-37, .row-27.column-37, .row-29.column-37, .row-31.column-37, .row-33.column-37, .row-35.column-37, .row-37.column-37, .row-39.column-37  {
+	left: 2059px;
+}
+
+.row-1.column-38, .row-3.column-38, .row-5.column-38, .row-7.column-38, .row-9.column-38, .row-11.column-38, .row-13.column-38, .row-15.column-38, .row-17.column-38, .row-19.column-38, .row-21.column-38, .row-23.column-38, .row-25.column-38, .row-27.column-38, .row-29.column-38, .row-31.column-38, .row-33.column-38, .row-35.column-38, .row-37.column-38, .row-39.column-38  {
+	left: 2158px;
+}
+
+.row-1.column-39, .row-3.column-39, .row-5.column-39, .row-7.column-39, .row-9.column-39, .row-11.column-39, .row-13.column-39, .row-15.column-39, .row-17.column-39, .row-19.column-39, .row-21.column-39, .row-23.column-39, .row-25.column-39, .row-27.column-39, .row-29.column-39, .row-31.column-39, .row-33.column-39, .row-35.column-39, .row-37.column-39, .row-39.column-39  {
+	left: 2257px;
+}
+
+
+.row-0 {
+	top: -1582px;
+}
+
+.row-1 {
+	top: -1496px;
+}
+
+.row-2 {
+	top: -1410px;
+}
+
+.row-3 {
+	top: -1324px;
+}
+
+.row-4 {
+	top: -1238px;
+}
+
+.row-5 {
+	top: -1152px;
+}
+
+.row-6 {
+	top: -1066px;
+}
+
+.row-7 {
+	top: -980px;
+}
+
+.row-8 {
+	top: -894px;
+}
+
+.row-9 {
+	top: -808px;
+}
+
+.row-10 {
+	top: -722px;
+}
+
+.row-11 {
+	top: -636px;
+}
+
+.row-12 {
+	top: -550px;
+}
+
+.row-13 {
+	top: -464px;
+}
+
+.row-14 {
+	top: -378px;
+}
+
+.row-15 {
+	top: -292px;
+}
+
+.row-16 {
+	top: -206px;
+}
+
+.row-17 {
+	top: -120px;
+}
+
+.row-18 {
+	top: -34px;
+}
+
+.row-19 {
+	top: 52px;
+}
+
+.row-20 {
+	top: 138px;
+}
+
+.row-21 {
+	top: 224px;
+}
+
+.row-22 {
+	top: 310px;
+}
+
+.row-23 {
+	top: 396px;
+}
+
+.row-24 {
+	top: 482px;
+}
+
+.row-25 {
+	top: 568px;
+}
+
+.row-26 {
+	top: 654px;
+}
+
+.row-27 {
+	top: 740px;
+}
+
+.row-28 {
+	top: 826px;
+}
+
+.row-29 {
+	top: 912px;
+}
+
+.row-30 {
+	top: 998px;
+}
+
+.row-31 {
+	top: 1084px;
+}
+
+.row-32 {
+	top: 1170px;
+}
+
+.row-33 {
+	top: 1256px;
+}
+
+.row-34 {
+	top: 1342px;
+}
+
+.row-35 {
+	top: 1428px;
+}
+
+.row-36 {
+	top: 1514px;
+}
+
+.row-37 {
+	top: 1600px;
+}
+
+.row-38 {
+	top: 1686px;
+}
+
+.row-39 {
+	top: 1772px;
+}
+
+.placedWildlifeToken, .activeToken, .flippedToken, .placedFlippedToken {
+	position: absolute;
+    z-index: 3;
+    left: 0px;
+    width: 60px;
+}
+
+.activeToken, .flippedToken {
+	display:none;
+}
+
+.notransition {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;
+}
+
+.wildlifeToken, .flippedWildlifeToken, .tileTokenOutline, .mapTileContainer.placedTile .activeToken, .mapTileContainer.placedTile .placedWildlifeToken, .mapTileContainer.placedTile .placedFlippedToken, .mapTileContainer.placedTile .flippedToken {
+    position: absolute;
+    width: 60px;
+    top: 26px;
+    left: 22px;
+}
+
+#earnedNatureTokenContainer {
+	width: 83px;
+	height: 43px;
+	opacity:0;
+	position:relative;
+}
+
+#earnedNatureTokenContainer.animationEnabled {
+	transition: top 2.2s linear, opacity .8s linear;
+}
+
+#earnedNatureTokenContainer .earnedNatureToken {
+    width: 43px;
+    max-width: 43px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#earnedNatureTokenContainer .plusOneText {
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 29px;
+    font-weight: bold;
+    color: #26ff00;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+
+.mapTileContainer.placedTile.wildlifeTokenPotential, .mapTileContainer.placedTile.flippedTokenPotential {
+	cursor:pointer;
+	cursor:hand;
+}
+
+.wildlifeToken, .flippedWildlifeToken, .mapTileContainer.placedTile .token {
+	z-index: 3;
+}
+
+.tileTokenOutline {
+	z-index: 4;
+}
+
+#invalidTokenImgContainer {
+	width: 202px;
+    margin: 0 auto 20px;
+}
+
+#invalidTokenImgContainer .invalidTokenImg, #invalidTokenImgContainer .invalidTokenArrow, #invalidTokenImgContainer .flippedTokenExample {
+    float: left;
+}
+
+#invalidTokenImgContainer .invalidTokenArrow {
+	width: 40px;
+    margin-top: 16px;
+    margin: 16px 20px 0px;
+}
+
+#tileTokenContainer #yeti-arm-tile-container {
+    position: absolute;
+    z-index: 1;
+    width: 170px;
+    right: 251px;
+    transition: all 1s ease-in-out;
+}
+
+#tileTokenContainer #yeti-arm-token-container {
+	position: absolute;
+    z-index: 1;
+    width: 110px;
+	right: -115px;
+	transition: all 1s ease-in-out;
+}
+
+#tileTokenContainer #yeti-arm-tile-container.takeTile {
+	right: 121px;
+}
+
+#tileTokenContainer #yeti-arm-token-container.takeToken {
+	right: -25px;
+}
+
+#tileTokenContainer #yeti-arm-tile-container[removedtilerow="0"] {
+	top: 12px;
+}
+
+#tileTokenContainer #yeti-arm-tile-container[removedtilerow="1"] {
+	top: 142px;
+}
+
+#tileTokenContainer #yeti-arm-tile-container[removedtilerow="2"] {
+	top: 272px;
+}
+
+#tileTokenContainer #yeti-arm-tile-container[removedtilerow="3"] {
+	top: 402px;
+}
+
+#tileTokenContainer #yeti-arm-token-container[removedtokenrow="0"] {
+	top: 30px;
+}
+
+#tileTokenContainer #yeti-arm-token-container[removedtokenrow="1"] {
+	top: 160px;
+}
+
+#tileTokenContainer #yeti-arm-token-container[removedtokenrow="2"] {
+top: 290px;
+}
+
+#tileTokenContainer #yeti-arm-token-container[removedtokenrow="3"] {
+	top: 420px;
+}
+
+#removeTileYetiClosedHand, #removeTokenYetiClosedHand {
+	display:none;
+}
+
+
+#scoringTable-finalScoringContainer {
+	display:none;
+	position:relative;
+}
+
+#scoringTable-finalScoringContainer .finalScoringTable {
+	position:absolute;
+	color: #5c2c05;
+}
+
+#scoringTable-finalScoringContainer #wildlifeScoringTable {
+	top: 2px;
+    left: 80px;
+    width: 73px;
+}
+
+#scoringTable-finalScoringContainer #habitatScoringTable {
+	left: 232px;
+    top: 62px;
+}
+
+#scoringTable-finalScoringContainer #habitatBonusScoringTable {
+	left: 301px;
+    top: 62px;
+}
+
+#allEndGameScoringCategories {
+	display:none;
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#allEndGameScoringCategories #scoringGoalsContainer {
+	display:block;
+}
+
+#allEndGameScoringCategories #mobileScoringGoalsContainer {
+	display:none;
+}
+
+#scoringGoalsContainer {
+	height: 110px;
+    width: 1160px;
+    margin: 30px 0px 20px 10px;
+}
+
+#scoringGoalsContainer .finalScoringItemTrigger {
+    position: relative;
+    float: left;
+    height: 108px;
+    width: 150px;
+    margin-left: 8px;
+}
+
+#scoringGoalsContainer .finalScoringItemTrigger:not(:last-child) {
+    margin-right: 40px;
+}
+
+#scoringGoalsContainer .finalScoringItemTrigger:not(.inactiveScoringItemTrigger) {
+    cursor: pointer;
+    cursor: hand;
+}
+
+#scoringGoalsContainer .finalScoringItemTrigger .goalScoringToken {
+    position: absolute;
+    width: 48px;
+    top: -17px;
+    z-index: 1;
+}
+
+#scoringGoalsContainer .finalScoringItemTrigger .goalScoringThumbnail {
+	position: absolute;
+    width: 147px;
+    right: 0px;
+}
+
+#scoringGoalsContainer .finalScoringItemTrigger .goalScoringTransparentLayer {
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+    top: 0px;
+    width: 160px;
+    display: block;
+}
+
+#scoringGoalsContainer .finalScoringItemTrigger .activeScoringFrame,
+#scoringGoalsContainer .finalScoringItemTrigger .hoverScoringFrame {
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    top: 0px;
+	width: 160px;
+    height: 109px;
+    display: none;
+}
+
+.goalScoringModalImg {
+	width: 440px;
+	display: block;
+	margin: 0 auto;
+}
+
+.finalScoringTable {
+    font-family: 'Architects Daughter', cursive;
+    border-collapse: collapse;
+    border-spacing: 0;
+	margin: 0 auto;
+}
+
+#wildlifeScoringTable.finalScoringTable input, #wildlifeScoringTable.finalScoringTable input:focus {
+	background-color: #32dc684f;
+	margin: 1.1px auto -0.5px;
+    padding: 9.4px 0px 9.4px;
+    display: block;
+    width: 71px;
+    height: 59.4px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: none;
+    text-align: center!important;
+    font-size: 29px;
+    color: #5e3a10;
+}
+
+
+
+#wildlifeScoringTable.finalScoringTable input, #wildlifeScoringTable.finalScoringTable input:focus {
+	background-color: #32dc684f;
+    display: block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: none;
+	color: #5e3a10;
+}
+
+#wildlifeScoringTable.finalScoringTable input, #wildlifeScoringTable.finalScoringTable input:focus, #scoringTable-finalScoringContainer #wildlifeScoringTable.finalScoringTable .scoreCell .scoreCellText,
+#scoringTable-finalScoringContainer #wildlifeScoringTable.finalScoringTable .subtotalCell .subtotalText {
+    font-size: 29px;
+    text-align: center!important;
+    margin: 1.1px auto -0.5px;
+    width: 68px;
+    height: 59.4px;
+	padding: 9.4px 0px 9.4px;
+	font-family: 'Architects Daughter', cursive;
+}
+
+#habitatScoringTable.finalScoringTable input,
+#habitatScoringTable.finalScoringTable input:focus,
+#habitatBonusScoringTable.finalScoringTable input,
+#habitatBonusScoringTable.finalScoringTable input:focus {
+	background-color: #32dc684f;
+    display: inline;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: none;
+	color: #5e3a10;
+}
+
+#habitatScoringTable.finalScoringTable input,
+#habitatScoringTable.finalScoringTable input:focus,
+#habitatScoringTable.finalScoringTable .scoreCell .scoreCellText,
+#habitatScoringTable.finalScoringTable .subtotalCell .subtotalText,
+#habitatBonusScoringTable.finalScoringTable input,
+#habitatBonusScoringTable.finalScoringTable input:focus,
+#habitatBonusScoringTable.finalScoringTable .scoreCell .scoreCellText,
+#habitatBonusScoringTable.finalScoringTable .subtotalCell .subtotalText {
+	width: 66px;
+    height: 59.4px;
+    margin: 1.1px 3px -0.5px 1px;
+    padding: 9.4px 0px 9.4px;
+    text-align: center!important;
+	font-size: 29px;
+	font-family: 'Architects Daughter', cursive;
+}
+
+.finalScoringTable th, .finalScoringTable td {
+	border-style: solid;
+    border-width: 0px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: transparent;
+    background-color: transparent;
+	display: inline-block;
+}
+
+#scoringTable-finalScoringContainer .finalScoringTable .subtotalCell .subtotalText {
+	color: #462a09;
+	font-weight:bold;
+}
+
+#scoringTable-finalScoringContainer .finalScoringTable .scoreCell .scoreCellText.lockedInNotQualified {
+	color: #e62929;
+	font-weight:bold;
+}
+
+#scoringTable-finalScoringContainer .finalScoringTable .scoreCell .scoreCellText.lockedInAndQualified {
+	color: #14901c;
+	font-weight:bold;
+}
+
+#scoringTable-finalScoringContainer #finalScore {
+	position: absolute;
+    top: 438px;
+    left: 77px;
+    color: #462a09;
+    font-size: 24px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+#tileTokenContainer.finalScoring .finalScoringItem {
+	position:absolute;
+    top: -8px;
+    left: 2px;
+	display:block;
+	opacity:0;
+	z-index:-1;
+	transition: all .7s ease-in-out;
+}
+
+#tileTokenContainer.finalScoring .finalScoringItem.activeScoringItem {
+	opacity:1;
+	z-index:0;
+}
+
+#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo.finalScoringItem {
+	top: -12px;
+}
+
+#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer {
+    position: relative;
+    height: 66px;
+    width: 278px;
+    margin: 20px auto 0px;
+}
+
+#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualScoringDescription {
+    width: 172px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    position: absolute;
+    top: -3px;
+    left: 20px;
+}
+
+#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualWildlifeScore-background {
+	position: absolute;
+    left: 0px;
+    width: 100%;
+}
+
+#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualWildlifeScore-mobileBackground {
+	display:none;
+}
+
+#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualScoringInput {
+	position: absolute;
+    top: 0px;
+    left: 92px;
+    margin: 0 auto;
+    padding: 13.4px 0px;
+    width: 183px;
+    height: 66px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: none;
+    text-align: center!important;
+    font-size: 32px;
+    color: #462a09;
+	font-family: 'Architects Daughter', cursive;
+}
+
+@-webkit-keyframes pulse {
+	from {
+	  -webkit-transform: scale3d(1, 1, 1);
+	  transform: scale3d(1, 1, 1);
+	}
+  
+	50% {
+	  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+	  transform: scale3d(1.05, 1.05, 1.05);
+	}
+  
+	to {
+	  -webkit-transform: scale3d(1, 1, 1);
+	  transform: scale3d(1, 1, 1);
+	}
+  }
+  
+  @keyframes pulse {
+	from {
+	  -webkit-transform: scale3d(.95, .95, .95);
+	  transform: scale3d(.95, .95, .95);
+	}
+  
+	50% {
+	  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+	  transform: scale3d(1.1, 1.1, 1.1);
+	}
+  
+	to {
+	  -webkit-transform: scale3d(.95, .95, .95);
+	  transform: scale3d(.95, .95, .95);
+	}
+  }
+  
+  .pulse {
+	-webkit-animation-name: pulse;
+	animation-name: pulse;
+  }
+  
+  .animated {
+	-webkit-animation-duration: 1.1s;
+	animation-duration: 1.1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+  }
+
+  .mapTileContainer.placedTile .debugTileCoords {
+    position: absolute;
+    z-index: 99;
+    font-weight: bold;
+    top: 9px;
+    left: 21px;
+    font-size: 23px;
+    color: #2b00ff;
+    text-shadow: 0.5px 0.5px 4px #ffffff;
+  }
+
+#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubeClearAnyTokens.button {
+	display:inline-flex!important;
+}
+  
+#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubeClearSomeTokens.button {
+	display:none!important;
+}
+
+@media screen and (min-width: 1223px) and (max-width: 1432px) {
+	/* #flatoutGamesLogo {
+		width: 7.5vw;
+		position: absolute;
+		top: .5vw;
+		left: 4.7vw;
+		bottom: auto;
+		right: auto;
+	} */
+}
+
+
+@media screen and (max-width: 1222px) {
+
+	body {
+		font-size: 2.1vw;
+		line-height: 3.9vw;
+	}
+
+	body.gameOver {
+		padding-top: 4.4vw;
+	}
+
+	.title.is-5 {
+		font-size: 2vw;
+		margin-bottom: 2.5vw;
+		line-height: 2vw;
+	}
+
+	.subtitle.is-6 {
+		font-size: 1.9vw;
+		line-height: 2.7vw;
+		width: 47vw;
+		margin: 2.5vw auto 2vw;
+	}
+
+	#mainCascadiaTitle {
+		margin: 3vw 0vw 0vw!important;
+	}
+
+	#container #gameLayer #goalsContainer {
+		display:none;
+	}
+
+	.title {
+		line-height: 1.9vw;
+	}
+
+	.button {
+		display: block;
+		height: 4.2vw!important;
+		width: auto!important;
+		font-size: 1.65vw!important;
+		border-radius: 0.4vw!important;
+		border-width: .3vw!important;
+		margin-top: 0vw!important;
+		margin-bottom: 0vw!important;
+		margin-left: 1vw!important;
+		margin-right: 1vw!important;
+		padding-bottom: .1vw!important;
+		padding-left: 3vw!important;
+		padding-right: 3vw!important;
+		padding-top: 0vw!important;
+	}
+
+	#gameButtonsContainer .button, #mobileButtonsContainer .button {
+		display: block;
+		margin: 0vw .5vw;
+		float: left;
+		height: 3.8vw;
+		padding: 0vw 0vw 0vw 0vw;
+		line-height: 0vw;
+	}
+
+	#gameLayer #allButtonsContainer #gameButtonsContainer .button {
+		padding-left: 1.5vw!important;
+		padding-right: 1.5vw!important;
+		margin-left: .5vw!important;
+		margin-right: .5vw!important;
+	}
+
+	#gameLayer #allButtonsContainer #mobileButtonsContainer .button {
+		margin-left: .5vw!important;
+		margin-right: .5vw!important;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter .button {
+		margin-left: .5vw!important;
+		margin-right: .5vw!important;
+		padding-left: 2vw!important;
+		padding-right: 2vw!important;
+	}
+
+	.button.button-is-centered {
+		margin:0vw auto!important;
+	}
+
+	#allButtonsContainer {
+		width: 70.5vw;
+		float: right;
+		margin-right: 3.3vw;
+	}
+
+	#allButtonsContainer {
+		width: 70.2vw;
+		float: right;
+		margin: 1.2vw 0vw 2.2vw 0vw;
+	}
+
+	#mobileButtonsContainer {
+		display: block;
+		height: 4vw;
+		width: 34vw;
+		margin: 0vw 0vw 1.5vw 0vw;
+		float: left;
+	}
+
+	#gameButtonsContainer {
+		height: 4vw;
+		width: 68vw;
+		float: left;
+		margin: 0vw 0vw 0vw 0vw;
+		padding-left: 0vw;
+	}
+
+	
+
+	#gameButtonsContainer .button {
+		width: 21vw;
+	}
+
+	#gameButtonsContainer .useNatureCube.button {
+		width: 16vw;
+	}
+
+	#gameLayer #allButtonsContainer #mobileButtonsContainer .useNatureCube.button {
+		display:none;
+	}
+	
+	#gameLayer #allButtonsContainer #gameButtonsContainer .useNatureCube.button {
+		display:block;
+	}
+
+	#mobileButtonsContainer .button {
+		width: 14vw;
+	}
+
+	#gameButtonsContainer #gameInstructionsButton.button {
+		display:none;
+	}
+
+	#mobileButtonsContainer #hideWildlifeGoals.button {
+		display:none;
+	}
+
+	#keyboardKeysModal .modal-content .notification #commenceGame {
+		margin: 0 auto;
+		display: block;
+	}
+
+	#flatoutGamesLogo {
+		display:none;
+	}
+
+	#mainCascadiaTitle img {
+		width: 56vw;
+		margin-left: 0vw;
+		margin-bottom: 0vw;
+	}
+
+	#mobileCascadiaTitle {
+		display: none;
+	}
+
+	#endGameCascadiaTitle {
+		display: none;
+		width: 32vw;
+		position: absolute;
+		top: 6.4vw;
+		left: 2.4vw;
+		z-index: 1;
+	}
+
+	body.gameView #ks-container {
+		display:none;
+	}
+
+	body.gameView #mainCascadiaTitle {
+		display:none;
+	}
+
+	body.gameView #endGameCascadiaTitle {
+		display:none;
+	}
+
+	body.gameView #mobileCascadiaTitle {
+		display: block;
+		width: 21vw;
+		position: absolute;
+		top: 1.7vw;
+		left: 2.7vw;
+	}
+
+	body.gameOver #mainCascadiaTitle {
+		display:none;
+	}
+
+	body.gameOver #mobileCascadiaTitle {
+		display:none;
+	}
+
+	body.gameOver #endGameCascadiaTitle {
+		display: block!important;
+	}
+
+	#ks-container {
+		position: absolute;
+		top: -6.1vw;
+		width: 100%;
+		height: 11vw;
+		transition: all .7s ease-in-out;
+	}
+
+	#ks-container.activeKickstarter {
+		top: -1vw;
+	}
+
+	#ks-container #ks-background {
+		background-color: #05ce78;
+		padding: 1vw 0vw 1.5vw;
+	}
+
+	#ks-container #ks-background p {
+		font-size: 1.7vw;
+		margin: .5vw 0vw 0vw 0vw;
+	}
+
+	#ks-container #kickstartImg {
+		width: 18vw;
+		top: 4.6vw;
+		right: 0vw;
+		border-bottom-right-radius: 1vw;
+		border-bottom-left-radius: 1vw;
+		z-index:0;
+	}
+
+	body.gameOver #ks-container {
+		height: 4.5vw;
+		top: 0vw;
+		z-index: 2;
+		display: block;
+	}
+
+	body.gameOver #ks-container #ks-background {
+		padding: 0.1vw 0vw 1.2vw 0vw;
+	}
+
+	body.gameOver #ks-container #ks-background p {
+		font-size: 1.6vw;
+		/* margin-top: 0.5vw!important; */
+	}
+
+	#ks-container #ks-background p {
+		font-size: 1.7vw;
+		margin: .6vw 0vw 0vw 0vw;
+	}
+
+	body.gameOver #ks-container #kickstartImg {
+		display: none;
+	}
+
+	#homepageButtonContainer {
+		margin: 0vw auto 1vw;
+		width: 36.5vw;
+	}
+
+	/* #homepageButtonContainer .button {
+		margin: 0vw 1.2vw;
+		width: 15vw;
+		font-size: 1.55vw;
+	} */
+
+	#container {
+		width: 94vw;
+	}
+
+	#goalTilesContainer {
+		margin-top: 3vw;
+	}
+
+	#goalTilesContainer #goalList {
+		width: 93vw;
+		margin: 0vw auto 0;
+	}
+
+	#goalTilesContainer #goalList li {
+		width: 30%;
+		margin: 0vw 0vw 2vw 0vw;
+	}
+
+	#goalsContainer {
+		float: right;
+		margin: 3vw auto 0vw;
+		height: 9vw;
+		width: 73vw;
+		transition: all 1s ease-in-out;
+	}
+
+	#goalsContainer .goalScoringThumbnailContainer .goalScoringToken {
+		position: absolute;
+		width: 3.5vw;
+		top: -1vw;
+		left: 0vw;
+		z-index: 1;
+	}
+
+	#goalsContainer .goalScoringThumbnailContainer {
+		position: relative;
+		height: 9vw;
+		width: 12vw;
+		float: left;
+		margin-right: 2.4vw;
+	}
+
+	#goalsContainer .goalScoringThumbnailContainer .goalScoringThumbnail {
+		position: absolute;
+		width: 12vw;
+		right: 0vw;
+	}
+
+	body.gameView #container #gameLayer {
+		margin-top: 0vw;
+	}
+
+	#turnsAndNatureTokenContainer {
+		width: 36vw;
+		float: left;
+		margin: 0.1vw 0vw 0vw 0vw;
+		padding-left: 0vw;
+	}
+
+	#turnsAndNatureTokenContainer p {
+		font-size: 2.15vw;
+		float: left;
+		margin: 0vw 0vw 0vw 0vw;
+	}
+
+	#turnsAndNatureTokenContainer p:not(:last-child) {
+		margin: 0vw 2.5vw 0vw .3vw;
+	}
+
+	#mobileTurnsAndNatureTokenContainer {
+		display:none;
+	}
+
+	#goalLayerListContainer {
+		display: none;
+		margin-top: 0vw;
+	}
+
+	#goalLayerListContainer #hideWildlifeGoals.button.is-warning.button-is-centered {
+		display: block;
+		margin: 2vw auto 2vw!important;
+		/* font-size: 1.55vw;
+		height: 4vw;
+		width: 15vw; */
+	}
+
+	#quickViewMobileGoalLayer {
+		display:none;
+	}
+
+	#quickViewTabletGoalLayerList {
+		display: block;
+		list-style: none;
+		text-align: center;
+		padding: 0 0 0 0;
+		margin: 0vw auto 0;
+		box-sizing: border-box;
+		height: 50vw;
+		width: 87vw;
+		overflow-y: auto;
+		border: 1px solid #000;
+		border-radius: 0vw;
+		padding: 2vw;
+	}
+
+	#quickViewTabletGoalLayerList li {
+		width: 33vw;
+		margin: 0vw 2vw 2vw;
+		height: auto;
+		padding: 0 0 0 0;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	#tileTokenContainer {
+		margin: 0.3vw 0vw 0vw 0vw;
+		padding-left: 2.7vw;
+		height: 48vw;
+		width: 22vw;
+	}
+	
+	.tokenTileContainer {
+		height: 10.75vw;
+		width: 18vw;
+	}
+
+	.tileContainer {
+		width: 9.35vw;
+    	height: 10.75vw;
+		margin-top: 0vw;
+		margin-left: 0vw;
+	}
+
+	.tileContainer .habitatTile {
+		position: absolute;
+		width: 9.35vw;
+    	height: 10.75vw;
+		max-width: 100%;
+		max-height: 100%;
+		transition: all .1s ease-in-out;
+	}
+
+	.tokenTileContainer .tokenContainer {
+		margin-right: 0.5vw;
+		width: 5.55vw;
+		margin-top: 2.7vw;
+		line-height: 1.9vw;
+	}
+
+	.token,
+	.tokenTileContainer .tokenContainer .token,
+	.tokenTileContainer .tokenContainer .activeToken,
+	.tokenTileContainer .tokenContainer .duplicateToken {
+		width: 5.55vw;
+		max-width: 5.55vw;
+	}
+
+	.mapTileContainer.placedTile .wildlifeToken,
+	.mapTileContainer.placedTile .activeToken,
+	.mapTileContainer.placedTile .placedWildlifeToken,
+	.mapTileContainer.placedTile .placedFlippedToken,
+	.mapTileContainer.placedTile .flippedToken {
+		position: absolute;
+		width: 5.55vw;
+		max-width: 5.55vw;
+		top: 2.6vw;
+		left: 1.9vw;
+	}
+
+	#earnedNatureTokenContainer {
+		width: 10.3vw;
+		height: 5.4vw;
+		margin-left: -0.6vw;
+		opacity:1;
+	}
+
+	#earnedNatureTokenContainer.animationEnabled {
+		transition: top 2.2s linear, opacity .8s linear;
+	}
+
+	#earnedNatureTokenContainer .earnedNatureToken {
+		width: 5.5vw;
+		max-width: 5.5vw;
+		position: absolute;
+		top: 0vw;
+		left: 0vw;
+	}
+
+	#earnedNatureTokenContainer .plusOneText {
+		position: absolute;
+		top: 0.6vw;
+		right: 0vw;
+		font-size: 4vw;
+		font-weight: bold;
+		color: #26ff00;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: black;
+		letter-spacing: 0vw;
+	}
+
+	.tokenContainer .redCross {
+		top: -1.5vw;
+		right: -1.5vw;
+		width: 4vw;
+	}
+
+	.tokenTileContainer[tokentilenum="0"] {
+		top: 0vw;
+	}
+
+	.tokenTileContainer[tokentilenum="1"] {
+		top: 12vw;
+	}
+
+	.tokenTileContainer[tokentilenum="2"] {
+		top: 24vw;
+	}
+
+	.tokenTileContainer[tokentilenum="3"] {
+		top: 36vw;
+	}
+
+	.tokenTileContainer[tokentilenum="-1"] {
+		top:-27vw;
+	}
+	
+	.tokenTileContainer[tokentilenum="-2"] {
+		top: -38vw;
+	}
+
+	.tileContainer[tilewildlife="1"] .wildlifeToken-1 {
+		top: 37.5%;
+		left: 34.8%;
+		z-index: 1;
+	}
+
+	.tileContainer[tilewildlife="2"] .wildlifeToken-1 {
+		top: 30.5%;
+		left: 26%;
+		z-index: 3;
+	}
+
+	.tileContainer[tilewildlife="2"] .wildlifeToken-2 {
+		top: 42.5%;
+		left: 47%;
+		z-index: 1;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container {
+		width: 15vw;
+		right: 22vw;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container.takeTile {
+		right: 10.5vw;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container[removedtilerow="0"] {
+		top: 1.9vw;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container[removedtilerow="1"] {
+		top: 13.9vw;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container[removedtilerow="2"] {
+		top: 25.8vw;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container[removedtilerow="3"] {
+		top: 37.5vw;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container {
+		width: 10.8vw;
+		right: -11.6vw;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container.takeToken {
+		right: -3.6vw;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container[removedtokenrow="0"] {
+		top: 3vw;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container[removedtokenrow="1"] {
+		top: 14.9vw;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container[removedtokenrow="2"] {
+		top: 27vw;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container[removedtokenrow="3"] {
+		top: 39vw;
+	}
+
+	#mapContainer {
+		border: .3vw solid #000;
+		float: left;
+		margin: 0vw 0vw 0vw 1.5vw;
+		height: 48vw;
+		/* width: 71vw; */
+		width: 68.25vw;
+		border-radius: 2vw;
+	}
+
+	#mapContainer .zoomOptions {
+		position: absolute;
+		top: .5vw;
+		left: 0vw;
+		z-index: 5;
+		width: 7vw;
+	}
+
+	#mapContainer .zoomOptions .zoomOption {
+		width: 4.1vw;
+		margin: 0vw .75vw 0vw;
+	}
+
+	#mapContainer .mapNavigation {
+		position: absolute;
+		top: 0vw;
+		right: 0vw;
+		z-index: 5;
+		width: 12vw;
+		height: 12vw;
+	}
+
+	#mapContainer .mapNavigation .navBackground {
+		width: 100%;
+	}
+
+	#mapContainer .mapNavigation .navArrow {
+		width: 4.4vw;
+	}
+
+	#mapContainer .mapNavigation .upArrow {
+		right: 3.7vw;
+		top: 1.2vw;
+	}
+
+	#mapContainer .mapNavigation .rightArrow {
+		right: 0.6vw;
+		top: 4.3vw;
+	}
+
+	#mapContainer .mapNavigation .downArrow {
+		right: 4.1vw;
+		top: 7.6vw;
+	}
+
+	#mapContainer .mapNavigation .leftArrow {
+		right: 7.2vw;
+		top: 3.9vw;
+	}
+
+	#mobileMapNavContainer {
+		display:none;
+	}
+
+	.mapTileContainer .tileOutline {
+		position: absolute;
+		width: 9.35vw;
+		opacity: .2;
+	}
+
+	#mapContainer #mapHiddenOverlay {
+		width: 238.1vw;
+		height: 238.1vw;
+		top: 0vw;
+		left: 0vw;
+		transform-origin: 13.4% 8%;
+	}
+
+	#mapContainer #mapHiddenOverlay .mapTileContainer {
+		width: 9.3vw;
+    	height: 10.75vw;
+	}
+	
+
+	#mapContainer #mapHiddenOverlay .mapTileContainer .validPlacement {
+		width: 9.5vw;
+	}
+
+	#mapContainer #placedTileOptions {
+		bottom: -7vw;
+		height: 7vw;
+		width: 69vw;
+		padding: 1.2vw 0vw 0vw 1vw;
+	}
+
+	#mapContainer #placedTileOptions.showOptions {
+		bottom: 0vw;
+	}
+
+	#mapContainer #placedTileOptions .button {
+		margin: 0.3vw .5vw 0vw;
+		font-size: 1.65vw;
+		height: 4vw;
+		margin-left: .9vw!important;
+		margin-right: .9vw!important;
+		padding-left: 1.5vw!important;
+		padding-right: 1.5vw!important;
+		display: inline-flex;
+	}
+
+	#mapContainer #placedTileOptions .button.natureCubeButton {
+		display: none;
+	}
+
+	.mapTileContainer.potentialPlacement .tileContainer:not(.lockedIn), .mapTileContainer.potentialNatureCubeTilePlacement .tileContainer {
+		width: 9.35vw;
+    	height: 10.75vw;
+	}
+
+	.row-0.column-0, .row-2.column-0, .row-4.column-0, .row-6.column-0, .row-8.column-0, .row-10.column-0, .row-12.column-0, .row-14.column-0, .row-16.column-0, .row-18.column-0, .row-20.column-0, .row-22.column-0, .row-24.column-0, .row-26.column-0, .row-28.column-0, .row-30.column-0, .row-32.column-0, .row-34.column-0, .row-36.column-0, .row-38.column-0  {
+		left: -156.00vw;
+	}
+
+	.row-0.column-1, .row-2.column-1, .row-4.column-1, .row-6.column-1, .row-8.column-1, .row-10.column-1, .row-12.column-1, .row-14.column-1, .row-16.column-1, .row-18.column-1, .row-20.column-1, .row-22.column-1, .row-24.column-1, .row-26.column-1, .row-28.column-1, .row-30.column-1, .row-32.column-1, .row-34.column-1, .row-36.column-1, .row-38.column-1  {
+		left: -146.76vw;
+	}
+
+	.row-0.column-2, .row-2.column-2, .row-4.column-2, .row-6.column-2, .row-8.column-2, .row-10.column-2, .row-12.column-2, .row-14.column-2, .row-16.column-2, .row-18.column-2, .row-20.column-2, .row-22.column-2, .row-24.column-2, .row-26.column-2, .row-28.column-2, .row-30.column-2, .row-32.column-2, .row-34.column-2, .row-36.column-2, .row-38.column-2  {
+		left: -137.52vw;
+	}
+
+	.row-0.column-3, .row-2.column-3, .row-4.column-3, .row-6.column-3, .row-8.column-3, .row-10.column-3, .row-12.column-3, .row-14.column-3, .row-16.column-3, .row-18.column-3, .row-20.column-3, .row-22.column-3, .row-24.column-3, .row-26.column-3, .row-28.column-3, .row-30.column-3, .row-32.column-3, .row-34.column-3, .row-36.column-3, .row-38.column-3  {
+		left: -128.28vw;
+	}
+
+	.row-0.column-4, .row-2.column-4, .row-4.column-4, .row-6.column-4, .row-8.column-4, .row-10.column-4, .row-12.column-4, .row-14.column-4, .row-16.column-4, .row-18.column-4, .row-20.column-4, .row-22.column-4, .row-24.column-4, .row-26.column-4, .row-28.column-4, .row-30.column-4, .row-32.column-4, .row-34.column-4, .row-36.column-4, .row-38.column-4  {
+		left: -119.04vw;
+	}
+
+	.row-0.column-5, .row-2.column-5, .row-4.column-5, .row-6.column-5, .row-8.column-5, .row-10.column-5, .row-12.column-5, .row-14.column-5, .row-16.column-5, .row-18.column-5, .row-20.column-5, .row-22.column-5, .row-24.column-5, .row-26.column-5, .row-28.column-5, .row-30.column-5, .row-32.column-5, .row-34.column-5, .row-36.column-5, .row-38.column-5  {
+		left: -109.80vw;
+	}
+
+	.row-0.column-6, .row-2.column-6, .row-4.column-6, .row-6.column-6, .row-8.column-6, .row-10.column-6, .row-12.column-6, .row-14.column-6, .row-16.column-6, .row-18.column-6, .row-20.column-6, .row-22.column-6, .row-24.column-6, .row-26.column-6, .row-28.column-6, .row-30.column-6, .row-32.column-6, .row-34.column-6, .row-36.column-6, .row-38.column-6  {
+		left: -100.56vw;
+	}
+
+	.row-0.column-7, .row-2.column-7, .row-4.column-7, .row-6.column-7, .row-8.column-7, .row-10.column-7, .row-12.column-7, .row-14.column-7, .row-16.column-7, .row-18.column-7, .row-20.column-7, .row-22.column-7, .row-24.column-7, .row-26.column-7, .row-28.column-7, .row-30.column-7, .row-32.column-7, .row-34.column-7, .row-36.column-7, .row-38.column-7  {
+		left: -91.32vw;
+	}
+
+	.row-0.column-8, .row-2.column-8, .row-4.column-8, .row-6.column-8, .row-8.column-8, .row-10.column-8, .row-12.column-8, .row-14.column-8, .row-16.column-8, .row-18.column-8, .row-20.column-8, .row-22.column-8, .row-24.column-8, .row-26.column-8, .row-28.column-8, .row-30.column-8, .row-32.column-8, .row-34.column-8, .row-36.column-8, .row-38.column-8  {
+		left: -82.08vw;
+	}
+
+	.row-0.column-9, .row-2.column-9, .row-4.column-9, .row-6.column-9, .row-8.column-9, .row-10.column-9, .row-12.column-9, .row-14.column-9, .row-16.column-9, .row-18.column-9, .row-20.column-9, .row-22.column-9, .row-24.column-9, .row-26.column-9, .row-28.column-9, .row-30.column-9, .row-32.column-9, .row-34.column-9, .row-36.column-9, .row-38.column-9  {
+		left: -72.84vw;
+	}
+
+	.row-0.column-10, .row-2.column-10, .row-4.column-10, .row-6.column-10, .row-8.column-10, .row-10.column-10, .row-12.column-10, .row-14.column-10, .row-16.column-10, .row-18.column-10, .row-20.column-10, .row-22.column-10, .row-24.column-10, .row-26.column-10, .row-28.column-10, .row-30.column-10, .row-32.column-10, .row-34.column-10, .row-36.column-10, .row-38.column-10  {
+		left: -63.60vw;
+	}
+
+	.row-0.column-11, .row-2.column-11, .row-4.column-11, .row-6.column-11, .row-8.column-11, .row-10.column-11, .row-12.column-11, .row-14.column-11, .row-16.column-11, .row-18.column-11, .row-20.column-11, .row-22.column-11, .row-24.column-11, .row-26.column-11, .row-28.column-11, .row-30.column-11, .row-32.column-11, .row-34.column-11, .row-36.column-11, .row-38.column-11  {
+		left: -54.36vw;
+	}
+
+	.row-0.column-12, .row-2.column-12, .row-4.column-12, .row-6.column-12, .row-8.column-12, .row-10.column-12, .row-12.column-12, .row-14.column-12, .row-16.column-12, .row-18.column-12, .row-20.column-12, .row-22.column-12, .row-24.column-12, .row-26.column-12, .row-28.column-12, .row-30.column-12, .row-32.column-12, .row-34.column-12, .row-36.column-12, .row-38.column-12  {
+		left: -45.12vw;
+	}
+
+	.row-0.column-13, .row-2.column-13, .row-4.column-13, .row-6.column-13, .row-8.column-13, .row-10.column-13, .row-12.column-13, .row-14.column-13, .row-16.column-13, .row-18.column-13, .row-20.column-13, .row-22.column-13, .row-24.column-13, .row-26.column-13, .row-28.column-13, .row-30.column-13, .row-32.column-13, .row-34.column-13, .row-36.column-13, .row-38.column-13  {
+		left: -35.88vw;
+	}
+
+	.row-0.column-14, .row-2.column-14, .row-4.column-14, .row-6.column-14, .row-8.column-14, .row-10.column-14, .row-12.column-14, .row-14.column-14, .row-16.column-14, .row-18.column-14, .row-20.column-14, .row-22.column-14, .row-24.column-14, .row-26.column-14, .row-28.column-14, .row-30.column-14, .row-32.column-14, .row-34.column-14, .row-36.column-14, .row-38.column-14  {
+		left: -26.64vw;
+	}
+
+	.row-0.column-15, .row-2.column-15, .row-4.column-15, .row-6.column-15, .row-8.column-15, .row-10.column-15, .row-12.column-15, .row-14.column-15, .row-16.column-15, .row-18.column-15, .row-20.column-15, .row-22.column-15, .row-24.column-15, .row-26.column-15, .row-28.column-15, .row-30.column-15, .row-32.column-15, .row-34.column-15, .row-36.column-15, .row-38.column-15  {
+		left: -17.40vw;
+	}
+
+	.row-0.column-16, .row-2.column-16, .row-4.column-16, .row-6.column-16, .row-8.column-16, .row-10.column-16, .row-12.column-16, .row-14.column-16, .row-16.column-16, .row-18.column-16, .row-20.column-16, .row-22.column-16, .row-24.column-16, .row-26.column-16, .row-28.column-16, .row-30.column-16, .row-32.column-16, .row-34.column-16, .row-36.column-16, .row-38.column-16  {
+		left: -8.16vw;
+	}
+
+	.row-0.column-17, .row-2.column-17, .row-4.column-17, .row-6.column-17, .row-8.column-17, .row-10.column-17, .row-12.column-17, .row-14.column-17, .row-16.column-17, .row-18.column-17, .row-20.column-17, .row-22.column-17, .row-24.column-17, .row-26.column-17, .row-28.column-17, .row-30.column-17, .row-32.column-17, .row-34.column-17, .row-36.column-17, .row-38.column-17  {
+		left: 1.08vw;
+	}
+
+	.row-0.column-18, .row-2.column-18, .row-4.column-18, .row-6.column-18, .row-8.column-18, .row-10.column-18, .row-12.column-18, .row-14.column-18, .row-16.column-18, .row-18.column-18, .row-20.column-18, .row-22.column-18, .row-24.column-18, .row-26.column-18, .row-28.column-18, .row-30.column-18, .row-32.column-18, .row-34.column-18, .row-36.column-18, .row-38.column-18  {
+		left: 10.32vw;
+	}
+
+	.row-0.column-19, .row-2.column-19, .row-4.column-19, .row-6.column-19, .row-8.column-19, .row-10.column-19, .row-12.column-19, .row-14.column-19, .row-16.column-19, .row-18.column-19, .row-20.column-19, .row-22.column-19, .row-24.column-19, .row-26.column-19, .row-28.column-19, .row-30.column-19, .row-32.column-19, .row-34.column-19, .row-36.column-19, .row-38.column-19  {
+		left: 19.56vw;
+	}
+
+	.row-0.column-20, .row-2.column-20, .row-4.column-20, .row-6.column-20, .row-8.column-20, .row-10.column-20, .row-12.column-20, .row-14.column-20, .row-16.column-20, .row-18.column-20, .row-20.column-20, .row-22.column-20, .row-24.column-20, .row-26.column-20, .row-28.column-20, .row-30.column-20, .row-32.column-20, .row-34.column-20, .row-36.column-20, .row-38.column-20  {
+		left: 28.80vw;
+	}
+
+	.row-0.column-21, .row-2.column-21, .row-4.column-21, .row-6.column-21, .row-8.column-21, .row-10.column-21, .row-12.column-21, .row-14.column-21, .row-16.column-21, .row-18.column-21, .row-20.column-21, .row-22.column-21, .row-24.column-21, .row-26.column-21, .row-28.column-21, .row-30.column-21, .row-32.column-21, .row-34.column-21, .row-36.column-21, .row-38.column-21  {
+		left: 38.04vw;
+	}
+
+	.row-0.column-22, .row-2.column-22, .row-4.column-22, .row-6.column-22, .row-8.column-22, .row-10.column-22, .row-12.column-22, .row-14.column-22, .row-16.column-22, .row-18.column-22, .row-20.column-22, .row-22.column-22, .row-24.column-22, .row-26.column-22, .row-28.column-22, .row-30.column-22, .row-32.column-22, .row-34.column-22, .row-36.column-22, .row-38.column-22  {
+		left: 47.28vw;
+	}
+
+	.row-0.column-23, .row-2.column-23, .row-4.column-23, .row-6.column-23, .row-8.column-23, .row-10.column-23, .row-12.column-23, .row-14.column-23, .row-16.column-23, .row-18.column-23, .row-20.column-23, .row-22.column-23, .row-24.column-23, .row-26.column-23, .row-28.column-23, .row-30.column-23, .row-32.column-23, .row-34.column-23, .row-36.column-23, .row-38.column-23  {
+		left: 56.52vw;
+	}
+
+	.row-0.column-24, .row-2.column-24, .row-4.column-24, .row-6.column-24, .row-8.column-24, .row-10.column-24, .row-12.column-24, .row-14.column-24, .row-16.column-24, .row-18.column-24, .row-20.column-24, .row-22.column-24, .row-24.column-24, .row-26.column-24, .row-28.column-24, .row-30.column-24, .row-32.column-24, .row-34.column-24, .row-36.column-24, .row-38.column-24  {
+		left: 65.76vw;
+	}
+
+	.row-0.column-25, .row-2.column-25, .row-4.column-25, .row-6.column-25, .row-8.column-25, .row-10.column-25, .row-12.column-25, .row-14.column-25, .row-16.column-25, .row-18.column-25, .row-20.column-25, .row-22.column-25, .row-24.column-25, .row-26.column-25, .row-28.column-25, .row-30.column-25, .row-32.column-25, .row-34.column-25, .row-36.column-25, .row-38.column-25  {
+		left: 75.00vw;
+	}
+
+	.row-0.column-26, .row-2.column-26, .row-4.column-26, .row-6.column-26, .row-8.column-26, .row-10.column-26, .row-12.column-26, .row-14.column-26, .row-16.column-26, .row-18.column-26, .row-20.column-26, .row-22.column-26, .row-24.column-26, .row-26.column-26, .row-28.column-26, .row-30.column-26, .row-32.column-26, .row-34.column-26, .row-36.column-26, .row-38.column-26  {
+		left: 84.24vw;
+	}
+
+	.row-0.column-27, .row-2.column-27, .row-4.column-27, .row-6.column-27, .row-8.column-27, .row-10.column-27, .row-12.column-27, .row-14.column-27, .row-16.column-27, .row-18.column-27, .row-20.column-27, .row-22.column-27, .row-24.column-27, .row-26.column-27, .row-28.column-27, .row-30.column-27, .row-32.column-27, .row-34.column-27, .row-36.column-27, .row-38.column-27  {
+		left: 93.48vw;
+	}
+
+	.row-0.column-28, .row-2.column-28, .row-4.column-28, .row-6.column-28, .row-8.column-28, .row-10.column-28, .row-12.column-28, .row-14.column-28, .row-16.column-28, .row-18.column-28, .row-20.column-28, .row-22.column-28, .row-24.column-28, .row-26.column-28, .row-28.column-28, .row-30.column-28, .row-32.column-28, .row-34.column-28, .row-36.column-28, .row-38.column-28  {
+		left: 102.72vw;
+	}
+
+	.row-0.column-29, .row-2.column-29, .row-4.column-29, .row-6.column-29, .row-8.column-29, .row-10.column-29, .row-12.column-29, .row-14.column-29, .row-16.column-29, .row-18.column-29, .row-20.column-29, .row-22.column-29, .row-24.column-29, .row-26.column-29, .row-28.column-29, .row-30.column-29, .row-32.column-29, .row-34.column-29, .row-36.column-29, .row-38.column-29  {
+		left: 111.96vw;
+	}
+
+	.row-0.column-30, .row-2.column-30, .row-4.column-30, .row-6.column-30, .row-8.column-30, .row-10.column-30, .row-12.column-30, .row-14.column-30, .row-16.column-30, .row-18.column-30, .row-20.column-30, .row-22.column-30, .row-24.column-30, .row-26.column-30, .row-28.column-30, .row-30.column-30, .row-32.column-30, .row-34.column-30, .row-36.column-30, .row-38.column-30  {
+		left: 121.20vw;
+	}
+
+	.row-0.column-31, .row-2.column-31, .row-4.column-31, .row-6.column-31, .row-8.column-31, .row-10.column-31, .row-12.column-31, .row-14.column-31, .row-16.column-31, .row-18.column-31, .row-20.column-31, .row-22.column-31, .row-24.column-31, .row-26.column-31, .row-28.column-31, .row-30.column-31, .row-32.column-31, .row-34.column-31, .row-36.column-31, .row-38.column-31  {
+		left: 130.44vw;
+	}
+
+	.row-0.column-32, .row-2.column-32, .row-4.column-32, .row-6.column-32, .row-8.column-32, .row-10.column-32, .row-12.column-32, .row-14.column-32, .row-16.column-32, .row-18.column-32, .row-20.column-32, .row-22.column-32, .row-24.column-32, .row-26.column-32, .row-28.column-32, .row-30.column-32, .row-32.column-32, .row-34.column-32, .row-36.column-32, .row-38.column-32  {
+		left: 139.68vw;
+	}
+
+	.row-0.column-33, .row-2.column-33, .row-4.column-33, .row-6.column-33, .row-8.column-33, .row-10.column-33, .row-12.column-33, .row-14.column-33, .row-16.column-33, .row-18.column-33, .row-20.column-33, .row-22.column-33, .row-24.column-33, .row-26.column-33, .row-28.column-33, .row-30.column-33, .row-32.column-33, .row-34.column-33, .row-36.column-33, .row-38.column-33  {
+		left: 148.92vw;
+	}
+
+	.row-0.column-34, .row-2.column-34, .row-4.column-34, .row-6.column-34, .row-8.column-34, .row-10.column-34, .row-12.column-34, .row-14.column-34, .row-16.column-34, .row-18.column-34, .row-20.column-34, .row-22.column-34, .row-24.column-34, .row-26.column-34, .row-28.column-34, .row-30.column-34, .row-32.column-34, .row-34.column-34, .row-36.column-34, .row-38.column-34  {
+		left: 158.16vw;
+	}
+
+	.row-0.column-35, .row-2.column-35, .row-4.column-35, .row-6.column-35, .row-8.column-35, .row-10.column-35, .row-12.column-35, .row-14.column-35, .row-16.column-35, .row-18.column-35, .row-20.column-35, .row-22.column-35, .row-24.column-35, .row-26.column-35, .row-28.column-35, .row-30.column-35, .row-32.column-35, .row-34.column-35, .row-36.column-35, .row-38.column-35  {
+		left: 167.40vw;
+	}
+
+	.row-0.column-36, .row-2.column-36, .row-4.column-36, .row-6.column-36, .row-8.column-36, .row-10.column-36, .row-12.column-36, .row-14.column-36, .row-16.column-36, .row-18.column-36, .row-20.column-36, .row-22.column-36, .row-24.column-36, .row-26.column-36, .row-28.column-36, .row-30.column-36, .row-32.column-36, .row-34.column-36, .row-36.column-36, .row-38.column-36  {
+		left: 176.64vw;
+	}
+
+	.row-0.column-37, .row-2.column-37, .row-4.column-37, .row-6.column-37, .row-8.column-37, .row-10.column-37, .row-12.column-37, .row-14.column-37, .row-16.column-37, .row-18.column-37, .row-20.column-37, .row-22.column-37, .row-24.column-37, .row-26.column-37, .row-28.column-37, .row-30.column-37, .row-32.column-37, .row-34.column-37, .row-36.column-37, .row-38.column-37  {
+		left: 185.88vw;
+	}
+
+	.row-0.column-38, .row-2.column-38, .row-4.column-38, .row-6.column-38, .row-8.column-38, .row-10.column-38, .row-12.column-38, .row-14.column-38, .row-16.column-38, .row-18.column-38, .row-20.column-38, .row-22.column-38, .row-24.column-38, .row-26.column-38, .row-28.column-38, .row-30.column-38, .row-32.column-38, .row-34.column-38, .row-36.column-38, .row-38.column-38  {
+		left: 195.12vw;
+	}
+
+	.row-0.column-39, .row-2.column-39, .row-4.column-39, .row-6.column-39, .row-8.column-39, .row-10.column-39, .row-12.column-39, .row-14.column-39, .row-16.column-39, .row-18.column-39, .row-20.column-39, .row-22.column-39, .row-24.column-39, .row-26.column-39, .row-28.column-39, .row-30.column-39, .row-32.column-39, .row-34.column-39, .row-36.column-39, .row-38.column-39  {
+		left: 204.36vw;
+	}
+
+	.row-1.column-0, .row-3.column-0, .row-5.column-0, .row-7.column-0, .row-9.column-0, .row-11.column-0, .row-13.column-0, .row-15.column-0, .row-17.column-0, .row-19.column-0, .row-21.column-0, .row-23.column-0, .row-25.column-0, .row-27.column-0, .row-29.column-0, .row-31.column-0, .row-33.column-0, .row-35.column-0, .row-37.column-0, .row-39.column-0  {
+		left: -151.26vw;
+	}
+
+	.row-1.column-1, .row-3.column-1, .row-5.column-1, .row-7.column-1, .row-9.column-1, .row-11.column-1, .row-13.column-1, .row-15.column-1, .row-17.column-1, .row-19.column-1, .row-21.column-1, .row-23.column-1, .row-25.column-1, .row-27.column-1, .row-29.column-1, .row-31.column-1, .row-33.column-1, .row-35.column-1, .row-37.column-1, .row-39.column-1  {
+		left: -142.02vw;
+	}
+
+	.row-1.column-2, .row-3.column-2, .row-5.column-2, .row-7.column-2, .row-9.column-2, .row-11.column-2, .row-13.column-2, .row-15.column-2, .row-17.column-2, .row-19.column-2, .row-21.column-2, .row-23.column-2, .row-25.column-2, .row-27.column-2, .row-29.column-2, .row-31.column-2, .row-33.column-2, .row-35.column-2, .row-37.column-2, .row-39.column-2  {
+		left: -132.78vw;
+	}
+
+	.row-1.column-3, .row-3.column-3, .row-5.column-3, .row-7.column-3, .row-9.column-3, .row-11.column-3, .row-13.column-3, .row-15.column-3, .row-17.column-3, .row-19.column-3, .row-21.column-3, .row-23.column-3, .row-25.column-3, .row-27.column-3, .row-29.column-3, .row-31.column-3, .row-33.column-3, .row-35.column-3, .row-37.column-3, .row-39.column-3  {
+		left: -123.54vw;
+	}
+
+	.row-1.column-4, .row-3.column-4, .row-5.column-4, .row-7.column-4, .row-9.column-4, .row-11.column-4, .row-13.column-4, .row-15.column-4, .row-17.column-4, .row-19.column-4, .row-21.column-4, .row-23.column-4, .row-25.column-4, .row-27.column-4, .row-29.column-4, .row-31.column-4, .row-33.column-4, .row-35.column-4, .row-37.column-4, .row-39.column-4  {
+		left: -114.30vw;
+	}
+
+	.row-1.column-5, .row-3.column-5, .row-5.column-5, .row-7.column-5, .row-9.column-5, .row-11.column-5, .row-13.column-5, .row-15.column-5, .row-17.column-5, .row-19.column-5, .row-21.column-5, .row-23.column-5, .row-25.column-5, .row-27.column-5, .row-29.column-5, .row-31.column-5, .row-33.column-5, .row-35.column-5, .row-37.column-5, .row-39.column-5  {
+		left: -105.06vw;
+	}
+
+	.row-1.column-6, .row-3.column-6, .row-5.column-6, .row-7.column-6, .row-9.column-6, .row-11.column-6, .row-13.column-6, .row-15.column-6, .row-17.column-6, .row-19.column-6, .row-21.column-6, .row-23.column-6, .row-25.column-6, .row-27.column-6, .row-29.column-6, .row-31.column-6, .row-33.column-6, .row-35.column-6, .row-37.column-6, .row-39.column-6  {
+		left: -95.82vw;
+	}
+
+	.row-1.column-7, .row-3.column-7, .row-5.column-7, .row-7.column-7, .row-9.column-7, .row-11.column-7, .row-13.column-7, .row-15.column-7, .row-17.column-7, .row-19.column-7, .row-21.column-7, .row-23.column-7, .row-25.column-7, .row-27.column-7, .row-29.column-7, .row-31.column-7, .row-33.column-7, .row-35.column-7, .row-37.column-7, .row-39.column-7  {
+		left: -86.58vw;
+	}
+
+	.row-1.column-8, .row-3.column-8, .row-5.column-8, .row-7.column-8, .row-9.column-8, .row-11.column-8, .row-13.column-8, .row-15.column-8, .row-17.column-8, .row-19.column-8, .row-21.column-8, .row-23.column-8, .row-25.column-8, .row-27.column-8, .row-29.column-8, .row-31.column-8, .row-33.column-8, .row-35.column-8, .row-37.column-8, .row-39.column-8  {
+		left: -77.34vw;
+	}
+
+	.row-1.column-9, .row-3.column-9, .row-5.column-9, .row-7.column-9, .row-9.column-9, .row-11.column-9, .row-13.column-9, .row-15.column-9, .row-17.column-9, .row-19.column-9, .row-21.column-9, .row-23.column-9, .row-25.column-9, .row-27.column-9, .row-29.column-9, .row-31.column-9, .row-33.column-9, .row-35.column-9, .row-37.column-9, .row-39.column-9  {
+		left: -68.10vw;
+	}
+
+	.row-1.column-10, .row-3.column-10, .row-5.column-10, .row-7.column-10, .row-9.column-10, .row-11.column-10, .row-13.column-10, .row-15.column-10, .row-17.column-10, .row-19.column-10, .row-21.column-10, .row-23.column-10, .row-25.column-10, .row-27.column-10, .row-29.column-10, .row-31.column-10, .row-33.column-10, .row-35.column-10, .row-37.column-10, .row-39.column-10  {
+		left: -58.86vw;
+	}
+
+	.row-1.column-11, .row-3.column-11, .row-5.column-11, .row-7.column-11, .row-9.column-11, .row-11.column-11, .row-13.column-11, .row-15.column-11, .row-17.column-11, .row-19.column-11, .row-21.column-11, .row-23.column-11, .row-25.column-11, .row-27.column-11, .row-29.column-11, .row-31.column-11, .row-33.column-11, .row-35.column-11, .row-37.column-11, .row-39.column-11  {
+		left: -49.62vw;
+	}
+
+	.row-1.column-12, .row-3.column-12, .row-5.column-12, .row-7.column-12, .row-9.column-12, .row-11.column-12, .row-13.column-12, .row-15.column-12, .row-17.column-12, .row-19.column-12, .row-21.column-12, .row-23.column-12, .row-25.column-12, .row-27.column-12, .row-29.column-12, .row-31.column-12, .row-33.column-12, .row-35.column-12, .row-37.column-12, .row-39.column-12  {
+		left: -40.38vw;
+	}
+
+	.row-1.column-13, .row-3.column-13, .row-5.column-13, .row-7.column-13, .row-9.column-13, .row-11.column-13, .row-13.column-13, .row-15.column-13, .row-17.column-13, .row-19.column-13, .row-21.column-13, .row-23.column-13, .row-25.column-13, .row-27.column-13, .row-29.column-13, .row-31.column-13, .row-33.column-13, .row-35.column-13, .row-37.column-13, .row-39.column-13  {
+		left: -31.14vw;
+	}
+
+	.row-1.column-14, .row-3.column-14, .row-5.column-14, .row-7.column-14, .row-9.column-14, .row-11.column-14, .row-13.column-14, .row-15.column-14, .row-17.column-14, .row-19.column-14, .row-21.column-14, .row-23.column-14, .row-25.column-14, .row-27.column-14, .row-29.column-14, .row-31.column-14, .row-33.column-14, .row-35.column-14, .row-37.column-14, .row-39.column-14  {
+		left: -21.90vw;
+	}
+
+	.row-1.column-15, .row-3.column-15, .row-5.column-15, .row-7.column-15, .row-9.column-15, .row-11.column-15, .row-13.column-15, .row-15.column-15, .row-17.column-15, .row-19.column-15, .row-21.column-15, .row-23.column-15, .row-25.column-15, .row-27.column-15, .row-29.column-15, .row-31.column-15, .row-33.column-15, .row-35.column-15, .row-37.column-15, .row-39.column-15  {
+		left: -12.66vw;
+	}
+
+	.row-1.column-16, .row-3.column-16, .row-5.column-16, .row-7.column-16, .row-9.column-16, .row-11.column-16, .row-13.column-16, .row-15.column-16, .row-17.column-16, .row-19.column-16, .row-21.column-16, .row-23.column-16, .row-25.column-16, .row-27.column-16, .row-29.column-16, .row-31.column-16, .row-33.column-16, .row-35.column-16, .row-37.column-16, .row-39.column-16  {
+		left: -3.42vw;
+	}
+
+	.row-1.column-17, .row-3.column-17, .row-5.column-17, .row-7.column-17, .row-9.column-17, .row-11.column-17, .row-13.column-17, .row-15.column-17, .row-17.column-17, .row-19.column-17, .row-21.column-17, .row-23.column-17, .row-25.column-17, .row-27.column-17, .row-29.column-17, .row-31.column-17, .row-33.column-17, .row-35.column-17, .row-37.column-17, .row-39.column-17  {
+		left: 5.82vw;
+	}
+
+	.row-1.column-18, .row-3.column-18, .row-5.column-18, .row-7.column-18, .row-9.column-18, .row-11.column-18, .row-13.column-18, .row-15.column-18, .row-17.column-18, .row-19.column-18, .row-21.column-18, .row-23.column-18, .row-25.column-18, .row-27.column-18, .row-29.column-18, .row-31.column-18, .row-33.column-18, .row-35.column-18, .row-37.column-18, .row-39.column-18  {
+		left: 15.06vw;
+	}
+
+	.row-1.column-19, .row-3.column-19, .row-5.column-19, .row-7.column-19, .row-9.column-19, .row-11.column-19, .row-13.column-19, .row-15.column-19, .row-17.column-19, .row-19.column-19, .row-21.column-19, .row-23.column-19, .row-25.column-19, .row-27.column-19, .row-29.column-19, .row-31.column-19, .row-33.column-19, .row-35.column-19, .row-37.column-19, .row-39.column-19  {
+		left: 24.30vw;
+	}
+
+	.row-1.column-20, .row-3.column-20, .row-5.column-20, .row-7.column-20, .row-9.column-20, .row-11.column-20, .row-13.column-20, .row-15.column-20, .row-17.column-20, .row-19.column-20, .row-21.column-20, .row-23.column-20, .row-25.column-20, .row-27.column-20, .row-29.column-20, .row-31.column-20, .row-33.column-20, .row-35.column-20, .row-37.column-20, .row-39.column-20  {
+		left: 33.54vw;
+	}
+
+	.row-1.column-21, .row-3.column-21, .row-5.column-21, .row-7.column-21, .row-9.column-21, .row-11.column-21, .row-13.column-21, .row-15.column-21, .row-17.column-21, .row-19.column-21, .row-21.column-21, .row-23.column-21, .row-25.column-21, .row-27.column-21, .row-29.column-21, .row-31.column-21, .row-33.column-21, .row-35.column-21, .row-37.column-21, .row-39.column-21  {
+		left: 42.78vw;
+	}
+
+	.row-1.column-22, .row-3.column-22, .row-5.column-22, .row-7.column-22, .row-9.column-22, .row-11.column-22, .row-13.column-22, .row-15.column-22, .row-17.column-22, .row-19.column-22, .row-21.column-22, .row-23.column-22, .row-25.column-22, .row-27.column-22, .row-29.column-22, .row-31.column-22, .row-33.column-22, .row-35.column-22, .row-37.column-22, .row-39.column-22  {
+		left: 52.02vw;
+	}
+
+	.row-1.column-23, .row-3.column-23, .row-5.column-23, .row-7.column-23, .row-9.column-23, .row-11.column-23, .row-13.column-23, .row-15.column-23, .row-17.column-23, .row-19.column-23, .row-21.column-23, .row-23.column-23, .row-25.column-23, .row-27.column-23, .row-29.column-23, .row-31.column-23, .row-33.column-23, .row-35.column-23, .row-37.column-23, .row-39.column-23  {
+		left: 61.26vw;
+	}
+
+	.row-1.column-24, .row-3.column-24, .row-5.column-24, .row-7.column-24, .row-9.column-24, .row-11.column-24, .row-13.column-24, .row-15.column-24, .row-17.column-24, .row-19.column-24, .row-21.column-24, .row-23.column-24, .row-25.column-24, .row-27.column-24, .row-29.column-24, .row-31.column-24, .row-33.column-24, .row-35.column-24, .row-37.column-24, .row-39.column-24  {
+		left: 70.50vw;
+	}
+
+	.row-1.column-25, .row-3.column-25, .row-5.column-25, .row-7.column-25, .row-9.column-25, .row-11.column-25, .row-13.column-25, .row-15.column-25, .row-17.column-25, .row-19.column-25, .row-21.column-25, .row-23.column-25, .row-25.column-25, .row-27.column-25, .row-29.column-25, .row-31.column-25, .row-33.column-25, .row-35.column-25, .row-37.column-25, .row-39.column-25  {
+		left: 79.74vw;
+	}
+
+	.row-1.column-26, .row-3.column-26, .row-5.column-26, .row-7.column-26, .row-9.column-26, .row-11.column-26, .row-13.column-26, .row-15.column-26, .row-17.column-26, .row-19.column-26, .row-21.column-26, .row-23.column-26, .row-25.column-26, .row-27.column-26, .row-29.column-26, .row-31.column-26, .row-33.column-26, .row-35.column-26, .row-37.column-26, .row-39.column-26  {
+		left: 88.98vw;
+	}
+
+	.row-1.column-27, .row-3.column-27, .row-5.column-27, .row-7.column-27, .row-9.column-27, .row-11.column-27, .row-13.column-27, .row-15.column-27, .row-17.column-27, .row-19.column-27, .row-21.column-27, .row-23.column-27, .row-25.column-27, .row-27.column-27, .row-29.column-27, .row-31.column-27, .row-33.column-27, .row-35.column-27, .row-37.column-27, .row-39.column-27  {
+		left: 98.22vw;
+	}
+
+	.row-1.column-28, .row-3.column-28, .row-5.column-28, .row-7.column-28, .row-9.column-28, .row-11.column-28, .row-13.column-28, .row-15.column-28, .row-17.column-28, .row-19.column-28, .row-21.column-28, .row-23.column-28, .row-25.column-28, .row-27.column-28, .row-29.column-28, .row-31.column-28, .row-33.column-28, .row-35.column-28, .row-37.column-28, .row-39.column-28  {
+		left: 107.46vw;
+	}
+
+	.row-1.column-29, .row-3.column-29, .row-5.column-29, .row-7.column-29, .row-9.column-29, .row-11.column-29, .row-13.column-29, .row-15.column-29, .row-17.column-29, .row-19.column-29, .row-21.column-29, .row-23.column-29, .row-25.column-29, .row-27.column-29, .row-29.column-29, .row-31.column-29, .row-33.column-29, .row-35.column-29, .row-37.column-29, .row-39.column-29  {
+		left: 116.70vw;
+	}
+
+	.row-1.column-30, .row-3.column-30, .row-5.column-30, .row-7.column-30, .row-9.column-30, .row-11.column-30, .row-13.column-30, .row-15.column-30, .row-17.column-30, .row-19.column-30, .row-21.column-30, .row-23.column-30, .row-25.column-30, .row-27.column-30, .row-29.column-30, .row-31.column-30, .row-33.column-30, .row-35.column-30, .row-37.column-30, .row-39.column-30  {
+		left: 125.94vw;
+	}
+
+	.row-1.column-31, .row-3.column-31, .row-5.column-31, .row-7.column-31, .row-9.column-31, .row-11.column-31, .row-13.column-31, .row-15.column-31, .row-17.column-31, .row-19.column-31, .row-21.column-31, .row-23.column-31, .row-25.column-31, .row-27.column-31, .row-29.column-31, .row-31.column-31, .row-33.column-31, .row-35.column-31, .row-37.column-31, .row-39.column-31  {
+		left: 135.18vw;
+	}
+
+	.row-1.column-32, .row-3.column-32, .row-5.column-32, .row-7.column-32, .row-9.column-32, .row-11.column-32, .row-13.column-32, .row-15.column-32, .row-17.column-32, .row-19.column-32, .row-21.column-32, .row-23.column-32, .row-25.column-32, .row-27.column-32, .row-29.column-32, .row-31.column-32, .row-33.column-32, .row-35.column-32, .row-37.column-32, .row-39.column-32  {
+		left: 144.42vw;
+	}
+
+	.row-1.column-33, .row-3.column-33, .row-5.column-33, .row-7.column-33, .row-9.column-33, .row-11.column-33, .row-13.column-33, .row-15.column-33, .row-17.column-33, .row-19.column-33, .row-21.column-33, .row-23.column-33, .row-25.column-33, .row-27.column-33, .row-29.column-33, .row-31.column-33, .row-33.column-33, .row-35.column-33, .row-37.column-33, .row-39.column-33  {
+		left: 153.66vw;
+	}
+
+	.row-1.column-34, .row-3.column-34, .row-5.column-34, .row-7.column-34, .row-9.column-34, .row-11.column-34, .row-13.column-34, .row-15.column-34, .row-17.column-34, .row-19.column-34, .row-21.column-34, .row-23.column-34, .row-25.column-34, .row-27.column-34, .row-29.column-34, .row-31.column-34, .row-33.column-34, .row-35.column-34, .row-37.column-34, .row-39.column-34  {
+		left: 162.90vw;
+	}
+
+	.row-1.column-35, .row-3.column-35, .row-5.column-35, .row-7.column-35, .row-9.column-35, .row-11.column-35, .row-13.column-35, .row-15.column-35, .row-17.column-35, .row-19.column-35, .row-21.column-35, .row-23.column-35, .row-25.column-35, .row-27.column-35, .row-29.column-35, .row-31.column-35, .row-33.column-35, .row-35.column-35, .row-37.column-35, .row-39.column-35  {
+		left: 172.14vw;
+	}
+
+	.row-1.column-36, .row-3.column-36, .row-5.column-36, .row-7.column-36, .row-9.column-36, .row-11.column-36, .row-13.column-36, .row-15.column-36, .row-17.column-36, .row-19.column-36, .row-21.column-36, .row-23.column-36, .row-25.column-36, .row-27.column-36, .row-29.column-36, .row-31.column-36, .row-33.column-36, .row-35.column-36, .row-37.column-36, .row-39.column-36  {
+		left: 181.38vw;
+	}
+
+	.row-1.column-37, .row-3.column-37, .row-5.column-37, .row-7.column-37, .row-9.column-37, .row-11.column-37, .row-13.column-37, .row-15.column-37, .row-17.column-37, .row-19.column-37, .row-21.column-37, .row-23.column-37, .row-25.column-37, .row-27.column-37, .row-29.column-37, .row-31.column-37, .row-33.column-37, .row-35.column-37, .row-37.column-37, .row-39.column-37  {
+		left: 190.62vw;
+	}
+
+	.row-1.column-38, .row-3.column-38, .row-5.column-38, .row-7.column-38, .row-9.column-38, .row-11.column-38, .row-13.column-38, .row-15.column-38, .row-17.column-38, .row-19.column-38, .row-21.column-38, .row-23.column-38, .row-25.column-38, .row-27.column-38, .row-29.column-38, .row-31.column-38, .row-33.column-38, .row-35.column-38, .row-37.column-38, .row-39.column-38  {
+		left: 199.86vw;
+	}
+
+	.row-1.column-39, .row-3.column-39, .row-5.column-39, .row-7.column-39, .row-9.column-39, .row-11.column-39, .row-13.column-39, .row-15.column-39, .row-17.column-39, .row-19.column-39, .row-21.column-39, .row-23.column-39, .row-25.column-39, .row-27.column-39, .row-29.column-39, .row-31.column-39, .row-33.column-39, .row-35.column-39, .row-37.column-39, .row-39.column-39  {
+		left: 209.10vw;
+	}
+
+
+	.row-0 {
+		top: -148.5vw;
+	}
+
+	.row-1 {
+		top: -140.5vw;
+	}
+
+	.row-2 {
+		top: -132.5vw;
+	}
+
+	.row-3 {
+		top: -124.5vw;
+	}
+
+	.row-4 {
+		top: -116.5vw;
+	}
+
+	.row-5 {
+		top: -108.5vw;
+	}
+
+	.row-6 {
+		top: -100.5vw;
+	}
+
+	.row-7 {
+		top: -92.5vw;
+	}
+
+	.row-8 {
+		top: -84.5vw;
+	}
+
+	.row-9 {
+		top: -76.5vw;
+	}
+
+	.row-10 {
+		top: -68.5vw;
+	}
+
+	.row-11 {
+		top: -60.5vw;
+	}
+
+	.row-12 {
+		top: -52.5vw;
+	}
+
+	.row-13 {
+		top: -44.5vw;
+	}
+
+	.row-14 {
+		top: -36.5vw;
+	}
+
+	.row-15 {
+		top: -28.5vw;
+	}
+
+	.row-16 {
+		top: -20.5vw;
+	}
+
+	.row-17 {
+		top: -12.5vw;
+	}
+
+	.row-18 {
+		top: -4.5vw;
+	}
+
+	.row-19 {
+		top: 3.5vw;
+	}
+
+	.row-20 {
+		top: 11.5vw;
+	}
+
+	.row-21 {
+		top: 19.5vw;
+	}
+
+	.row-22 {
+		top: 27.5vw;
+	}
+
+	.row-23 {
+		top: 35.5vw;
+	}
+
+	.row-24 {
+		top: 43.5vw;
+	}
+
+	.row-25 {
+		top: 51.5vw;
+	}
+
+	.row-26 {
+		top: 59.5vw;
+	}
+
+	.row-27 {
+		top: 67.5vw;
+	}
+
+	.row-28 {
+		top: 75.5vw;
+	}
+
+	.row-29 {
+		top: 83.5vw;
+	}
+
+	.row-30 {
+		top: 91.5vw;
+	}
+
+	.row-31 {
+		top: 99.5vw;
+	}
+
+	.row-32 {
+		top: 107.5vw;
+	}
+
+	.row-33 {
+		top: 115.5vw;
+	}
+
+	.row-34 {
+		top: 123.5vw;
+	}
+
+	.row-35 {
+		top: 131.5vw;
+	}
+
+	.row-36 {
+		top: 139.5vw;
+	}
+
+	.row-37 {
+		top: 147.5vw;
+	}
+
+	.row-38 {
+		top: 155.5vw;
+	}
+
+	.row-39 {
+		top: 163.5vw;
+	}
+
+	.modal {
+		justify-content: start;
+		padding-top: 3vw;
+	}
+
+	.modal-card, .modal-content {
+		margin: 0vw 3vw;
+		width: 60%!important;
+	}
+
+	.modal-card-body {
+		padding: 2.5vw 2.5vw 1.5vw 2.5vw;
+	}
+
+	.modal.is-active .modalButtonsToCenter {
+		margin:0 auto!important;
+	}
+
+	.modal.is-active .modalButtonsToCenter .button {
+		display:inline-flex!important;
+	}
+
+	.modal-card-head {
+		border-bottom: .2vw solid #dbdbdb;
+		border-top-left-radius: 1vw;
+		border-top-right-radius: 1vw;
+		padding: 2vw 2vw 0vw 2vw;
+	}
+
+	.modal-card-foot {
+		padding: 1.2vw;
+		border-bottom-left-radius: 1vw;
+		border-bottom-right-radius: 1vw;
+		border-top: .2vw solid #dbdbdb;
+	}
+
+	.modal.is-active .modal-card .modal-card-title {
+		font-size: 2.4vw;
+	}
+
+	.modal.is-active p {
+		font-size: 1.8vw;
+		margin-bottom: 1.8vw;
+		line-height: 2.45vw;
+	}
+
+	.notification {
+		padding: 2.5vw 2.5vw 3vw 2.5vw;
+	}
+
+	.delete, .modal-close {
+		height: 3vw;
+		max-height: 3vw;
+		max-width: 3vw;
+		min-height: 3vw;
+		min-width: 3vw;
+		width: 3vw;
+		margin-top: -2vw;
+	}
+
+	#keyboardKeysModal .modal-content .title.is-6 {
+		margin: 0vw 0vw 0vw 0vw;
+		padding: 0vw 0vw 0vw 0vw;
+	}
+
+	#keyboardKeysModal .modal-content #keyboardMoveKeysImg {
+		display: block;
+		margin: 2vw auto 3vw;
+		width: 32vw;
+	}
+
+	#keyboardKeysModal .modal-content #keyboardRotateKeysImg {
+		display: block;
+		margin: 2vw auto 3vw;
+		width: 17vw;
+	}
+
+	#noValidPlacementModal .modal-content, #noValidPlacementNatureCubeModal .modal-content {
+		width: 42vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .invalidTokenImg, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg {
+		position: relative;
+		height: 7vw;
+		width: 6vw;
+		margin: 0vw auto 2vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .invalidTokenImg .removedToken, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg .removedToken {
+		position: absolute;
+		width: 6.5vw;
+		max-width: 6.5vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .invalidTokenImg .removeTokenRedCross, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg .removeTokenRedCross {
+		position: absolute;
+		width: 3.4vw;
+		top: -1.5vw;
+		right: -1.5vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .noValidPlacementButtonContainer, #noValidPlacementNatureCubeModal .modal-content .notification .noValidPlacementButtonContainer {
+		margin: 0 auto 1vw;
+		width: 29.2vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .noValidPlacementButtonContainer .button, #noValidPlacementNatureCubeModal .modal-content .notification .noValidPlacementButtonContainer .button {
+		margin: 0vw .5vw;
+		width: 12vw;
+		font-size: 1.55vw;
+		display: inline-flex;
+	}
+
+	#allDuplicateTokensModal .modal-content .notification #duplicateImgContainer {
+		display: block;
+		margin: 0 auto 2vw;
+		width: 6vw;
+	}
+
+	#allDuplicateTokensModal .modal-content .notification #duplicateImgContainer .duplicateTokenExample {
+		width: 6vw;
+		max-width: 6vw;
+	}
+
+	#natureCubesPlaceTileModal .modal-content p, #natureCubesPlaceTokenModal .modal-content p {
+		margin: 1vw 0vw 3vw;
+	}
+
+	#natureTokenTrackerContainer {
+		width: 12vw;
+		margin: 0 auto 1vw;
+	}
+
+	#natureTokenTrackerContainer #natureTokenImage {
+		width: 5vw;
+	}
+
+	#natureTokenTrackerContainer #natureTokenAmount {
+		margin-left: .5vw;
+		margin-top: 1.6vw;
+	}
+
+	#natureTokenTrackerContainer #natureTokenAmount p.title.is-3,
+	#natureTokenTrackerContainer #natureTokenAmount p.title.is-4 {
+		font-size:3vw;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card {
+		width: 90%!important;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-body .natureTokenContent {
+		margin-bottom: 2vw;
+ 	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter .button span {
+		margin: 0vw 0.5vw;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubeClearAllTokens {
+		border: .2vw solid #f14668;
+	}
+
+	#natureCubesClearAnyNumberOfTokensModal.modal.notificationModal.is-active .modal-content {
+		width: 54%!important;
+	}
+
+	#natureCubesPlaceTileModal.modal.notificationModal.is-active .modal-content,
+	#natureCubesPlaceTokenModal.modal.notificationModal.is-active .modal-content,
+	#lastTurnModal.modal.notificationModal.is-active .modal-content {
+		width: 34%!important;
+	}
+
+	#natureCubesPlaceTileModal.modal.notificationModal.is-active .modal-content .notification,
+	#natureCubesPlaceTokenModal.modal.notificationModal.is-active .modal-content .notification,
+	#natureCubesClearAnyNumberOfTokensModal.modal.notificationModal.is-active .modal-content .notification,
+	#lastTurnModal.modal.notificationModal.is-active .modal-content .notification {
+		padding: 3.5vw 3.5vw 3vw 2.5vw;
+	}
+	
+	#natureCubesPlaceTileModal.modal.notificationModal.is-active .modal-content .notification .delete.closeModalTrigger,
+	#natureCubesPlaceTokenModal.modal.notificationModal.is-active .modal-content .notification .delete.closeModalTrigger,
+	#natureCubesClearAnyNumberOfTokensModal.modal.notificationModal.is-active .modal-content .notification .delete.closeModalTrigger,
+	#lastTurnModal.modal.notificationModal.is-active .modal-content .notification .delete.closeModalTrigger {
+		margin-top: 0vw;
+	}
+
+	#lastTurnModal.modal.notificationModal.is-active .modal-content .notification .button.closeModalTrigger {
+		margin:0 auto;
+	}
+
+	#confirmClearSelectedTokens, #selectAllTokensToClear {
+		font-size: 1.3vw;
+		width: 17vw!important;
+		right: 1.3vw!important;
+	}
+
+	#confirmClearSelectedTokens {
+		top: -10vw;
+	}
+
+	#confirmClearSelectedTokens.revealButton {
+		top: 0vw;
+	}
+
+	#selectAllTokensToClear {
+		top: -4.5vw;
+	}
+
+	#selectAllTokensToClear.revealButton {
+		top: 5.5vw;
+	}
+
+	.tokenTileContainer.natureCubeClearTokens,
+	.tokenTileContainer.natureCubeClearTokens .tileContainer,
+	.tokenTileContainer.natureCubeClearTokens .tokenContainer {
+		transition: all .7s ease-in-out;
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer .tileContainer {
+		width: 7.35vw;
+		height: 8.45vw;
+		margin-top: 1.3vw;
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer .tokenContainer {
+		margin-right: 1.5vw;
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="0"] {
+		top: 9.8vw;
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="1"] {
+		top: 19.1vw;
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="2"] {
+		top: 28.6vw;
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="3"] {
+		top: 38.3vw;
+	}
+
+	body.gameOver #mapContainer {
+		height: 40vw;
+		width: 57vw;
+	}
+
+	#allEndGameScoringCategories #mobileScoringGoalsContainer {
+		display:block;
+	}
+
+	#allEndGameScoringCategories #scoringGoalsContainer {
+		display:none;
+	}
+		
+	#allEndGameScoringCategories {
+		display: none;
+		margin-top: 0vw;
+		margin-bottom: 1vw;
+	}
+
+	#mobileScoringGoalsContainer {
+		height: 6.3vw;
+		width: 58vw;
+		margin: 0vw 0vw 1.8vw 0vw;
+		float: right;
+	}
+
+	#mobileScoringGoalsContainer .mobileGoalScoringThumbnailContainer {
+		position: relative;
+		float: left;
+		height: 8.5vw;
+		width: 8vw;
+		margin: 0vw 2vw;
+	}
+
+	#mobileScoringGoalsContainer #scoringTable-mobileFinalScoringModalTrigger {
+		float: left;
+		height: 6.2vw;
+		width: 8.54vw;
+		margin-right: 0vw;
+		position: relative;
+		cursor: pointer;
+		cursor: hand;
+	}
+
+	#mobileScoringGoalsContainer #scoringTable-mobileFinalScoringModalTrigger #scoringThumbnail {
+		position: absolute;
+		width: 100%;
+		right: 0vw;
+	}
+
+	#mobileScoringGoalsContainer .mobileGoalScoringThumbnailContainer {
+		position: relative;
+		float: left;
+		height: 6.4vw;
+		width: 6vw;
+		margin: 0vw 0vw 0vw 2.9vw;
+	}
+
+	#mobileScoringGoalsContainer .mobileGoalScoringThumbnailContainer:not(.inactiveMobileScoringItemTrigger) {
+		cursor: pointer;
+		cursor: hand;
+	}
+
+	#mobileScoringGoalsContainer .mobileGoalScoringThumbnailContainer .mobileGoalScoringThumbnail {
+		position: absolute;
+		width: 100%;
+		right: 0vw;
+	}
+
+	#mobileScoringGoalsContainer .mobileFinalScoringItemTrigger .mobileGoalScoringTransparentLayer {
+		position: absolute;
+		z-index: 2;
+		right: 0vw;
+		top: 0vw;
+		width: 100%;
+		display: block;
+	}
+
+	#mobileScoringGoalsContainer #scoringTable-mobileFinalScoringModalTrigger .mobileActiveScoringFrame,
+	 #mobileScoringGoalsContainer #scoringTable-mobileFinalScoringModalTrigger .mobileHoverScoringFrame {
+		position: absolute;
+		z-index: 1;
+		right: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		max-width: 100%;
+		max-height: 100%;
+		display: none;
+	}
+
+	#mobileScoringGoalsContainer .mobileGoalScoringThumbnailContainer .mobileActiveScoringFrame,
+	#mobileScoringGoalsContainer .mobileGoalScoringThumbnailContainer .mobileHoverScoringFrame {
+		position: absolute;
+		z-index: 1;
+		right: 0px;
+		top: 0px;
+		width: 100%;
+		height: 97%;
+		max-width: 100%;
+		max-height: 97%;
+		display: none;
+	}
+
+	#tileTokenContainer.finalScoring {
+		margin: 0vw 2vw 0vw 1vw;
+		padding-left: 0vw;
+		width: 29.9vw;
+		height: 39.3vw;
+	}
+
+	#tileTokenContainer.finalScoring .finalScoringItem {
+		top: 0vw;
+		left: 0vw;
+	}
+
+	#scoringTable-finalScoringContainer #wildlifeScoringTable {
+		top: 0vw;
+		left: 6.3vw;
+		width: 6vw;
+	}
+
+	#wildlifeScoringTable.finalScoringTable input, #wildlifeScoringTable.finalScoringTable input:focus, #scoringTable-finalScoringContainer #wildlifeScoringTable.finalScoringTable .scoreCell .scoreCellText, #scoringTable-finalScoringContainer #wildlifeScoringTable.finalScoringTable .subtotalCell .subtotalText {
+		font-size: 2.3vw;
+		margin: 0vw auto -0.3vw;
+		width: 5.5vw;
+		height: 5vw;
+		padding: 1.2vw 0vw .5vw;
+	}
+
+	#scoringTable-finalScoringContainer #habitatScoringTable {
+		left: 18.5vw;
+		top: 5vw;
+	}
+
+	#scoringTable-finalScoringContainer #habitatBonusScoringTable {
+		left: 24vw;
+		top: 5vw;
+	}
+
+	#habitatScoringTable.finalScoringTable input,
+	#habitatScoringTable.finalScoringTable input:focus,
+	#habitatScoringTable.finalScoringTable .scoreCell .scoreCellText,
+	#habitatScoringTable.finalScoringTable .subtotalCell .subtotalText,
+	#habitatBonusScoringTable.finalScoringTable input,
+	#habitatBonusScoringTable.finalScoringTable input:focus,
+	#habitatBonusScoringTable.finalScoringTable .scoreCell .scoreCellText,
+	#habitatBonusScoringTable.finalScoringTable .subtotalCell .subtotalText {
+		font-size: 2.3vw;
+		margin: 0vw auto -0.3vw;
+		width: 5.5vw;
+		height: 5vw;
+		padding: 1vw 0vw .5vw;
+	}
+
+	#scoringTable-finalScoringContainer #finalScore {
+		top: 34.7vw;
+		left: 6vw;
+		font-size: 2vw;
+	}
+
+	#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualScoringInput {
+		position: absolute;
+		left: 8.7vw;
+		padding: 1.3vw 0vw 1.1vw;
+		width: 17vw;
+		height: 7vw;
+		font-size: 2.7vw;
+	}
+
+	#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo.finalScoringItem {
+		top: -1vw;
+		width: 31vw;
+	}
+
+	#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer {
+		position: relative;
+		height: 7vw;
+		width: 26vw;
+		margin: 1vw auto 0vw;
+	}
+
+	#tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualWildlifeScore-mobileBackground {
+		display:none;
+	}
+
+	#lastTurnModal .modal-content p {
+		font-size: 1.8vw;
+		margin-bottom: 2vw;
+	}
+
+	.mapTileContainer.placedTile .debugTileCoords {
+		top: 0vw;
+		left: 0vw;
+		font-size: 2.6vw;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubeClearAnyTokens.button {
+		display:inline-flex!important;
+	}
+	  
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubeClearSomeTokens.button {
+		display:none!important;
+	}
+
+}
+
+@media screen and (max-width: 599px) {
+
+	body {
+		/* padding-bottom: 15vw; */
+		padding-bottom: 0vw;
+	}
+
+	#ks-container {
+		position: absolute;
+		top: -.3vw;
+		width: 100%;
+		height: 11vw;
+		transition: all .7s ease-in-out;
+	}
+
+	#ks-container #ks-background p {
+		font-size: 3.2vw;
+		margin: .6vw 0vw 2vw 0vw;
+	}
+
+	#ks-container #kickstartImg {
+		display:none;
+	}
+
+	#container {
+		width: 100vw;
+		padding-top: 4vw;
+	}
+
+	#mainCascadiaTitle {
+		margin: 6vw 0vw 0vw!important;
+	}
+
+	#mainCascadiaTitle img {
+		width: 85vw;
+	}
+
+	.subtitle.is-6 {
+		font-size: 3.7vw;
+		line-height: 4.9vw;
+		width: 90vw;
+		margin: 4vw auto 4vw;
+	}
+
+	.title.is-5 {
+		font-size: 3.9vw;
+		margin-bottom: 2.5vw;
+		line-height: 5vw;
+	}
+
+	.button {
+		display: block;
+		height: 8.2vw!important;
+		width: auto!important;
+		font-size: 3.4vw!important;
+		border-radius: 0.8vw!important;
+		border-width: .3vw!important;
+		margin-top: 0vw!important;
+		margin-bottom: 0vw!important;
+		margin-left: 2vw!important;
+		margin-right: 2vw!important;
+		padding-bottom: .1vw!important;
+		padding-left: 4vw!important;
+		padding-right: 4vw!important;
+		padding-top: 0vw!important;
+	}
+
+	#homepageButtonContainer {
+		margin: 0vw auto 5vw;
+		width: 72vw;
+	}
+
+	#homepageButtonContainer .button {
+		padding-left: 5vw!important;
+		padding-right: 5vw!important;
+		width: 31vw!important;
+	}
+
+	.modal.is-active .modalButtonsToCenter .button {
+		padding-left: 7vw!important;
+		padding-right: 7vw!important;
+	}
+
+	#goalTilesContainer {
+		margin-top: 3vw;
+	}
+
+	#goalTilesContainer #goalList {
+		width: 93vw;
+		margin: 5vw auto 0;
+	}
+
+	#goalTilesContainer #goalList li {
+		width: 49%;
+		margin: 0vw 0vw 3vw 0vw;
+	}
+
+	#goalTilesContainer #goalList li .goalScoring {
+		width: 88%;
+		margin: 0vw 0vw 0vw 0vw;
+	}
+
+	.modal-card, .modal-content {
+		margin: 0vw 1vw;
+		width: 94%!important;
+	}
+
+	.modal.is-active .modal-card .modal-card-title {
+		font-size: 4.9vw;
+		margin-bottom: 0vw;
+	}
+
+	.modal-card-head {
+		border-bottom: .2vw solid #dbdbdb;
+		border-top-left-radius: 1vw;
+		border-top-right-radius: 1vw;
+		padding: 3vw 2vw 2vw 3vw;
+	}
+
+	.modal-card-body {
+		padding: 2.5vw 2.5vw 2.5vw 2.5vw;
+	}
+
+	.modal-card-foot {
+		padding: 2.2vw 2.2vw 2.2vw 2.2vw;
+	}
+
+	.delete, .modal-close {
+		height: 5vw;
+		max-height: 5vw;
+		max-width: 5vw;
+		min-height: 5vw;
+		min-width: 5vw;
+		width: 5vw;
+		margin-top: -1vw;
+	}
+
+	.goalScoringModalImg {
+		width: 86%;
+	}
+
+	.modal.is-active p {
+		font-size: 3.7vw;
+		margin-bottom: 3.8vw;
+		line-height: 5vw;
+	}
+
+	.notification {
+		padding: 4.5vw 5.5vw 6vw 5.5vw;
+	}
+
+	body.gameView #mainCascadiaTitle {
+		display: block;
+		margin: 2vw 0vw 0vw!important;
+	}
+
+	body.gameView #mobileCascadiaTitle {
+		display: none;
+	}
+
+	body.gameView #container {
+		padding-top: 0vw;
+	}
+
+	#allButtonsContainer {
+		width: 98vw;
+		float: none;
+		margin: 4vw auto 0vw;
+		height: 26vw;
+	}
+
+	#mobileButtonsContainer {
+		display: block;
+		height: 8.4vw;
+		width: 99vw;
+		margin: 0vw auto 1.3vw;
+		float: none;
+	}
+
+	#gameLayer #allButtonsContainer #mobileButtonsContainer .button {
+		margin-left: 1vw!important;
+		margin-right: 1vw!important;
+		width: 29vw!important;
+		padding-left: 2.8vw!important;
+		padding-right: 2.8vw!important;
+	}
+
+	#gameLayer #allButtonsContainer #mobileButtonsContainer .useNatureCube.button {
+		display:block;
+	}
+
+	#gameLayer #allButtonsContainer #gameButtonsContainer .useNatureCube.button {
+		display:none;
+	}
+
+	#turnsAndNatureTokenContainer {
+		display:none
+	}
+
+	/* #turnsAndNatureTokenContainer p {
+		font-size: 2.15vw;
+		float: left;
+		margin: 0vw 0vw 0vw 0vw;
+	}
+
+	#turnsAndNatureTokenContainer p:not(:last-child) {
+		margin: 0vw 2.5vw 0vw .3vw;
+	} */
+
+	#mobileTurnsAndNatureTokenContainer {
+		display: block;
+		width: 77vw;
+		height: 4vw;
+		margin: 4vw auto 0vw;
+		padding: 0vw 0vw 0vw 1vw;
+	}
+
+	#mobileTurnsAndNatureTokenContainer p {
+		font-size: 4.5vw;
+		margin: 0vw 0vw 0vw 0vw;
+	}
+	
+	#mobileTurnsAndNatureTokenContainer .turnsLeftElement {
+		float: left;
+	}
+
+	#mobileTurnsAndNatureTokenContainer .natureTokensElement {
+		float: right;
+	}
+
+	/* #mobileTurnsAndNatureTokenContainer p:not(:last-child) {
+		margin: 0vw 16.1vw 0vw 0.3vw;
+	} */
+
+	#mobileTurnsAndNatureTokenContainer p span {
+		font-weight: bold;
+	}
+
+	#gameButtonsContainer {
+		height: 8.2vw;
+		width: 98vw;
+		float: none;
+		margin: 0vw auto;
+		padding-left: 0vw;
+	}
+
+	#gameLayer #allButtonsContainer #gameButtonsContainer .button {
+		padding-left: 3vw!important;
+		padding-right: 3vw!important;
+		margin-left: 1vw!important;
+		margin-right: 1vw!important;
+	}
+
+	#gameLayer #allButtonsContainer #gameButtonsContainer .useNatureCube.button {
+		display:none;
+	}
+
+	#tileTokenContainer {
+		margin: 4.7vw auto 0vw;
+		padding-left: 0vw;
+		height: 34.8vw;
+		width: 89.3vw;
+		float: none;
+		padding-top: 0vw;
+		padding-bottom: 0vw;
+		transition: all .7s ease-in-out;
+	}
+
+	.tokenTileContainer {
+		height: 32.8vw;
+		width: 16.65vw;
+	}
+
+	.tileContainer, #tileTokenContainer.natureCubeTempDimensions .tokenTileContainer .tileContainer {
+		position: absolute;
+		top: 0vw;
+		left: 0vw;
+		width: 16.35vw;
+		height: 18.8vw;
+		margin-top: 0vw;
+		margin-left: 0vw;
+	}
+
+	.tileContainer .habitatTile {
+		position: absolute;
+		width: 16.35vw;
+		height: 18.8vw;
+		max-width: 100%;
+		max-height: 100%;
+		transition: all .1s ease-in-out;
+	}
+
+	.tokenTileContainer .tokenContainer {
+		width: 9.7vw;
+		height: 9.7vw;
+		position: absolute;
+		bottom: 1.2vw;
+		left: 3.4vw;
+		line-height: 0vw;
+		margin-top: 0vw;
+		margin-bottom: 0vw;
+		margin-right: 0vw;
+		margin-left: 0vw;
+		float: none;
+	}
+
+	.token, .tokenTileContainer .tokenContainer .token, .tokenTileContainer .tokenContainer .activeToken, .tokenTileContainer .tokenContainer .duplicateToken {
+		width: 9.7vw;
+		max-width: 9.7vw;
+	}
+
+	.mapTileContainer.placedTile .wildlifeToken, .mapTileContainer.placedTile .activeToken, .mapTileContainer.placedTile .placedWildlifeToken, .mapTileContainer.placedTile .placedFlippedToken, .mapTileContainer.placedTile .flippedToken {
+		position: absolute;
+		width: 9.7vw;
+		max-width: 9.7vw;
+		top: 4.4vw;
+		left: 3.4vw;
+	}
+
+	.tokenContainer .redCross {
+		top: -2.7vw;
+		right: -2.7vw;
+		width: 7vw;
+	}
+
+	.tokenTileContainer[tokentilenum="-2"] {
+		top: 0vw;
+		left: -48vw;
+	}
+
+	.tokenTileContainer[tokentilenum="-1"] {
+		top: 0vw;
+		left: -24vw;
+	}
+
+	.tokenTileContainer[tokentilenum="0"] {
+		top: 0vw;
+		left: 0vw;
+	}
+
+	.tokenTileContainer[tokentilenum="1"] {
+		top: 0vw;
+		left: 24vw;
+	}
+
+	.tokenTileContainer[tokentilenum="2"] {
+		top: 0vw;
+		left: 48vw;
+	}
+
+	.tokenTileContainer[tokentilenum="3"] {
+		top: 0vw;
+		left: 72vw;
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions {
+		height: 47.8vw;
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="0"] {
+		top: 12vw!important;		
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="1"] {
+		top: 12vw!important;		
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="2"] {
+		top: 12vw!important;		
+	}
+
+	#tileTokenContainer.natureCubeTempDimensions .tokenTileContainer[tokentilenum="3"] {
+		top: 12vw!important;		
+	}
+
+	#mapContainer, body.gameOver #mapContainer {
+		border: .3vw solid #000;
+		float: none;
+		margin: 0vw auto;
+		height: 64vw;
+		width: 92.25vw;
+		border-radius: 2vw;
+	}
+
+	#mapContainer .zoomOptions {
+		display:none;
+	}
+
+	#mapContainer .mapNavigation {
+		display:none;
+	}
+
+	#mobileMapNavContainer {
+		display: block;
+		position: relative;
+		width: 91.25vw;
+		height: 38vw;
+		margin: 0.7vw auto 0vw;
+	}
+
+	#mobileMapNavContainer .zoomOptions {
+		position: absolute;
+		top: 2vw;
+		left: 1vw;
+		z-index: 5;
+		width: 12.5vw;
+	}
+
+	#mobileMapNavContainer .zoomOptions .zoomOption {
+		width: 12.5vw;
+		margin: 1.5vw 0vw 4.3vw 0vw;
+		float: right;
+	}
+
+	#mobileMapNavContainer .mapNavigation {
+		position: absolute;
+		top: 1.4vw;
+		right: -2vw;
+		z-index: 5;
+		width: 35vw;
+		height: 34.2vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .navBackground {
+		width: 100%;
+	}
+
+	#mobileMapNavContainer .mapNavigation .navArrow {
+		width: 11vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .upArrow {
+		right: 11.7vw;
+		top: 4.3vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .rightArrow {
+		right: 2.3vw;
+		top: 13.6vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .downArrow {
+		right: 12.3vw;
+		top: 23vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .leftArrow {
+		right: 21.7vw;
+		top: 13.2vw;
+	}
+
+	#mapContainer #placedTileOptions {
+		display:none;
+	}
+
+	#mobileMapNavContainer .mobileTilePlacementOptions {
+		width: 38vw;
+		height: 37vw;
+		position: absolute;
+		top: 0vw;
+		left: 17.2vw;
+		transition: all .7s ease-in-out;
+	}
+
+	#mobileMapNavContainer .mobileTilePlacementOptions.inactiveTileOptions {
+		opacity: .2;
+	}
+
+	#mobileMapNavContainer .mobileTilePlacementOptions.activeTileOptions {
+		opacity: 1;
+	}
+
+	#mobileMapNavContainer .mobileTilePlacementOptions .mobileTilePlacementOption {
+		float: left;
+		width: 13vw;
+		margin: 2vw 3vw;
+	}
+
+	#mobileMapNavContainer .mobileTilePlacementOptions.activeTileOptions .mobileTilePlacementOption {
+		cursor:hand;
+		cursor:pointer;
+	}
+
+	#mapContainer #mapHiddenOverlay {
+		transform-origin: 21.1% 14%;
+	}
+
+	.mapTileContainer .tileOutline {
+		position: absolute;
+		width: 16.35vw;
+	}
+
+	.mapTileContainer.potentialPlacement .tileContainer:not(.lockedIn), .mapTileContainer.potentialNatureCubeTilePlacement .tileContainer {
+		width: 16.35vw;
+    	height: 18.8vw;
+	}
+
+	#mapContainer #mapHiddenOverlay .mapTileContainer {
+		width: 16.35vw;
+    	height: 18.8vw;
+	}
+	
+
+	#mapContainer #mapHiddenOverlay .mapTileContainer .validPlacement {
+		width: 16.35vw;
+	}
+
+	.row-0.column-0, .row-2.column-0, .row-4.column-0, .row-6.column-0, .row-8.column-0, .row-10.column-0, .row-12.column-0, .row-14.column-0, .row-16.column-0, .row-18.column-0, .row-20.column-0, .row-22.column-0, .row-24.column-0, .row-26.column-0, .row-28.column-0, .row-30.column-0, .row-32.column-0, .row-34.column-0, .row-36.column-0, .row-38.column-0  {
+		left: -289.22vw;
+	}
+
+	.row-0.column-1, .row-2.column-1, .row-4.column-1, .row-6.column-1, .row-8.column-1, .row-10.column-1, .row-12.column-1, .row-14.column-1, .row-16.column-1, .row-18.column-1, .row-20.column-1, .row-22.column-1, .row-24.column-1, .row-26.column-1, .row-28.column-1, .row-30.column-1, .row-32.column-1, .row-34.column-1, .row-36.column-1, .row-38.column-1  {
+		left: -272.87vw;
+	}
+
+	.row-0.column-2, .row-2.column-2, .row-4.column-2, .row-6.column-2, .row-8.column-2, .row-10.column-2, .row-12.column-2, .row-14.column-2, .row-16.column-2, .row-18.column-2, .row-20.column-2, .row-22.column-2, .row-24.column-2, .row-26.column-2, .row-28.column-2, .row-30.column-2, .row-32.column-2, .row-34.column-2, .row-36.column-2, .row-38.column-2  {
+		left: -256.52vw;
+	}
+
+	.row-0.column-3, .row-2.column-3, .row-4.column-3, .row-6.column-3, .row-8.column-3, .row-10.column-3, .row-12.column-3, .row-14.column-3, .row-16.column-3, .row-18.column-3, .row-20.column-3, .row-22.column-3, .row-24.column-3, .row-26.column-3, .row-28.column-3, .row-30.column-3, .row-32.column-3, .row-34.column-3, .row-36.column-3, .row-38.column-3  {
+		left: -240.17vw;
+	}
+
+	.row-0.column-4, .row-2.column-4, .row-4.column-4, .row-6.column-4, .row-8.column-4, .row-10.column-4, .row-12.column-4, .row-14.column-4, .row-16.column-4, .row-18.column-4, .row-20.column-4, .row-22.column-4, .row-24.column-4, .row-26.column-4, .row-28.column-4, .row-30.column-4, .row-32.column-4, .row-34.column-4, .row-36.column-4, .row-38.column-4  {
+		left: -223.82vw;
+	}
+
+	.row-0.column-5, .row-2.column-5, .row-4.column-5, .row-6.column-5, .row-8.column-5, .row-10.column-5, .row-12.column-5, .row-14.column-5, .row-16.column-5, .row-18.column-5, .row-20.column-5, .row-22.column-5, .row-24.column-5, .row-26.column-5, .row-28.column-5, .row-30.column-5, .row-32.column-5, .row-34.column-5, .row-36.column-5, .row-38.column-5  {
+		left: -207.47vw;
+	}
+
+	.row-0.column-6, .row-2.column-6, .row-4.column-6, .row-6.column-6, .row-8.column-6, .row-10.column-6, .row-12.column-6, .row-14.column-6, .row-16.column-6, .row-18.column-6, .row-20.column-6, .row-22.column-6, .row-24.column-6, .row-26.column-6, .row-28.column-6, .row-30.column-6, .row-32.column-6, .row-34.column-6, .row-36.column-6, .row-38.column-6  {
+		left: -191.12vw;
+	}
+
+	.row-0.column-7, .row-2.column-7, .row-4.column-7, .row-6.column-7, .row-8.column-7, .row-10.column-7, .row-12.column-7, .row-14.column-7, .row-16.column-7, .row-18.column-7, .row-20.column-7, .row-22.column-7, .row-24.column-7, .row-26.column-7, .row-28.column-7, .row-30.column-7, .row-32.column-7, .row-34.column-7, .row-36.column-7, .row-38.column-7  {
+		left: -174.77vw;
+	}
+
+	.row-0.column-8, .row-2.column-8, .row-4.column-8, .row-6.column-8, .row-8.column-8, .row-10.column-8, .row-12.column-8, .row-14.column-8, .row-16.column-8, .row-18.column-8, .row-20.column-8, .row-22.column-8, .row-24.column-8, .row-26.column-8, .row-28.column-8, .row-30.column-8, .row-32.column-8, .row-34.column-8, .row-36.column-8, .row-38.column-8  {
+		left: -158.42vw;
+	}
+
+	.row-0.column-9, .row-2.column-9, .row-4.column-9, .row-6.column-9, .row-8.column-9, .row-10.column-9, .row-12.column-9, .row-14.column-9, .row-16.column-9, .row-18.column-9, .row-20.column-9, .row-22.column-9, .row-24.column-9, .row-26.column-9, .row-28.column-9, .row-30.column-9, .row-32.column-9, .row-34.column-9, .row-36.column-9, .row-38.column-9  {
+		left: -142.07vw;
+	}
+
+	.row-0.column-10, .row-2.column-10, .row-4.column-10, .row-6.column-10, .row-8.column-10, .row-10.column-10, .row-12.column-10, .row-14.column-10, .row-16.column-10, .row-18.column-10, .row-20.column-10, .row-22.column-10, .row-24.column-10, .row-26.column-10, .row-28.column-10, .row-30.column-10, .row-32.column-10, .row-34.column-10, .row-36.column-10, .row-38.column-10  {
+		left: -125.72vw;
+	}
+
+	.row-0.column-11, .row-2.column-11, .row-4.column-11, .row-6.column-11, .row-8.column-11, .row-10.column-11, .row-12.column-11, .row-14.column-11, .row-16.column-11, .row-18.column-11, .row-20.column-11, .row-22.column-11, .row-24.column-11, .row-26.column-11, .row-28.column-11, .row-30.column-11, .row-32.column-11, .row-34.column-11, .row-36.column-11, .row-38.column-11  {
+		left: -109.37vw;
+	}
+
+	.row-0.column-12, .row-2.column-12, .row-4.column-12, .row-6.column-12, .row-8.column-12, .row-10.column-12, .row-12.column-12, .row-14.column-12, .row-16.column-12, .row-18.column-12, .row-20.column-12, .row-22.column-12, .row-24.column-12, .row-26.column-12, .row-28.column-12, .row-30.column-12, .row-32.column-12, .row-34.column-12, .row-36.column-12, .row-38.column-12  {
+		left: -93.02vw;
+	}
+
+	.row-0.column-13, .row-2.column-13, .row-4.column-13, .row-6.column-13, .row-8.column-13, .row-10.column-13, .row-12.column-13, .row-14.column-13, .row-16.column-13, .row-18.column-13, .row-20.column-13, .row-22.column-13, .row-24.column-13, .row-26.column-13, .row-28.column-13, .row-30.column-13, .row-32.column-13, .row-34.column-13, .row-36.column-13, .row-38.column-13  {
+		left: -76.67vw;
+	}
+
+	.row-0.column-14, .row-2.column-14, .row-4.column-14, .row-6.column-14, .row-8.column-14, .row-10.column-14, .row-12.column-14, .row-14.column-14, .row-16.column-14, .row-18.column-14, .row-20.column-14, .row-22.column-14, .row-24.column-14, .row-26.column-14, .row-28.column-14, .row-30.column-14, .row-32.column-14, .row-34.column-14, .row-36.column-14, .row-38.column-14  {
+		left: -60.32vw;
+	}
+
+	.row-0.column-15, .row-2.column-15, .row-4.column-15, .row-6.column-15, .row-8.column-15, .row-10.column-15, .row-12.column-15, .row-14.column-15, .row-16.column-15, .row-18.column-15, .row-20.column-15, .row-22.column-15, .row-24.column-15, .row-26.column-15, .row-28.column-15, .row-30.column-15, .row-32.column-15, .row-34.column-15, .row-36.column-15, .row-38.column-15  {
+		left: -43.97vw;
+	}
+
+	.row-0.column-16, .row-2.column-16, .row-4.column-16, .row-6.column-16, .row-8.column-16, .row-10.column-16, .row-12.column-16, .row-14.column-16, .row-16.column-16, .row-18.column-16, .row-20.column-16, .row-22.column-16, .row-24.column-16, .row-26.column-16, .row-28.column-16, .row-30.column-16, .row-32.column-16, .row-34.column-16, .row-36.column-16, .row-38.column-16  {
+		left: -27.62vw;
+	}
+
+	.row-0.column-17, .row-2.column-17, .row-4.column-17, .row-6.column-17, .row-8.column-17, .row-10.column-17, .row-12.column-17, .row-14.column-17, .row-16.column-17, .row-18.column-17, .row-20.column-17, .row-22.column-17, .row-24.column-17, .row-26.column-17, .row-28.column-17, .row-30.column-17, .row-32.column-17, .row-34.column-17, .row-36.column-17, .row-38.column-17  {
+		left: -11.27vw;
+	}
+
+	.row-0.column-18, .row-2.column-18, .row-4.column-18, .row-6.column-18, .row-8.column-18, .row-10.column-18, .row-12.column-18, .row-14.column-18, .row-16.column-18, .row-18.column-18, .row-20.column-18, .row-22.column-18, .row-24.column-18, .row-26.column-18, .row-28.column-18, .row-30.column-18, .row-32.column-18, .row-34.column-18, .row-36.column-18, .row-38.column-18  {
+		left: 5.08vw;
+	}
+
+	.row-0.column-19, .row-2.column-19, .row-4.column-19, .row-6.column-19, .row-8.column-19, .row-10.column-19, .row-12.column-19, .row-14.column-19, .row-16.column-19, .row-18.column-19, .row-20.column-19, .row-22.column-19, .row-24.column-19, .row-26.column-19, .row-28.column-19, .row-30.column-19, .row-32.column-19, .row-34.column-19, .row-36.column-19, .row-38.column-19  {
+		left: 21.43vw;
+	}
+
+	.row-0.column-20, .row-2.column-20, .row-4.column-20, .row-6.column-20, .row-8.column-20, .row-10.column-20, .row-12.column-20, .row-14.column-20, .row-16.column-20, .row-18.column-20, .row-20.column-20, .row-22.column-20, .row-24.column-20, .row-26.column-20, .row-28.column-20, .row-30.column-20, .row-32.column-20, .row-34.column-20, .row-36.column-20, .row-38.column-20  {
+		left: 37.78vw;
+	}
+
+	.row-0.column-21, .row-2.column-21, .row-4.column-21, .row-6.column-21, .row-8.column-21, .row-10.column-21, .row-12.column-21, .row-14.column-21, .row-16.column-21, .row-18.column-21, .row-20.column-21, .row-22.column-21, .row-24.column-21, .row-26.column-21, .row-28.column-21, .row-30.column-21, .row-32.column-21, .row-34.column-21, .row-36.column-21, .row-38.column-21  {
+		left: 54.13vw;
+	}
+
+	.row-0.column-22, .row-2.column-22, .row-4.column-22, .row-6.column-22, .row-8.column-22, .row-10.column-22, .row-12.column-22, .row-14.column-22, .row-16.column-22, .row-18.column-22, .row-20.column-22, .row-22.column-22, .row-24.column-22, .row-26.column-22, .row-28.column-22, .row-30.column-22, .row-32.column-22, .row-34.column-22, .row-36.column-22, .row-38.column-22  {
+		left: 70.48vw;
+	}
+
+	.row-0.column-23, .row-2.column-23, .row-4.column-23, .row-6.column-23, .row-8.column-23, .row-10.column-23, .row-12.column-23, .row-14.column-23, .row-16.column-23, .row-18.column-23, .row-20.column-23, .row-22.column-23, .row-24.column-23, .row-26.column-23, .row-28.column-23, .row-30.column-23, .row-32.column-23, .row-34.column-23, .row-36.column-23, .row-38.column-23  {
+		left: 86.83vw;
+	}
+
+	.row-0.column-24, .row-2.column-24, .row-4.column-24, .row-6.column-24, .row-8.column-24, .row-10.column-24, .row-12.column-24, .row-14.column-24, .row-16.column-24, .row-18.column-24, .row-20.column-24, .row-22.column-24, .row-24.column-24, .row-26.column-24, .row-28.column-24, .row-30.column-24, .row-32.column-24, .row-34.column-24, .row-36.column-24, .row-38.column-24  {
+		left: 103.18vw;
+	}
+
+	.row-0.column-25, .row-2.column-25, .row-4.column-25, .row-6.column-25, .row-8.column-25, .row-10.column-25, .row-12.column-25, .row-14.column-25, .row-16.column-25, .row-18.column-25, .row-20.column-25, .row-22.column-25, .row-24.column-25, .row-26.column-25, .row-28.column-25, .row-30.column-25, .row-32.column-25, .row-34.column-25, .row-36.column-25, .row-38.column-25  {
+		left: 119.53vw;
+	}
+
+	.row-0.column-26, .row-2.column-26, .row-4.column-26, .row-6.column-26, .row-8.column-26, .row-10.column-26, .row-12.column-26, .row-14.column-26, .row-16.column-26, .row-18.column-26, .row-20.column-26, .row-22.column-26, .row-24.column-26, .row-26.column-26, .row-28.column-26, .row-30.column-26, .row-32.column-26, .row-34.column-26, .row-36.column-26, .row-38.column-26  {
+		left: 135.88vw;
+	}
+
+	.row-0.column-27, .row-2.column-27, .row-4.column-27, .row-6.column-27, .row-8.column-27, .row-10.column-27, .row-12.column-27, .row-14.column-27, .row-16.column-27, .row-18.column-27, .row-20.column-27, .row-22.column-27, .row-24.column-27, .row-26.column-27, .row-28.column-27, .row-30.column-27, .row-32.column-27, .row-34.column-27, .row-36.column-27, .row-38.column-27  {
+		left: 152.23vw;
+	}
+
+	.row-0.column-28, .row-2.column-28, .row-4.column-28, .row-6.column-28, .row-8.column-28, .row-10.column-28, .row-12.column-28, .row-14.column-28, .row-16.column-28, .row-18.column-28, .row-20.column-28, .row-22.column-28, .row-24.column-28, .row-26.column-28, .row-28.column-28, .row-30.column-28, .row-32.column-28, .row-34.column-28, .row-36.column-28, .row-38.column-28  {
+		left: 168.58vw;
+	}
+
+	.row-0.column-29, .row-2.column-29, .row-4.column-29, .row-6.column-29, .row-8.column-29, .row-10.column-29, .row-12.column-29, .row-14.column-29, .row-16.column-29, .row-18.column-29, .row-20.column-29, .row-22.column-29, .row-24.column-29, .row-26.column-29, .row-28.column-29, .row-30.column-29, .row-32.column-29, .row-34.column-29, .row-36.column-29, .row-38.column-29  {
+		left: 184.93vw;
+	}
+
+	.row-0.column-30, .row-2.column-30, .row-4.column-30, .row-6.column-30, .row-8.column-30, .row-10.column-30, .row-12.column-30, .row-14.column-30, .row-16.column-30, .row-18.column-30, .row-20.column-30, .row-22.column-30, .row-24.column-30, .row-26.column-30, .row-28.column-30, .row-30.column-30, .row-32.column-30, .row-34.column-30, .row-36.column-30, .row-38.column-30  {
+		left: 201.28vw;
+	}
+
+	.row-0.column-31, .row-2.column-31, .row-4.column-31, .row-6.column-31, .row-8.column-31, .row-10.column-31, .row-12.column-31, .row-14.column-31, .row-16.column-31, .row-18.column-31, .row-20.column-31, .row-22.column-31, .row-24.column-31, .row-26.column-31, .row-28.column-31, .row-30.column-31, .row-32.column-31, .row-34.column-31, .row-36.column-31, .row-38.column-31  {
+		left: 217.63vw;
+	}
+
+	.row-0.column-32, .row-2.column-32, .row-4.column-32, .row-6.column-32, .row-8.column-32, .row-10.column-32, .row-12.column-32, .row-14.column-32, .row-16.column-32, .row-18.column-32, .row-20.column-32, .row-22.column-32, .row-24.column-32, .row-26.column-32, .row-28.column-32, .row-30.column-32, .row-32.column-32, .row-34.column-32, .row-36.column-32, .row-38.column-32  {
+		left: 233.98vw;
+	}
+
+	.row-0.column-33, .row-2.column-33, .row-4.column-33, .row-6.column-33, .row-8.column-33, .row-10.column-33, .row-12.column-33, .row-14.column-33, .row-16.column-33, .row-18.column-33, .row-20.column-33, .row-22.column-33, .row-24.column-33, .row-26.column-33, .row-28.column-33, .row-30.column-33, .row-32.column-33, .row-34.column-33, .row-36.column-33, .row-38.column-33  {
+		left: 250.33vw;
+	}
+
+	.row-0.column-34, .row-2.column-34, .row-4.column-34, .row-6.column-34, .row-8.column-34, .row-10.column-34, .row-12.column-34, .row-14.column-34, .row-16.column-34, .row-18.column-34, .row-20.column-34, .row-22.column-34, .row-24.column-34, .row-26.column-34, .row-28.column-34, .row-30.column-34, .row-32.column-34, .row-34.column-34, .row-36.column-34, .row-38.column-34  {
+		left: 266.68vw;
+	}
+
+	.row-0.column-35, .row-2.column-35, .row-4.column-35, .row-6.column-35, .row-8.column-35, .row-10.column-35, .row-12.column-35, .row-14.column-35, .row-16.column-35, .row-18.column-35, .row-20.column-35, .row-22.column-35, .row-24.column-35, .row-26.column-35, .row-28.column-35, .row-30.column-35, .row-32.column-35, .row-34.column-35, .row-36.column-35, .row-38.column-35  {
+		left: 283.03vw;
+	}
+
+	.row-0.column-36, .row-2.column-36, .row-4.column-36, .row-6.column-36, .row-8.column-36, .row-10.column-36, .row-12.column-36, .row-14.column-36, .row-16.column-36, .row-18.column-36, .row-20.column-36, .row-22.column-36, .row-24.column-36, .row-26.column-36, .row-28.column-36, .row-30.column-36, .row-32.column-36, .row-34.column-36, .row-36.column-36, .row-38.column-36  {
+		left: 299.38vw;
+	}
+
+	.row-0.column-37, .row-2.column-37, .row-4.column-37, .row-6.column-37, .row-8.column-37, .row-10.column-37, .row-12.column-37, .row-14.column-37, .row-16.column-37, .row-18.column-37, .row-20.column-37, .row-22.column-37, .row-24.column-37, .row-26.column-37, .row-28.column-37, .row-30.column-37, .row-32.column-37, .row-34.column-37, .row-36.column-37, .row-38.column-37  {
+		left: 315.73vw;
+	}
+
+	.row-0.column-38, .row-2.column-38, .row-4.column-38, .row-6.column-38, .row-8.column-38, .row-10.column-38, .row-12.column-38, .row-14.column-38, .row-16.column-38, .row-18.column-38, .row-20.column-38, .row-22.column-38, .row-24.column-38, .row-26.column-38, .row-28.column-38, .row-30.column-38, .row-32.column-38, .row-34.column-38, .row-36.column-38, .row-38.column-38  {
+		left: 332.08vw;
+	}
+
+	.row-0.column-39, .row-2.column-39, .row-4.column-39, .row-6.column-39, .row-8.column-39, .row-10.column-39, .row-12.column-39, .row-14.column-39, .row-16.column-39, .row-18.column-39, .row-20.column-39, .row-22.column-39, .row-24.column-39, .row-26.column-39, .row-28.column-39, .row-30.column-39, .row-32.column-39, .row-34.column-39, .row-36.column-39, .row-38.column-39  {
+		left: 348.43vw;
+	}
+
+	.row-1.column-0, .row-3.column-0, .row-5.column-0, .row-7.column-0, .row-9.column-0, .row-11.column-0, .row-13.column-0, .row-15.column-0, .row-17.column-0, .row-19.column-0, .row-21.column-0, .row-23.column-0, .row-25.column-0, .row-27.column-0, .row-29.column-0, .row-31.column-0, .row-33.column-0, .row-35.column-0, .row-37.column-0, .row-39.column-0  {
+		left: -280.93vw;
+	}
+
+	.row-1.column-1, .row-3.column-1, .row-5.column-1, .row-7.column-1, .row-9.column-1, .row-11.column-1, .row-13.column-1, .row-15.column-1, .row-17.column-1, .row-19.column-1, .row-21.column-1, .row-23.column-1, .row-25.column-1, .row-27.column-1, .row-29.column-1, .row-31.column-1, .row-33.column-1, .row-35.column-1, .row-37.column-1, .row-39.column-1  {
+		left: -264.58vw;
+	}
+
+	.row-1.column-2, .row-3.column-2, .row-5.column-2, .row-7.column-2, .row-9.column-2, .row-11.column-2, .row-13.column-2, .row-15.column-2, .row-17.column-2, .row-19.column-2, .row-21.column-2, .row-23.column-2, .row-25.column-2, .row-27.column-2, .row-29.column-2, .row-31.column-2, .row-33.column-2, .row-35.column-2, .row-37.column-2, .row-39.column-2  {
+		left: -248.23vw;
+	}
+
+	.row-1.column-3, .row-3.column-3, .row-5.column-3, .row-7.column-3, .row-9.column-3, .row-11.column-3, .row-13.column-3, .row-15.column-3, .row-17.column-3, .row-19.column-3, .row-21.column-3, .row-23.column-3, .row-25.column-3, .row-27.column-3, .row-29.column-3, .row-31.column-3, .row-33.column-3, .row-35.column-3, .row-37.column-3, .row-39.column-3  {
+		left: -231.88vw;
+	}
+
+	.row-1.column-4, .row-3.column-4, .row-5.column-4, .row-7.column-4, .row-9.column-4, .row-11.column-4, .row-13.column-4, .row-15.column-4, .row-17.column-4, .row-19.column-4, .row-21.column-4, .row-23.column-4, .row-25.column-4, .row-27.column-4, .row-29.column-4, .row-31.column-4, .row-33.column-4, .row-35.column-4, .row-37.column-4, .row-39.column-4  {
+		left: -215.53vw;
+	}
+
+	.row-1.column-5, .row-3.column-5, .row-5.column-5, .row-7.column-5, .row-9.column-5, .row-11.column-5, .row-13.column-5, .row-15.column-5, .row-17.column-5, .row-19.column-5, .row-21.column-5, .row-23.column-5, .row-25.column-5, .row-27.column-5, .row-29.column-5, .row-31.column-5, .row-33.column-5, .row-35.column-5, .row-37.column-5, .row-39.column-5  {
+		left: -199.18vw;
+	}
+
+	.row-1.column-6, .row-3.column-6, .row-5.column-6, .row-7.column-6, .row-9.column-6, .row-11.column-6, .row-13.column-6, .row-15.column-6, .row-17.column-6, .row-19.column-6, .row-21.column-6, .row-23.column-6, .row-25.column-6, .row-27.column-6, .row-29.column-6, .row-31.column-6, .row-33.column-6, .row-35.column-6, .row-37.column-6, .row-39.column-6  {
+		left: -182.83vw;
+	}
+
+	.row-1.column-7, .row-3.column-7, .row-5.column-7, .row-7.column-7, .row-9.column-7, .row-11.column-7, .row-13.column-7, .row-15.column-7, .row-17.column-7, .row-19.column-7, .row-21.column-7, .row-23.column-7, .row-25.column-7, .row-27.column-7, .row-29.column-7, .row-31.column-7, .row-33.column-7, .row-35.column-7, .row-37.column-7, .row-39.column-7  {
+		left: -166.48vw;
+	}
+
+	.row-1.column-8, .row-3.column-8, .row-5.column-8, .row-7.column-8, .row-9.column-8, .row-11.column-8, .row-13.column-8, .row-15.column-8, .row-17.column-8, .row-19.column-8, .row-21.column-8, .row-23.column-8, .row-25.column-8, .row-27.column-8, .row-29.column-8, .row-31.column-8, .row-33.column-8, .row-35.column-8, .row-37.column-8, .row-39.column-8  {
+		left: -150.13vw;
+	}
+
+	.row-1.column-9, .row-3.column-9, .row-5.column-9, .row-7.column-9, .row-9.column-9, .row-11.column-9, .row-13.column-9, .row-15.column-9, .row-17.column-9, .row-19.column-9, .row-21.column-9, .row-23.column-9, .row-25.column-9, .row-27.column-9, .row-29.column-9, .row-31.column-9, .row-33.column-9, .row-35.column-9, .row-37.column-9, .row-39.column-9  {
+		left: -133.78vw;
+	}
+
+	.row-1.column-10, .row-3.column-10, .row-5.column-10, .row-7.column-10, .row-9.column-10, .row-11.column-10, .row-13.column-10, .row-15.column-10, .row-17.column-10, .row-19.column-10, .row-21.column-10, .row-23.column-10, .row-25.column-10, .row-27.column-10, .row-29.column-10, .row-31.column-10, .row-33.column-10, .row-35.column-10, .row-37.column-10, .row-39.column-10  {
+		left: -117.43vw;
+	}
+
+	.row-1.column-11, .row-3.column-11, .row-5.column-11, .row-7.column-11, .row-9.column-11, .row-11.column-11, .row-13.column-11, .row-15.column-11, .row-17.column-11, .row-19.column-11, .row-21.column-11, .row-23.column-11, .row-25.column-11, .row-27.column-11, .row-29.column-11, .row-31.column-11, .row-33.column-11, .row-35.column-11, .row-37.column-11, .row-39.column-11  {
+		left: -101.08vw;
+	}
+
+	.row-1.column-12, .row-3.column-12, .row-5.column-12, .row-7.column-12, .row-9.column-12, .row-11.column-12, .row-13.column-12, .row-15.column-12, .row-17.column-12, .row-19.column-12, .row-21.column-12, .row-23.column-12, .row-25.column-12, .row-27.column-12, .row-29.column-12, .row-31.column-12, .row-33.column-12, .row-35.column-12, .row-37.column-12, .row-39.column-12  {
+		left: -84.73vw;
+	}
+
+	.row-1.column-13, .row-3.column-13, .row-5.column-13, .row-7.column-13, .row-9.column-13, .row-11.column-13, .row-13.column-13, .row-15.column-13, .row-17.column-13, .row-19.column-13, .row-21.column-13, .row-23.column-13, .row-25.column-13, .row-27.column-13, .row-29.column-13, .row-31.column-13, .row-33.column-13, .row-35.column-13, .row-37.column-13, .row-39.column-13  {
+		left: -68.38vw;
+	}
+
+	.row-1.column-14, .row-3.column-14, .row-5.column-14, .row-7.column-14, .row-9.column-14, .row-11.column-14, .row-13.column-14, .row-15.column-14, .row-17.column-14, .row-19.column-14, .row-21.column-14, .row-23.column-14, .row-25.column-14, .row-27.column-14, .row-29.column-14, .row-31.column-14, .row-33.column-14, .row-35.column-14, .row-37.column-14, .row-39.column-14  {
+		left: -52.03vw;
+	}
+
+	.row-1.column-15, .row-3.column-15, .row-5.column-15, .row-7.column-15, .row-9.column-15, .row-11.column-15, .row-13.column-15, .row-15.column-15, .row-17.column-15, .row-19.column-15, .row-21.column-15, .row-23.column-15, .row-25.column-15, .row-27.column-15, .row-29.column-15, .row-31.column-15, .row-33.column-15, .row-35.column-15, .row-37.column-15, .row-39.column-15  {
+		left: -35.68vw;
+	}
+
+	.row-1.column-16, .row-3.column-16, .row-5.column-16, .row-7.column-16, .row-9.column-16, .row-11.column-16, .row-13.column-16, .row-15.column-16, .row-17.column-16, .row-19.column-16, .row-21.column-16, .row-23.column-16, .row-25.column-16, .row-27.column-16, .row-29.column-16, .row-31.column-16, .row-33.column-16, .row-35.column-16, .row-37.column-16, .row-39.column-16  {
+		left: -19.33vw;
+	}
+
+	.row-1.column-17, .row-3.column-17, .row-5.column-17, .row-7.column-17, .row-9.column-17, .row-11.column-17, .row-13.column-17, .row-15.column-17, .row-17.column-17, .row-19.column-17, .row-21.column-17, .row-23.column-17, .row-25.column-17, .row-27.column-17, .row-29.column-17, .row-31.column-17, .row-33.column-17, .row-35.column-17, .row-37.column-17, .row-39.column-17  {
+		left: -2.98vw;
+	}
+
+	.row-1.column-18, .row-3.column-18, .row-5.column-18, .row-7.column-18, .row-9.column-18, .row-11.column-18, .row-13.column-18, .row-15.column-18, .row-17.column-18, .row-19.column-18, .row-21.column-18, .row-23.column-18, .row-25.column-18, .row-27.column-18, .row-29.column-18, .row-31.column-18, .row-33.column-18, .row-35.column-18, .row-37.column-18, .row-39.column-18  {
+		left: 13.37vw;
+	}
+
+	.row-1.column-19, .row-3.column-19, .row-5.column-19, .row-7.column-19, .row-9.column-19, .row-11.column-19, .row-13.column-19, .row-15.column-19, .row-17.column-19, .row-19.column-19, .row-21.column-19, .row-23.column-19, .row-25.column-19, .row-27.column-19, .row-29.column-19, .row-31.column-19, .row-33.column-19, .row-35.column-19, .row-37.column-19, .row-39.column-19  {
+		left: 29.72vw;
+	}
+
+	.row-1.column-20, .row-3.column-20, .row-5.column-20, .row-7.column-20, .row-9.column-20, .row-11.column-20, .row-13.column-20, .row-15.column-20, .row-17.column-20, .row-19.column-20, .row-21.column-20, .row-23.column-20, .row-25.column-20, .row-27.column-20, .row-29.column-20, .row-31.column-20, .row-33.column-20, .row-35.column-20, .row-37.column-20, .row-39.column-20  {
+		left: 46.07vw;
+	}
+
+	.row-1.column-21, .row-3.column-21, .row-5.column-21, .row-7.column-21, .row-9.column-21, .row-11.column-21, .row-13.column-21, .row-15.column-21, .row-17.column-21, .row-19.column-21, .row-21.column-21, .row-23.column-21, .row-25.column-21, .row-27.column-21, .row-29.column-21, .row-31.column-21, .row-33.column-21, .row-35.column-21, .row-37.column-21, .row-39.column-21  {
+		left: 62.42vw;
+	}
+
+	.row-1.column-22, .row-3.column-22, .row-5.column-22, .row-7.column-22, .row-9.column-22, .row-11.column-22, .row-13.column-22, .row-15.column-22, .row-17.column-22, .row-19.column-22, .row-21.column-22, .row-23.column-22, .row-25.column-22, .row-27.column-22, .row-29.column-22, .row-31.column-22, .row-33.column-22, .row-35.column-22, .row-37.column-22, .row-39.column-22  {
+		left: 78.77vw;
+	}
+
+	.row-1.column-23, .row-3.column-23, .row-5.column-23, .row-7.column-23, .row-9.column-23, .row-11.column-23, .row-13.column-23, .row-15.column-23, .row-17.column-23, .row-19.column-23, .row-21.column-23, .row-23.column-23, .row-25.column-23, .row-27.column-23, .row-29.column-23, .row-31.column-23, .row-33.column-23, .row-35.column-23, .row-37.column-23, .row-39.column-23  {
+		left: 95.12vw;
+	}
+
+	.row-1.column-24, .row-3.column-24, .row-5.column-24, .row-7.column-24, .row-9.column-24, .row-11.column-24, .row-13.column-24, .row-15.column-24, .row-17.column-24, .row-19.column-24, .row-21.column-24, .row-23.column-24, .row-25.column-24, .row-27.column-24, .row-29.column-24, .row-31.column-24, .row-33.column-24, .row-35.column-24, .row-37.column-24, .row-39.column-24  {
+		left: 111.47vw;
+	}
+
+	.row-1.column-25, .row-3.column-25, .row-5.column-25, .row-7.column-25, .row-9.column-25, .row-11.column-25, .row-13.column-25, .row-15.column-25, .row-17.column-25, .row-19.column-25, .row-21.column-25, .row-23.column-25, .row-25.column-25, .row-27.column-25, .row-29.column-25, .row-31.column-25, .row-33.column-25, .row-35.column-25, .row-37.column-25, .row-39.column-25  {
+		left: 127.82vw;
+	}
+
+	.row-1.column-26, .row-3.column-26, .row-5.column-26, .row-7.column-26, .row-9.column-26, .row-11.column-26, .row-13.column-26, .row-15.column-26, .row-17.column-26, .row-19.column-26, .row-21.column-26, .row-23.column-26, .row-25.column-26, .row-27.column-26, .row-29.column-26, .row-31.column-26, .row-33.column-26, .row-35.column-26, .row-37.column-26, .row-39.column-26  {
+		left: 144.17vw;
+	}
+
+	.row-1.column-27, .row-3.column-27, .row-5.column-27, .row-7.column-27, .row-9.column-27, .row-11.column-27, .row-13.column-27, .row-15.column-27, .row-17.column-27, .row-19.column-27, .row-21.column-27, .row-23.column-27, .row-25.column-27, .row-27.column-27, .row-29.column-27, .row-31.column-27, .row-33.column-27, .row-35.column-27, .row-37.column-27, .row-39.column-27  {
+		left: 160.52vw;
+	}
+
+	.row-1.column-28, .row-3.column-28, .row-5.column-28, .row-7.column-28, .row-9.column-28, .row-11.column-28, .row-13.column-28, .row-15.column-28, .row-17.column-28, .row-19.column-28, .row-21.column-28, .row-23.column-28, .row-25.column-28, .row-27.column-28, .row-29.column-28, .row-31.column-28, .row-33.column-28, .row-35.column-28, .row-37.column-28, .row-39.column-28  {
+		left: 176.87vw;
+	}
+
+	.row-1.column-29, .row-3.column-29, .row-5.column-29, .row-7.column-29, .row-9.column-29, .row-11.column-29, .row-13.column-29, .row-15.column-29, .row-17.column-29, .row-19.column-29, .row-21.column-29, .row-23.column-29, .row-25.column-29, .row-27.column-29, .row-29.column-29, .row-31.column-29, .row-33.column-29, .row-35.column-29, .row-37.column-29, .row-39.column-29  {
+		left: 193.22vw;
+	}
+
+	.row-1.column-30, .row-3.column-30, .row-5.column-30, .row-7.column-30, .row-9.column-30, .row-11.column-30, .row-13.column-30, .row-15.column-30, .row-17.column-30, .row-19.column-30, .row-21.column-30, .row-23.column-30, .row-25.column-30, .row-27.column-30, .row-29.column-30, .row-31.column-30, .row-33.column-30, .row-35.column-30, .row-37.column-30, .row-39.column-30  {
+		left: 209.57vw;
+	}
+
+	.row-1.column-31, .row-3.column-31, .row-5.column-31, .row-7.column-31, .row-9.column-31, .row-11.column-31, .row-13.column-31, .row-15.column-31, .row-17.column-31, .row-19.column-31, .row-21.column-31, .row-23.column-31, .row-25.column-31, .row-27.column-31, .row-29.column-31, .row-31.column-31, .row-33.column-31, .row-35.column-31, .row-37.column-31, .row-39.column-31  {
+		left: 225.92vw;
+	}
+
+	.row-1.column-32, .row-3.column-32, .row-5.column-32, .row-7.column-32, .row-9.column-32, .row-11.column-32, .row-13.column-32, .row-15.column-32, .row-17.column-32, .row-19.column-32, .row-21.column-32, .row-23.column-32, .row-25.column-32, .row-27.column-32, .row-29.column-32, .row-31.column-32, .row-33.column-32, .row-35.column-32, .row-37.column-32, .row-39.column-32  {
+		left: 242.27vw;
+	}
+
+	.row-1.column-33, .row-3.column-33, .row-5.column-33, .row-7.column-33, .row-9.column-33, .row-11.column-33, .row-13.column-33, .row-15.column-33, .row-17.column-33, .row-19.column-33, .row-21.column-33, .row-23.column-33, .row-25.column-33, .row-27.column-33, .row-29.column-33, .row-31.column-33, .row-33.column-33, .row-35.column-33, .row-37.column-33, .row-39.column-33  {
+		left: 258.62vw;
+	}
+
+	.row-1.column-34, .row-3.column-34, .row-5.column-34, .row-7.column-34, .row-9.column-34, .row-11.column-34, .row-13.column-34, .row-15.column-34, .row-17.column-34, .row-19.column-34, .row-21.column-34, .row-23.column-34, .row-25.column-34, .row-27.column-34, .row-29.column-34, .row-31.column-34, .row-33.column-34, .row-35.column-34, .row-37.column-34, .row-39.column-34  {
+		left: 274.97vw;
+	}
+
+	.row-1.column-35, .row-3.column-35, .row-5.column-35, .row-7.column-35, .row-9.column-35, .row-11.column-35, .row-13.column-35, .row-15.column-35, .row-17.column-35, .row-19.column-35, .row-21.column-35, .row-23.column-35, .row-25.column-35, .row-27.column-35, .row-29.column-35, .row-31.column-35, .row-33.column-35, .row-35.column-35, .row-37.column-35, .row-39.column-35  {
+		left: 291.32vw;
+	}
+
+	.row-1.column-36, .row-3.column-36, .row-5.column-36, .row-7.column-36, .row-9.column-36, .row-11.column-36, .row-13.column-36, .row-15.column-36, .row-17.column-36, .row-19.column-36, .row-21.column-36, .row-23.column-36, .row-25.column-36, .row-27.column-36, .row-29.column-36, .row-31.column-36, .row-33.column-36, .row-35.column-36, .row-37.column-36, .row-39.column-36  {
+		left: 307.67vw;
+	}
+
+	.row-1.column-37, .row-3.column-37, .row-5.column-37, .row-7.column-37, .row-9.column-37, .row-11.column-37, .row-13.column-37, .row-15.column-37, .row-17.column-37, .row-19.column-37, .row-21.column-37, .row-23.column-37, .row-25.column-37, .row-27.column-37, .row-29.column-37, .row-31.column-37, .row-33.column-37, .row-35.column-37, .row-37.column-37, .row-39.column-37  {
+		left: 324.02vw;
+	}
+
+	.row-1.column-38, .row-3.column-38, .row-5.column-38, .row-7.column-38, .row-9.column-38, .row-11.column-38, .row-13.column-38, .row-15.column-38, .row-17.column-38, .row-19.column-38, .row-21.column-38, .row-23.column-38, .row-25.column-38, .row-27.column-38, .row-29.column-38, .row-31.column-38, .row-33.column-38, .row-35.column-38, .row-37.column-38, .row-39.column-38  {
+		left: 340.37vw;
+	}
+
+	.row-1.column-39, .row-3.column-39, .row-5.column-39, .row-7.column-39, .row-9.column-39, .row-11.column-39, .row-13.column-39, .row-15.column-39, .row-17.column-39, .row-19.column-39, .row-21.column-39, .row-23.column-39, .row-25.column-39, .row-27.column-39, .row-29.column-39, .row-31.column-39, .row-33.column-39, .row-35.column-39, .row-37.column-39, .row-39.column-39  {
+		left: 356.72vw;
+	}
+
+	.row-0 {
+		top: -267.5vw;
+	}
+
+	.row-1 {
+		top: -253.4vw;
+	}
+
+	.row-2 {
+		top: -239.3vw;
+	}
+
+	.row-3 {
+		top: -225.2vw;
+	}
+
+	.row-4 {
+		top: -211.1vw;
+	}
+
+	.row-5 {
+		top: -197.0vw;
+	}
+
+	.row-6 {
+		top: -182.9vw;
+	}
+
+	.row-7 {
+		top: -168.8vw;
+	}
+
+	.row-8 {
+		top: -154.7vw;
+	}
+
+	.row-9 {
+		top: -140.6vw;
+	}
+
+	.row-10 {
+		top: -126.5vw;
+	}
+
+	.row-11 {
+		top: -112.4vw;
+	}
+
+	.row-12 {
+		top: -98.3vw;
+	}
+
+	.row-13 {
+		top: -84.2vw;
+	}
+
+	.row-14 {
+		top: -70.1vw;
+	}
+
+	.row-15 {
+		top: -56.0vw;
+	}
+
+	.row-16 {
+		top: -41.9vw;
+	}
+
+	.row-17 {
+		top: -27.8vw;
+	}
+
+	.row-18 {
+		top: -13.7vw;
+	}
+
+	.row-19 {
+		top: .4vw;
+	}
+
+	.row-20 {
+		top: 14.5vw;
+	}
+
+	.row-21 {
+		top: 28.6vw;
+	}
+
+	.row-22 {
+		top: 42.7vw;
+	}
+
+	.row-23 {
+		top: 56.8vw;
+	}
+
+	.row-24 {
+		top: 70.9vw;
+	}
+
+	.row-25 {
+		top: 85.0vw;
+	}
+
+	.row-26 {
+		top: 99.1vw;
+	}
+
+	.row-27 {
+		top: 113.2vw;
+	}
+
+	.row-28 {
+		top: 127.3vw;
+	}
+
+	.row-29 {
+		top: 141.4vw;
+	}
+
+	.row-30 {
+		top: 155.5vw;
+	}
+
+	.row-31 {
+		top: 169.6vw;
+	}
+
+	.row-32 {
+		top: 183.7vw;
+	}
+
+	.row-33 {
+		top: 197.8vw;
+	}
+
+	.row-34 {
+		top: 211.9vw;
+	}
+
+	.row-35 {
+		top: 226.0vw;
+	}
+
+	.row-36 {
+		top: 240.1vw;
+	}
+
+	.row-37 {
+		top: 254.2vw;
+	}
+
+	.row-38 {
+		top: 268.3vw;
+	}
+
+	.row-39 {
+		top: 282.4vw;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container{
+		width: 27vw;
+		transform: rotate(90deg);
+		top: -22.1vw!important;
+	}
+
+
+	#tileTokenContainer #yeti-arm-tile-container.takeTile {
+		right: auto!important;
+		transform: rotate(90deg);
+		top: -4.1vw!important;
+		
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container[removedtilerow="0"] {
+		left: -6vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container[removedtilerow="1"] {
+		left: 18vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container[removedtilerow="2"] {
+		left: 42vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-tile-container[removedtilerow="3"] {
+		left: 66vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container{
+		width: 19vw;
+		transform: rotate(90deg);
+		top: 41vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container.takeToken {
+		right: auto;
+		transform: rotate(90deg);
+		top: 26.5vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container[removedtokenrow="0"] {
+		left: -2vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container[removedtokenrow="1"] {
+		left: 22vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container[removedtokenrow="2"] {
+		left: 46vw!important;
+	}
+
+	#tileTokenContainer #yeti-arm-token-container[removedtokenrow="3"] {
+		left: 70vw!important;
+	}
+
+	#earnedNatureTokenContainer {
+		width: 19.3vw;
+		height: 11.4vw;
+		margin-left: -2vw;
+		opacity: 1;
+	}
+
+	#earnedNatureTokenContainer .earnedNatureToken {
+		width: 9.5vw;
+		max-width: 9.5vw;
+		position: absolute;
+		top: 0vw;
+		left: 0vw;
+	}
+
+	#earnedNatureTokenContainer .plusOneText {
+		position: absolute;
+		top: 2.9vw;
+		right: 0vw;
+		font-size: 8vw;
+		font-weight: bold;
+		color: #26ff00;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: black;
+		letter-spacing: 0vw;
+	}
+
+	#quickViewTabletGoalLayerList {
+		display:none;
+	}
+
+	#quickViewMobileGoalLayer {
+		display:block;
+		margin-top: 5vw;
+	}
+
+	#quickViewMobileGoalLayer #mobileGoalThumbnails {
+		height: 16vw;
+		width: 98vw;
+		margin: 0vw auto 4vw;
+	}
+
+	#quickViewMobileGoalLayer #mobileGoalThumbnails .mobileThumbnail {
+		position: relative;
+		float: left;
+		width: 15vw;
+		height: 15.7vw;
+		margin: 0vw 2vw;
+		cursor:hand;
+		cursor:pointer;
+	}
+
+	#quickViewMobileGoalLayer #mobileGoalThumbnails:not(.activeQuickViewGoal) .mobileThumbnail {
+		cursor:hand;
+		cursor:pointer;
+	}
+
+	#quickViewMobileGoalLayer #mobileGoalThumbnails .mobileThumbnail .mobileThumbnailImg {
+		position: absolute;
+	}
+
+	#quickViewMobileGoalLayer #mobileGoalThumbnails .mobileThumbnail .mobileThumbnailActiveFrame {
+		position: absolute;
+		z-index:1;
+	}
+
+	#quickViewMobileGoalLayer #quickViewMobileGoalFullImages {
+		position: relative;
+		width: 90vw;
+		height: 88vw;
+		margin: 0 auto 1vw;
+	}
+
+	#quickViewMobileGoalLayer #quickViewMobileGoalFullImages .mobileGoalImg {
+		position: absolute;
+		display: none;
+    	width: 90vw;
+	}
+
+	#quickViewMobileGoalLayer #quickViewMobileGoalFullImages .mobileGoalImg.activeQuickViewGoalImg {
+		display: block;
+	}
+
+	#natureTokenTrackerContainer {
+		width: 18vw;
+		margin: 1vw auto 1vw;
+	}
+
+	#natureTokenTrackerContainer #natureTokenImage {
+		width: 9vw;
+	}
+
+	#natureTokenTrackerContainer #natureTokenAmount {
+		margin-left: .5vw;
+		margin-top: 2vw;
+	}
+
+	#natureTokenTrackerContainer #natureTokenAmount p.title.is-3, #natureTokenTrackerContainer #natureTokenAmount p.title.is-4 {
+		font-size: 6vw;
+		margin-bottom: 1.8vw;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-body .natureTokenContent {
+		margin-bottom: 2.5vw;
+	}
+
+	#natureCubesModal.modal.is-active .modalButtonsToCenter {
+		width: 79vw;
+		padding-left: 1vw;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot {
+		padding: 2.2vw 2.2vw 1.2vw 2.2vw;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter .button {
+		margin-left: 1vw!important;
+		margin-right: 1vw!important;
+		padding-left: 3vw!important;
+		padding-right: 3vw!important;
+		margin-bottom: 2vw!important;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter .button.is-danger.closeModalTrigger {
+		width: 24vw!important;
+		margin-left: 1vw!important;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubePickAnyTileToken.button {
+		width: 44.5vw!important;
+		padding-left: 3vw!important;
+		padding-right: 3vw!important;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubeClearAnyTokens.button {
+		display:none!important;
+	}
+	  
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter #natureCubeClearSomeTokens.button {
+		display:inline-flex!important;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-body {
+		padding: 2.5vw 5.5vw 1.5vw 5.5vw;
+	}
+
+	#natureCubesPlaceTileModal.modal.notificationModal.is-active .modal-content .notification, #natureCubesPlaceTokenModal.modal.notificationModal.is-active .modal-content .notification, #natureCubesClearAnyNumberOfTokensModal.modal.notificationModal.is-active .modal-content .notification, #lastTurnModal.modal.notificationModal.is-active .modal-content .notification {
+		padding: 5.5vw 5.5vw 5vw 4.5vw;
+	}
+
+	#natureCubesPlaceTileModal .modal-content p, #natureCubesPlaceTokenModal .modal-content p {
+		margin: 3vw 0vw 4vw;
+	}
+
+	.modal.is-active .modalButtonsToCenter {
+		margin: 1vw auto!important;
+		width: auto;
+	}
+
+	#natureCubesClearAnyNumberOfTokensModal.modal.notificationModal.is-active .modal-content {
+		width: 91%!important;
+	}
+
+	#selectAllTokensToClear, #confirmClearSelectedTokens {
+		top: -9.5vw!important;
+		width: 29vw!important;
+	} 
+
+	#selectAllTokensToClear {
+		right: unset!important;
+		left: 10vw!important;
+	}
+
+	#confirmClearSelectedTokens {
+		right: 13.3vw!important;
+	}
+
+	#selectAllTokensToClear.revealButton, #confirmClearSelectedTokens.revealButton {
+		top: 0vw!important;
+	}
+
+	#natureCubesPlaceTileModal.modal.notificationModal.is-active .modal-content, #natureCubesPlaceTokenModal.modal.notificationModal.is-active .modal-content, #lastTurnModal.modal.notificationModal.is-active .modal-content {
+		width: auto!important;
+		max-width: 80vw;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter .button span {
+		margin: 0vw 1vw;
+	}
+
+	#allDuplicateTokensModal .modal-content .notification #duplicateImgContainer {
+		display: block;
+		margin: 0 auto 5vw;
+		width: 11vw;
+	}
+
+	#allDuplicateTokensModal .modal-content .notification #duplicateImgContainer .duplicateTokenExample {
+		width: 11vw;
+		max-width: 11vw;
+	}
+
+	.button.button-is-centered {
+		margin: 0vw auto!important;
+		padding-left: 7vw!important;
+		padding-right: 7vw!important;
+	}
+
+	#noValidPlacementModal .modal-content .notification .invalidTokenImg, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg {
+		position: relative;
+		height: 12vw;
+		width: 13vw;
+		margin: 0vw auto 2vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .invalidTokenImg .removedToken, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg .removedToken {
+		position: absolute;
+		width: 11.5vw;
+		max-width: 11.5vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .invalidTokenImg .removeTokenRedCross, #noValidPlacementNatureCubeModal .modal-content .notification .invalidTokenImg .removeTokenRedCross {
+		position: absolute;
+		width: 8vw;
+		top: -3vw;
+		right: -1.5vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .noValidPlacementButtonContainer, #noValidPlacementNatureCubeModal .modal-content .notification .noValidPlacementButtonContainer {
+		margin: 4vw auto 0vw;
+		width: 59.2vw;
+	}
+
+	#noValidPlacementModal .modal-content .notification .noValidPlacementButtonContainer .button, #noValidPlacementNatureCubeModal .modal-content .notification .noValidPlacementButtonContainer .button {
+		display: inline-flex;
+		padding-left: 5.5vw!important;
+		padding-right: 5.5vw!important;
+		width: 25vw!important;
+	}
+
+	#lastTurnModal .modal-content p {
+		font-size: 3.7vw;
+		margin-bottom: 3vw;
+	}
+
+	#mobileScoringGoalsContainer #scoringTable-mobileFinalScoringModalTrigger .mobileActiveScoringFrame,
+	#mobileScoringGoalsContainer #scoringTable-mobileFinalScoringModalTrigger .mobileHoverScoringFrame {
+		height: 102%;
+		max-height: 102%;
+	}
+
+	#mobileScoringGoalsContainer {
+		height: 12.3vw;
+		width: 99vw;
+		margin: 4vw auto;
+		float: none;
+	}
+
+	#mobileScoringGoalsContainer #scoringTable-mobileFinalScoringModalTrigger {
+		float: left;
+		height: 12vw;
+		width: 16.54vw;
+		margin-right: 0vw;
+		position: relative;
+		cursor: pointer;
+		cursor: hand;
+	}
+
+	#mobileScoringGoalsContainer .mobileGoalScoringThumbnailContainer {
+		height: 11.4vw;
+		width: 11vw;
+		margin: 0vw 0vw 0vw 4.5vw;
+	}
+
+	body.gameOver {
+		padding-top: 7.4vw;
+	}
+
+	body.gameOver #container #gameLayer {
+		margin-top: 0vw;
+		height: 180vw;
+		display: block;
+		position: relative;
+	}
+
+	body.gameOver #mainCascadiaTitle img {
+		width: 83vw;
+		margin-top: 2vw;
+	}
+
+	body.gameOver #endGameCascadiaTitle {
+		display: none!important;
+	}
+
+	body.gameOver #mobileMapNavContainer .mobileTilePlacementOptions {
+		display:none;
+	}
+
+	body.gameOver #mapContainer .mapNavigation {
+		display: block;
+		position: absolute;
+		top: 0vw;
+		right: 0vw;
+		z-index: 5;
+		width: 23vw;
+		height: 22.5vw;
+	}
+
+	body.gameOver #mapContainer .mapNavigation .navArrow {
+		width: 8vw;
+	}
+
+	body.gameOver #mapContainer .mapNavigation .upArrow {
+		right: 7vw;
+		top: 2.2vw;
+	}
+
+	body.gameOver #mapContainer .mapNavigation .rightArrow {
+		right: 1vw;
+		top: 8.4vw;
+	}
+
+	body.gameOver #mapContainer .mapNavigation .downArrow {
+		right: 7.7vw;
+		top: 14.6vw;
+	}
+
+	body.gameOver #mapContainer .mapNavigation .leftArrow {
+		right: 13.7vw;
+		top: 7.7vw;
+	}
+
+	body.gameOver #mapContainer .zoomOptions {
+		display: block;
+		position: absolute;
+		top: 1vw;
+		left: 1vw;
+		z-index: 5;
+		width: 10vw;
+	}
+
+	body.gameOver #mapContainer .zoomOptions .zoomOption {
+		width: 9vw;
+		margin: 0vw 0vw .5vw 0vw;
+	}
+
+	body.gameOver #mobileMapNavContainer {
+		display: none;
+	}
+
+	body.gameOver #allEndGameScoringCategories {
+		display: none;
+		margin-top: 0vw;
+		margin-bottom: 1vw;
+		width: 13vw;
+		height: 81vw;
+		position: absolute;
+		right: 6.5vw;
+		top: 6.3vw;
+	}
+
+	body.gameOver #mobileScoringGoalsContainer {
+		height: 12.3vw;
+		width: 12vw;
+		height: 83vw;
+		margin: 0vw auto 0vw;
+		float: right;
+	}
+
+	body.gameOver #mobileScoringGoalsContainer #scoringTable-mobileFinalScoringModalTrigger {
+		float: none;
+		height: 8.8vw;
+		width: 12.34vw;
+		margin-right: 0vw;
+		margin-bottom: 3.4vw;
+		position: relative;
+		cursor: pointer;
+		cursor: hand;
+	}
+
+	body.gameOver #mobileScoringGoalsContainer .mobileFinalScoringItemTrigger .mobileActiveScoringFrame,
+	body.gameOver #mobileScoringGoalsContainer .mobileFinalScoringItemTrigger .mobileHoverScoringFrame {
+		position: absolute;
+		z-index: 1;
+		right: 0px;
+		top: 0px;
+		width: 100%;
+		height: 97%;
+		max-width: 100%;
+		max-height: 97%;
+		display: none;
+	}
+
+	body.gameOver #mobileScoringGoalsContainer .mobileGoalScoringThumbnailContainer {
+		height: 13vw;
+		width: 12.34vw;
+		margin: 0vw 0vw 4.1vw;
+		float: none;
+		position: relative;
+	}
+
+	body.gameOver #tileTokenContainer.finalScoring {
+		margin: 0vw 0vw 0vw;
+		padding-left: 0vw;
+		width: 71.4vw;
+		height: 98vw;
+		float: none;
+		position: absolute;
+		left: 4vw;
+		top: 1.4vw;
+	}
+
+	body.gameOver #tileTokenContainer.finalScoring #scoringTable-finalScoringContainer .scoringTableImage  {
+		max-width: 71.4vw;
+		width: 71.4vw;
+	}
+
+	body.gameOver #scoringTable-finalScoringContainer #wildlifeScoringTable {
+		top: 0vw;
+		left: 15.3vw;
+		width: 6vw;
+	}
+
+	body.gameOver #wildlifeScoringTable.finalScoringTable input,
+	body.gameOver #wildlifeScoringTable.finalScoringTable input:focus,
+	body.gameOver #scoringTable-finalScoringContainer #wildlifeScoringTable.finalScoringTable .scoreCell .scoreCellText,
+	body.gameOver #scoringTable-finalScoringContainer #wildlifeScoringTable.finalScoringTable .subtotalCell .subtotalText {
+		font-size: 5.7vw;
+		margin: 0vw auto -0.3vw;
+		width: 13vw;
+		height: 11.7vw;
+		padding: 4.5vw 0vw 0vw;
+	}
+
+	body.gameOver #scoringTable-finalScoringContainer #habitatScoringTable {
+		left: 43.9vw;
+		top: 11.5vw;
+	}
+
+	body.gameOver #scoringTable-finalScoringContainer #habitatBonusScoringTable {
+		left: 57.2vw;
+		top: 11.5vw;
+	}
+
+	body.gameOver #habitatScoringTable.finalScoringTable input,
+	body.gameOver #habitatScoringTable.finalScoringTable input:focus,
+	body.gameOver #habitatScoringTable.finalScoringTable .scoreCell .scoreCellText,
+	body.gameOver #habitatScoringTable.finalScoringTable .subtotalCell .subtotalText,
+	body.gameOver #habitatBonusScoringTable.finalScoringTable input,
+	body.gameOver #habitatBonusScoringTable.finalScoringTable input:focus,
+	body.gameOver #habitatBonusScoringTable.finalScoringTable .scoreCell .scoreCellText,
+	body.gameOver #habitatBonusScoringTable.finalScoringTable .subtotalCell .subtotalText {
+		font-size: 5.7vw;
+		margin: 0vw auto -0.3vw;
+		width: 13vw;
+		height: 11.7vw;
+		padding: 4.5vw 0vw 0vw;
+	}
+
+	body.gameOver #mobileScoringGoalsContainer {
+		width: 13vw;
+		height: 94vw;
+		margin: 0vw auto 0vw;
+		float: right;
+	}
+
+	body.gameOver #tileTokenContainer.finalScoring .finalScoringItem {
+		top: 4.2vw;
+		left: 0vw;
+	}
+
+	body.gameOver #tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo.finalScoringItem {
+		top: 9vw;
+		width: 71.5vw;
+		left: 0vw;
+	}
+
+	body.gameOver #mapContainer {
+		border: .3vw solid #000;
+		float: none;
+		margin: 0vw auto;
+		height: 64vw;
+		width: 92.25vw;
+		border-radius: 2vw;
+		top: 93vw;
+	}
+
+	body.gameOver #ks-container #ks-background p {
+		font-size: 3.4vw;
+		margin-top: 3vw!important;
+		/* margin-top: 0.5vw!important; */
+	}
+
+	body.gameOver #mapContainer {
+		border: .3vw solid #000;
+		float: none;
+		margin: 0vw 0vw 0vw 4vw;
+		height: 64vw;
+		width: 89vw;
+		border-radius: 2vw;
+		top: 104vw;
+	}
+
+	body.gameOver #scoringTable-finalScoringContainer #finalScore {
+		top: 85.1vw;
+		left: 14vw;
+		font-size: 5vw;
+	}
+
+	body.gameOver #tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer {
+		position: relative;
+		height: 14.3vw;
+		width: 71.6vw;
+		margin: 3.7vw auto 0vw;
+	}
+
+	body.gameOver #tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualWildlifeScore-background {
+		display:none;
+	}
+
+	body.gameOver #tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualWildlifeScore-mobileBackground {
+		display:block;
+		position: relative;
+		height: 14.3vw;
+		width: 71.6vw;
+		margin: 3.7vw auto 0vw;
+	}
+
+	body.gameOver #tileTokenContainer.finalScoring .largeWildlifeFinalScoringInfo .individualWildlifeScoringInputContainer .individualScoringInput {
+		position: absolute;
+		left: 17vw;
+		padding: 4.8vw 0vw 1.1vw;
+		width: 54vw;
+		height: 10.5vw;
+		font-size: 6.7vw;
+	}
+
+}
+
+@media screen and (max-width: 389px) {
+
+	#gameLayer #allButtonsContainer #mobileButtonsContainer .button {
+		width: 29.9vw!important;
+	}
+
+	.button {
+        font-size: 3.35vw!important;
+	}
+
+    #allButtonsContainer {
+		width: 98vw;
+		float: none;
+		margin: 4vw auto 0vw;
+		height: 24.2vw;
+	}
+
+	#mobileTurnsAndNatureTokenContainer {
+		display: block;
+		width: 78vw;
+		height: 3.7vw;
+		margin: 2.5vw auto 0vw;
+		padding: 0vw 0vw 0vw 1vw;
+	}
+	
+	#mobileTurnsAndNatureTokenContainer .natureTokensElement {
+		float: right;
+		margin: 0vw 4vw 0vw 0vw;
+    }
+    
+    #mobileTurnsAndNatureTokenContainer p {
+		font-size: 4vw;
+		margin: 0vw 0vw 0vw 0vw;
+    }
+
+    #tileTokenContainer {
+		margin: 3.7vw auto 0vw;
+		padding-left: 0vw;
+		height: 33.5vw;
+		width: 89.3vw;
+		float: none;
+		padding-top: 0vw;
+		padding-bottom: 0vw;
+		transition: all .7s ease-in-out;
+	}
+
+	.tokenTileContainer {
+		height: 31.8vw;
+		width: 16.65vw;
+	}
+	
+	.tokenTileContainer .tokenContainer {
+		bottom: 1vw;
+	}
+
+	#mobileMapNavContainer {
+		display: block;
+		position: relative;
+		width: 73.25vw;
+		height: 26vw;
+		margin: 1.7vw auto 0vw;
+	}
+
+	#mobileMapNavContainer .zoomOptions {
+		position: absolute;
+		top: 1vw;
+		left: 1vw;
+		z-index: 5;
+		width: 9.5vw;
+	}
+
+	#mobileMapNavContainer .zoomOptions .zoomOption {
+		width: 9.5vw;
+		margin: 0vw 0vw 4.5vw 0vw;
+		float: right;
+	}
+
+	#mobileMapNavContainer .mobileTilePlacementOptions {
+		width: 33vw;
+		height: 26vw;
+		position: absolute;
+		top: 0vw;
+		left: 14.2vw;
+		transition: all .7s ease-in-out;
+	}
+
+	#mobileMapNavContainer .mobileTilePlacementOptions .mobileTilePlacementOption {
+		float: left;
+		width: 10vw;
+		margin: 0vw 3vw 2.7vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation {
+		position: absolute;
+		top: 0.4vw;
+		right: -2vw;
+		z-index: 5;
+		width: 26vw;
+		height: 25.8vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .navArrow {
+		width: 8.7vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .upArrow {
+		right: 8.2vw;
+		top: 2.3vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .rightArrow {
+		right: 1.8vw;
+		top: 9.4vw;
+	}
+
+	#mobileMapNavContainer .mapNavigation .downArrow {
+		right: 9vw;
+		top: 16.7vw;
+	}
+	
+	#mobileMapNavContainer .mapNavigation .leftArrow {
+		right: 15.7vw;
+		top: 8.8vw;
+	}
+
+	#natureCubesModal.modal.is-active .modal-card .modal-card-foot .modalButtonsToCenter .button.is-danger.closeModalTrigger {
+		width: 25vw!important;
+		margin-left: 1vw!important;
+	}
+
+	#gameLayer #allButtonsContainer #gameButtonsContainer .button {
+		padding-left: 2.5vw!important;
+		padding-right: 2.5vw!important;
+		margin-left: 1vw!important;
+		margin-right: 1vw!important;
+	}
+
+}

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-WJSFCW5');</script>
+	<!-- End Google Tag Manager -->
+
+	<title>Cascadia</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@4.0.0/dist/css/bulma-extensions.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177957524-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-177957524-1');
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJSFCW5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div id="ks-container">
+
+		<div id="ks-background">
+			<p id="cascadiaKickstarterLink" class="has-text-centered title is-4"><a href="https://www.kickstarter.com/projects/flatoutgames/cascadia" target="_blank">BACK CASCADIA today for only $29 on Kickstarter!</a></p>
+		</div>
+
+		<img id="kickstartImg" src="img/kickstarter.jpg" alt="Just launched on Kickstarter" />
+	</div>
+
+	<div id="container">
+
+		<p id="mainCascadiaTitle" class="title">
+			<img src="img/title-main.png" alt="Main Cascadia Title" />
+		</p>
+
+		<p id="mobileCascadiaTitle" class="title hideWhenShowingGoalsTablet">
+			<img src="img/title-mobile.png" alt="Mbile Cascadia Title" />
+		</p>
+
+		<p id="endGameCascadiaTitle" class="title">
+			<img src="img/title-endGame.png" alt="End Game Cascadia Title" />
+		</p>
+
+		<div id="setupLayer" class="layer">
+
+			<p class="subtitle is-6">Cascadia is a puzzly tile-laying and token-drafting game by Randy Flynn, for 1-4 players, ages 14+</p>
+
+			<div id="homepageButtonContainer" class="buttons">
+				<button id="frontPageGameInstructionsButton" class="button is-info" title="Instructions">Instructions</button>
+				<button id="startGame" class="button is-success startCommenceButton" title="Start Game">Start Game</button>
+			</div>
+
+			<div id="goalTilesContainer">
+
+				<p class="has-text-centered title is-5">Wildlife Scoring Objectives (Click to enlarge)</p>
+
+				<ul id="goalList">
+					<li>
+						<img id="bear-showWildlifeScoringModal" class="goalScoring" src="img/scoring-goals/bear-small.jpg" alt="Bear Goal Thumbnail" />
+					</li>
+					<li>
+						<img id="elk-showWildlifeScoringModal" class="goalScoring" src="img/scoring-goals/elk-small.jpg" alt="Elk Goal Thumbnail" />
+					</li>
+					<li>
+						<img id="fox-showWildlifeScoringModal" class="goalScoring" src="img/scoring-goals/fox-small.jpg" alt="Fox Goal Thumbnail" />
+					</li>
+					<li>
+						<img id="hawk-showWildlifeScoringModal" class="goalScoring" src="img/scoring-goals/hawk-small.jpg" alt="Hawk Goal Thumbnail" />
+					</li>
+					<li>
+						<img id="salmon-showWildlifeScoringModal" class="goalScoring" src="img/scoring-goals/salmon-small.jpg" alt="Salmon Goal Thumbnail" />
+					</li>
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div id="gameLayer" class="layer">
+
+			<div id="allEndGameScoringCategories">
+
+				<div id="scoringGoalsContainer">
+					<div id="scoringTable-FinalScoringModalTrigger" class="finalScoringItemTrigger activeScoringItemTrigger">
+						<img class="goalScoringTransparentLayer" src="img/scoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="goalScoringThumbnail" src="img/scoring/scoring-thumbnail.jpg" alt="Scoring Table Thumbnail" />
+					</div>
+					<div id="bear-FinalScoringModalTrigger" class="goalScoringThumbnailContainer finalScoringItemTrigger activeScoringItemTrigger">
+						<img class="goalScoringTransparentLayer" src="img/scoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="goalScoringToken" src="img/tokens/bear.png" alt="Bear Token" />
+						<img class="goalScoringThumbnail" src="img/scoring-goals/bear-thumbnail-desktop.jpg" alt="Bear Thumbnail" />
+					</div>
+					<div id="elk-FinalScoringModalTrigger" class="goalScoringThumbnailContainer finalScoringItemTrigger activeScoringItemTrigger">
+						<img class="goalScoringTransparentLayer" src="img/scoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="goalScoringToken" src="img/tokens/elk.png" alt="Elk Token" />
+						<img class="goalScoringThumbnail" src="img/scoring-goals/elk-thumbnail-desktop.jpg" alt="Elk Thumbnail" />
+					</div>
+					<div id="fox-FinalScoringModalTrigger" class="goalScoringThumbnailContainer finalScoringItemTrigger activeScoringItemTrigger">
+						<img class="goalScoringTransparentLayer" src="img/scoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="goalScoringToken" src="img/tokens/fox.png" alt="Fox Token" />
+						<img class="goalScoringThumbnail" src="img/scoring-goals/fox-thumbnail-desktop.jpg" alt="Fox Thumbnail" />
+					</div>
+					<div id="hawk-FinalScoringModalTrigger" class="goalScoringThumbnailContainer finalScoringItemTrigger activeScoringItemTrigger">
+						<img class="goalScoringTransparentLayer" src="img/scoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="goalScoringToken" src="img/tokens/hawk.png" alt="Hawk Token" />
+						<img class="goalScoringThumbnail" src="img/scoring-goals/hawk-thumbnail-desktop.jpg" alt="Hawk Thumbnail" />
+					</div>
+					<div id="salmon-FinalScoringModalTrigger" class="goalScoringThumbnailContainer finalScoringItemTrigger activeScoringItemTrigger">
+						<img class="goalScoringTransparentLayer" src="img/scoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="goalScoringToken" src="img/tokens/salmon.png" alt="Salmon Token" />
+						<img class="goalScoringThumbnail" src="img/scoring-goals/salmon-thumbnail-desktop.jpg" alt="Salmon Thumbnail" />
+					</div>
+				</div>
+
+				<div id="mobileScoringGoalsContainer">
+					<div id="scoringTable-mobileFinalScoringModalTrigger" class="mobileFinalScoringItemTrigger mobileActiveScoringItemTrigger">
+						<img class="mobileGoalScoringTransparentLayer" src="img/scoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img id="scoringThumbnail" src="img/scoring/scoring-thumbnail.jpg" alt="alt tag here" />
+					</div>
+					<div id="bear-mobileFinalScoringModalTrigger" class="mobileGoalScoringThumbnailContainer mobileFinalScoringItemTrigger mobileActiveScoringItemTrigger">
+						<img class="mobileGoalScoringTransparentLayer" src="img/mobileScoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="mobileGoalScoringThumbnail" src="img/scoring-goals/bear-mobile-end-scoring.jpg" alt="Bear Mobile Scoring Thumbnail" />
+					</div>
+					<div id="elk-mobileFinalScoringModalTrigger" class="mobileGoalScoringThumbnailContainer mobileFinalScoringItemTrigger mobileActiveScoringItemTrigger">
+						<img class="mobileGoalScoringTransparentLayer" src="img/mobileScoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="mobileGoalScoringThumbnail" src="img/scoring-goals/elk-mobile-end-scoring.jpg" alt="Elk Mobile Scoring Thumbnail" />
+					</div>
+					<div id="fox-mobileFinalScoringModalTrigger" class="mobileGoalScoringThumbnailContainer mobileFinalScoringItemTrigger mobileActiveScoringItemTrigger">
+						<img class="mobileGoalScoringTransparentLayer" src="img/mobileScoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="mobileGoalScoringThumbnail" src="img/scoring-goals/fox-mobile-end-scoring.jpg" alt="Fox Mobile Scoring Thumbnail" />
+					</div>
+					<div id="hawk-mobileFinalScoringModalTrigger" class="mobileGoalScoringThumbnailContainer mobileFinalScoringItemTrigger mobileActiveScoringItemTrigger">
+						<img class="mobileGoalScoringTransparentLayer" src="img/mobileScoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="mobileGoalScoringThumbnail" src="img/scoring-goals/hawk-mobile-end-scoring.jpg" alt="Hawk Mobile Scoring Thumbnail" />
+					</div>
+					<div id="salmon-mobileFinalScoringModalTrigger" class="mobileGoalScoringThumbnailContainer mobileFinalScoringItemTrigger mobileActiveScoringItemTrigger">
+						<img class="mobileGoalScoringTransparentLayer" src="img/mobileScoringGoal-transparentLayer.png" alt="Transparent Layer Image" />
+						<img class="mobileGoalScoringThumbnail" src="img/scoring-goals/salmon-mobile-end-scoring.jpg" alt="Salmon Mobile Scoring Thumbnail" />
+					</div>
+				</div>
+
+			</div>
+
+			<div id="allButtonsContainer" class="hideWhenShowingGoalsMobile hideWhenShowingGoalsTablet">
+				<div id="mobileButtonsContainer">
+					<button id="showWildlifeGoals" class="button is-warning" title="Show Goals Button">Show Goals</button>
+					<button id="mobileGameInstructionsButton" class="button is-info" title="Instructions Button">Instructions</button>
+					<button class="button is-success useNatureCube" disabled title="Nature Tokens Button">Nature Tokens</button>
+					<div class="clearDiv"></div>
+				</div>
+
+				<div id="turnsAndNatureTokenContainer">
+					<p>Turns Left: <span class="turnsLeftFigure"></span></p>
+					<p>Nature Tokens: <span class="numNatureCubesInfo"></span></p>
+				</div>
+
+				<div class="clearDiv"></div>
+
+				<div id="gameButtonsContainer">
+					<button id="undoTilePlacement" class="button is-primary" disabled title="Undo Last Tile
+					Placement Button">Undo Last Tile
+						Placement</button>
+					<button id="replaceDuplicateTokens" class="button is-danger" disabled title="Replace Duplicate Tokens Button">Replace Duplicate Tokens</button>
+					<button class="button is-success useNatureCube" disabled title="Use Nature Tokens Button">Use Nature Tokens</button>
+					<button id="gameInstructionsButton" class="button is-info" title="Instructions Button">Instructions</button>
+					<div class="clearDiv"></div>
+				</div>
+
+				<div class="clearDiv"></div>
+
+				<div id="mobileTurnsAndNatureTokenContainer">
+					<p class="turnsLeftElement">Turns Left: <span class="turnsLeftFigure">20</span></p>
+					<p class="natureTokensElement">Nature Tokens: <span class="numNatureCubesInfo">0</span></p>
+				</div>
+
+			</div>
+
+			<div class="clearDiv"></div>
+
+			<div id="goalLayerListContainer">
+
+				<button id="hideWildlifeGoals" class="button is-warning button-is-centered" title="Hide Goals Button">Hide Goals</button>
+
+				<ul id="quickViewTabletGoalLayerList">
+
+					<li>
+						<img class="goalLayerScoring" src="img/scoring-goals/bear-large.jpg" alt="Bear Scoring Image" />
+					</li>
+					<li>
+						<img class="goalLayerScoring" src="img/scoring-goals/elk-large.jpg" alt="Elk Scoring Image" />
+					</li>
+					<li>
+						<img class="goalLayerScoring" src="img/scoring-goals/fox-large.jpg" alt="Fox Scoring Image" />
+					</li>
+					<li>
+						<img class="goalLayerScoring" src="img/scoring-goals/hawk-large.jpg" alt="Hawk Scoring Image" />
+					</li>
+					<li>
+						<img class="goalLayerScoring" src="img/scoring-goals/salmon-large.jpg" alt="Salmon Scoring Image" />
+					</li>
+
+				</ul>
+
+				<div id="quickViewMobileGoalLayer">
+
+					<div id="mobileGoalThumbnails">
+
+						<div id="quickViewGoalThumnail-bear" class="mobileThumbnail activeQuickViewGoal">
+							<img class="mobileThumbnailImg" src="img/scoring-goals/bear-mobile-end-scoring.jpg" alt="Bear Scoring Thumbnail" />
+							<img class="mobileThumbnailActiveFrame" src="img/mobileScoringGoal-hover.png" alt="Active Thumbnail Frame" />
+						</div>
+						<div id="quickViewGoalThumnail-elk" class="mobileThumbnail">
+							<img class="mobileThumbnailImg" src="img/scoring-goals/elk-mobile-end-scoring.jpg" alt="Elk Scoring Thumbnail" />
+						</div>
+						<div id="quickViewGoalThumnail-fox" class="mobileThumbnail">
+							<img class="mobileThumbnailImg" src="img/scoring-goals/fox-mobile-end-scoring.jpg" alt="Fox Scoring Thumbnail" />
+						</div>
+						<div id="quickViewGoalThumnail-hawk" class="mobileThumbnail">
+							<img class="mobileThumbnailImg" src="img/scoring-goals/hawk-mobile-end-scoring.jpg" alt="Hawk Scoring Thumbnail" />
+						</div>
+						<div id="quickViewGoalThumnail-salmon" class="mobileThumbnail">
+							<img class="mobileThumbnailImg" src="img/scoring-goals/salmon-mobile-end-scoring.jpg" alt="Salmon Scoring Thumbnail" />
+						</div>
+
+					</div>
+
+					<div id="quickViewMobileGoalFullImages">
+						<img id="quickViewGoalImg-bear" class="mobileGoalImg activeQuickViewGoalImg" src="img/scoring-goals/bear-large.jpg" alt="Bear Scoring Image" />
+						<img id="quickViewGoalImg-elk" class="mobileGoalImg" src="img/scoring-goals/elk-large.jpg" alt="Elk Scoring Image" />
+						<img id="quickViewGoalImg-fox" class="mobileGoalImg" src="img/scoring-goals/fox-large.jpg" alt="Fox Scoring Image" />
+						<img id="quickViewGoalImg-hawk" class="mobileGoalImg" src="img/scoring-goals/hawk-large.jpg" alt="Hawk Scoring Image" />
+						<img id="quickViewGoalImg-salmon" class="mobileGoalImg" src="img/scoring-goals/salmon-large.jpg" alt="Salmon Scoring Image" />
+					</div>
+
+				</div>
+
+			</div>
+
+			<div id="tileTokenContainer" class="hideWhenShowingGoalsMobile hideWhenShowingGoalsTablet"></div>
+
+			<div id="mapContainer" class="hideWhenShowingGoalsMobile hideWhenShowingGoalsTablet"></div>
+
+			<div id="mobileMapNavContainer" class="hideWhenShowingGoalsMobile">
+				<div class="zoomOptions">
+					<img zoomType="zoomIn" class="zoomIn zoomOption inactiveZoom" src="img/zoomIn-inactive.png" alt="Zoom In Image" />
+					<img zoomType="zoomOut" class="zoomOut zoomOption activeZoom" src="img/zoomOut.png" alt="Zoom Out Image" />
+				</div>
+				<div class="mobileTilePlacementOptions inactiveTileOptions">
+					<img class="mobileTilePlacementRotateCounterClockwise mobileTilePlacementOption" src="img/tilePlacementRotateCounterClockwise.png" alt="Rotate Placed Tile Counter Clockwise" />
+					<img class="mobileTilePlacementRotateClockwise mobileTilePlacementOption" src="img/tilePlacementRotateClockwise.png" alt="Rotate Placed Tile Clockwise" />
+					<img class="mobileTilePlacementConfirm mobileTilePlacementOption" src="img/tilePlacementConfirm.png" alt="Confirm Tile Placement Image" />
+					<img class="mobileTilePlacementCancel mobileTilePlacementOption" src="img/tilePlacementCancel.png" alt="Cancel Tile Placement Image" />
+				</div>
+				<div class="mapNavigation">
+					<img class="navBackground" src="img/woodCircle.png" alt="Navigation Arrows Container Background" />
+					<img direction="up" class="upArrow navArrow" src="img/arrow.png" alt="Up Arrow Image" />
+					<img direction="right" class="rightArrow navArrow" src="img/arrow.png" alt="Right Arrow Image" />
+					<img direction="down" class="downArrow navArrow" src="img/arrow.png" alt="Down Arrow Image" />
+					<img direction="left" class="leftArrow navArrow" src="img/arrow.png" alt="Left Arrow Image" />
+				</div>
+			</div>
+			<div id="goalsContainer">
+				<div id="bear-ScoringModalTrigger" class="goalScoringThumbnailContainer">
+					<img class="goalScoringToken" src="img/tokens/bear.png" alt="Bear Token Image" />
+					<img class="goalScoringThumbnail" src="img/scoring-goals/bear-thumbnail-desktop.jpg" alt="Bear Thumbnail Image" />
+				</div>
+				<div id="elk-ScoringModalTrigger" class="goalScoringThumbnailContainer">
+					<img class="goalScoringToken" src="img/tokens/elk.png" alt="Elk Token Image" />
+					<img class="goalScoringThumbnail" src="img/scoring-goals/elk-thumbnail-desktop.jpg" alt="Elk Thumbnail Image" />
+				</div>
+				<div id="fox-ScoringModalTrigger" class="goalScoringThumbnailContainer">
+					<img class="goalScoringToken" src="img/tokens/fox.png" alt="Fox Token Image" />
+					<img class="goalScoringThumbnail" src="img/scoring-goals/fox-thumbnail-desktop.jpg" alt="Fox Thumbnail Image" />
+				</div>
+				<div id="hawk-ScoringModalTrigger" class="goalScoringThumbnailContainer">
+					<img class="goalScoringToken" src="img/tokens/hawk.png" alt="Hawk Token Image" />
+					<img class="goalScoringThumbnail" src="img/scoring-goals/hawk-thumbnail-desktop.jpg" alt="Hawk Thumbnail Image" />
+				</div>
+				<div id="salmon-ScoringModalTrigger" class="goalScoringThumbnailContainer">
+					<img class="goalScoringToken" src="img/tokens/salmon.png" alt="Salmon Token Image" />
+					<img class="goalScoringThumbnail" src="img/scoring-goals/salmon-thumbnail-desktop.jpg" alt="Salmon Thumbnail Image" />
+				</div>
+			</div>
+
+			<div class="clearDiv"></div>
+
+		</div>
+
+		<div id="goalsLayer" class="layer"></div>
+
+	</div>
+
+	<div id="threeDuplicateTokensModal" class="modal">
+		<div class="modal-background"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Replace Duplicate Tokens</p>
+				<button class="delete closeModalTrigger" aria-label="close"></button>
+			</header>
+			<section class="modal-card-body">
+
+				<p>Since there are three duplicate tokens, you have the option to replace them with three new tokens. (The three replaced tokens will go back into the supply and all tokens reshuffled.)</p>
+
+				<p class="has-text-danger has-text-weight-bold has-text-centered">Note: You can only do this once per turn.</p>
+
+			</section>
+			<footer class="modal-card-foot">
+				<div class="modalButtonsToCenter">
+					<button class="button is-danger closeModalTrigger" title="Close Modal Button">Close</button>
+					<button id="confirmReplacingDuplicates" class="button is-success" title="Replace Duplicate Tokens Button">Replace Duplicate Tokens</button>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<div id="natureCubesModal" class="modal">
+		<div class="modal-background closableModalBackground"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Use Nature Token</p>
+				<button class="delete closeModalTrigger" aria-label="close"></button>
+			</header>
+			<section class="modal-card-body">
+
+				<div id="natureTokenTrackerContainer">
+					<div id="natureTokenImage">
+						<img src="img/tokens/nature-token.png" alt="Nature Token image" />
+					</div>
+					<div id="natureTokenAmount">
+						<p class="title is-4">x<span class="numNatureCubes">0</span></p>
+					</div>
+					<div class="clearDiv"></div>
+				</div>
+
+				<p class="natureTokenContent">You may spend one of your Nature Tokens one of the following two ways:</p>
+
+				<p class="is-italic natureTokenContent">1 - To take any one tile and and any one token available (they do not need to be a combination / on the same row).</p>
+
+				<p class="is-italic natureTokenContent">2 - To wipe ANY number of wildlife tokens from the market and refill before you
+					choose your
+					combination.</p>
+
+				<p class="natureTokenContent">Players can always use as many nature tokens as they want on their turn.</p>
+
+				<p class="has-text-weight-bold is-italic underline natureTokenContent">Any nature tokens left at the end of the game are worth 1 point.</p>
+
+				<p class="has-text-danger has-text-weight-bold natureTokenContent">Note: You cannot undo this action once you confirm.</p>
+
+			</section>
+			<footer class="modal-card-foot">
+				<div class="modalButtonsToCenter">
+					<button class="button is-danger closeModalTrigger" title="Close Modal Button">Close</button>
+					<button id="natureCubePickAnyTileToken" class="button is-success" title="Pick any tile or token button">Pick any tile / token</button>
+					<button id="natureCubeClearAnyTokens" class="button is-info" title="Clear any number of tokens button">Clear <span class="has-text-weight-bold underline">any number</span> of tokens</button>
+					<button id="natureCubeClearSomeTokens" class="button is-info" title="Clear some tokens button">Clear <span class="has-text-weight-bold underline">SOME</span> tokens</button>
+					<button id="natureCubeClearAllTokens" class="button is-danger is-inverted" title="Clear all tokens button">Clear <span class="has-text-weight-bold underline">ALL</span> tokens</button></div>
+			</footer>
+		</div>
+	</div>
+
+	<div id="noValidPlacementModal" class="modal notificationModal">
+
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="notification">
+				<p>There are no tiles that can take a <span class="invalidWildlifeText"></span> token, so this token will be removed from the game if you go ahead.</p>
+
+				<p>Click "Cancel" to choose another Tile + Token combination, or click "Confirm" to remove the token.</p>
+				<div class="invalidTokenImg"></div>
+
+				<div class="noValidPlacementButtonContainer">
+
+					<button id="cancelInvalidTokenPlacement" class="button is-danger closeModalTrigger" title="Cancel remove token action button">Cancel</button>
+					<button id="confirmInvalidTokenPlacement" class="button is-success closeModalTrigger" title="Confirm remove token action button">Confirm</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="noValidPlacementNatureCubeModal" class="modal notificationModal">
+
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="notification">
+				<p>There are no tiles that can take a <span class="invalidWildlifeText"></span> token, so this token will be removed from the game if you go ahead.</p>
+
+				<p>Click "Cancel" to choose another Token, or click "Confirm" to remove the token.</p>
+
+				<div class="invalidTokenImg"></div>
+
+				<div class="noValidPlacementButtonContainer">
+					<button id="cancelInvalidNatureCubeTokenPlacement" class="button is-danger closeModalTrigger" title="Cancel remove token action button">Cancel</button>
+					<button id="confirmInvalidNatureCubeTokenPlacement" class="button is-success closeModalTrigger" title="Confirm remove token action button">Confirm</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="allDuplicateTokensModal" class="modal notificationModal">
+
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="notification">
+				<p>Since there are only <span class="duplicateWildlifeText"></span> tokens, they will all be discarded,
+					four new tokens will be generated, and the replaced <span class="duplicateWildlifeText"></span>
+					tokens will go back into the supply and shuffled.</p>
+				<div id="duplicateImgContainer"></div>
+				<button id="confirmReplacingFourDuplicates" class="button is-danger closeModalTrigger button-is-centered" title="Close modal button">Close</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="keyboardKeysModal" class="modal notificationModal">
+
+		<div class="modal-background closableModalBackground"></div>
+		<div class="modal-content">
+			<div class="notification">
+				<p>If you're playing on a computer, you can use following keyboard keys to interact with the map while playing:</p>
+				<p class="has-text-centered title is-6">Navigating Around Map:</p>
+				<img id="keyboardMoveKeysImg" class="keyboardImg" src="img/keyboard-keys-move.png" alt="Move map keyboard keys image" />
+				<p class="has-text-centered title is-6">Rotating Placed Tile:</p>
+				<img id="keyboardRotateKeysImg" class="keyboardImg" src="img/keyboard-keys-rotate.png" alt="Rotate placed tile keyboard keys image" />
+				<button id="commenceGame" class="button is-success button-is-centered closeModalTrigger" title="Start game button">Start Game</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="natureCubesPlaceTileModal" class="modal notificationModal">
+
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="notification">
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+				<p class="has-text-centered">First choose a tile to place.</p>
+				<button class="button is-danger closeModalTrigger button-is-centered" title="Close modal button">Close</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="natureCubesPlaceTokenModal" class="modal notificationModal">
+
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="notification">
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+				<p class="has-text-centered">Now choose a token to place.</p>
+				<button class="button is-danger closeModalTrigger button-is-centered" title="Close modal button">Close</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="natureCubesClearAnyNumberOfTokensModal" class="modal notificationModal">
+
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="notification">
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+				<p>Choose which displayed wildlife tokens you would like to clear by clicking on them (click on them again to deselect the token).</p>
+				<p>Once finalized, press the "Clear Tokens" button to replace the chosen tokens with new tokens from the supply.</p>
+				<button class="button is-danger closeModalTrigger button-is-centered" title="Close modal button">Close</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="lastTurnModal" class="modal notificationModal">
+
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="notification">
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+				<p>The last tile and token has been placed and the scoring phase will now begin!</p>
+				<button class="button is-link closeModalTrigger button-is-centered" title="Calculate score button">Calculate Score</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="bearScoringModal" class="modal">
+		<div class="modal-background closableModalBackground"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Bear Scoring Objective</p>
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+			</header>
+			<section class="modal-card-body">
+				<img class="goalScoringModalImg" src="img/scoring-goals/bear-large.jpg" alt="Bear Scoring Image" />
+			</section>
+			<footer class="modal-card-foot">
+				<div class="modalButtonsToCenter">
+					<button class="button is-danger closeModalTrigger" title="Close modal button">Close</button>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<div id="salmonScoringModal" class="modal">
+		<div class="modal-background closableModalBackground"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Salmon Scoring Objective</p>
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+			</header>
+			<section class="modal-card-body">
+				<img class="goalScoringModalImg" src="img/scoring-goals/salmon-large.jpg" alt="Salmon Scoring Image" />
+			</section>
+			<footer class="modal-card-foot">
+				<div class="modalButtonsToCenter">
+					<button class="button is-danger closeModalTrigger" title="Close modal button">Close</button>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<div id="hawkScoringModal" class="modal">
+		<div class="modal-background closableModalBackground"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Hawk Scoring Objective</p>
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+			</header>
+			<section class="modal-card-body">
+				<img class="goalScoringModalImg" src="img/scoring-goals/hawk-large.jpg" alt="Hawk Scoring Image" />
+			</section>
+			<footer class="modal-card-foot">
+				<div class="modalButtonsToCenter">
+					<button class="button is-danger closeModalTrigger" title="Close modal button">Close</button>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<div id="elkScoringModal" class="modal">
+		<div class="modal-background closableModalBackground"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Elk Scoring Objective</p>
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+			</header>
+			<section class="modal-card-body">
+				<img class="goalScoringModalImg" src="img/scoring-goals/elk-large.jpg" alt="Elk Scoring Image" />
+			</section>
+			<footer class="modal-card-foot">
+				<div class="modalButtonsToCenter">
+					<button class="button is-danger closeModalTrigger" title="Close modal button">Close</button>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<div id="foxScoringModal" class="modal">
+		<div class="modal-background closableModalBackground"></div>
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Fox Scoring Objective</p>
+				<button class="delete closeModalTrigger" aria-label="close" title="Close button image"></button>
+			</header>
+			<section class="modal-card-body">
+				<img class="goalScoringModalImg" src="img/scoring-goals/fox-large.jpg" alt="Fox Scoring Image" />
+			</section>
+			<footer class="modal-card-foot">
+				<div class="modalButtonsToCenter">
+					<button class="button is-danger closeModalTrigger" title="Close modal button">Close</button>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+
+	<script defer src="https://cdn.jsdelivr.net/npm/bulma-extensions@4.0.0/dist/js/bulma-extensions.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/image-preloader.js"></script>
+
+</body>
+
+</html>
