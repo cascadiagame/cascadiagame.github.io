@@ -174,9 +174,6 @@ $(document).ready(function(){
 	// setupScoringGoals(scoringGoalMode); //all or beginner
 	updateNextTurn('setup');
 	checkScreenWidth();
-	setTimeout(function(){
-		$('#ks-container').addClass('showKickstarterInfo');
-	}, 500)
 
 })
 
@@ -314,14 +311,6 @@ function updateMapPosition(moveDirection) {
 		$('#mapContainer #mapHiddenOverlay').css('top', newTopPos);
 	}
 }
-
-$(document).on('mouseenter','#ks-container #kickstartImg',function(){
-	$('#ks-container').addClass('activeKickstarter');
-});
-
-$(document).on('mouseleave','#ks-container.activeKickstarter:not(.gameOver)',function(){
-	$('#ks-container.activeKickstarter').removeClass('activeKickstarter');
-});
 
 $(document).on(touchEvent,'#showWildlifeGoals',function(){
 
@@ -987,7 +976,7 @@ $(document).on(touchEvent,'.mapTileContainer.placedTile.wildlifeTokenPotential',
 					$('#earnedNatureTokenContainer').remove();
 				}, 2500)
 
-			}, 1050)
+			}, 1050);
 
 		}
 
