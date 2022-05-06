@@ -3655,7 +3655,7 @@ function calculateBearTokenScoring() {
 					}
 				}
 				if(potentialTokenIDs.length == 2) {
-					if(confirmedBearPairs <= 4) confirmedBearPairs++;
+					if(confirmedBearPairs < 4) confirmedBearPairs++;
 				}
 			}
 			usedTokenIDs.push(...potentialTokenIDs);
